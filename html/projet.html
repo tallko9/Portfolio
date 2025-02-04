@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/projet_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+                
+            </ul>
+            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;">
+            <span>Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
+            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+        </div>
+    </header>
+
+    <!-- Section Projets -->
+    <section class="projects">
+        <h2>Mes Projets</h2>
+        <div class="project-list">
+            <!-- Exemple de projet 1 -->
+            <div class="project-card">
+                <h3>Projet 1 : Site E-commerce</h3>
+                <p>Un site de commerce en ligne permettant aux utilisateurs de parcourir et d’acheter des produits. </p>
+                <p><strong class="strong_word">Technologies :</strong> HTML, CSS, JavaScript, PHP</p>
+                <a href="#" class="btn">Voir le projet</a>
+            </div>
+
+            <!-- Exemple de projet 2 -->
+            <div class="project-card">
+                <h3>Projet 2 : Application de Gestion</h3>
+                <p>Une application pour gérer les tâches quotidiennes d'une petite entreprise, avec suivi des performances.</p>
+                <p><strong class="strong_word">Technologies :</strong> React, Node.js, MongoDB</p>
+                <a href="#" class="btn">Voir le projet</a>
+            </div>
+
+            <!-- Exemple de projet 3 -->
+            <div class="project-card">
+                <h3>Projet 3 : Portfolio Interactif</h3>
+                <p>Un portfolio interactif pour présenter mes compétences et projets de manière visuelle.</p>
+                <p><strong class="strong_word">Technologies :</strong> HTML, CSS, JavaScript</p>
+                <a href="#" class="btn">Voir le projet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/tallko9?tab=repositories" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+ 
+         function scrollFunction() {
+             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                 document.getElementById("scroll-to-top").style.display = "block";
+             } else {
+                 document.getElementById("scroll-to-top").style.display = "none";
+             }
+         }
+ 
+         document.getElementById("scroll-to-top").onclick = function() {
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+         };
+ 
+         // Fonction pour changer la couleur d'accentuation
+         document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+             radio.addEventListener('change', function() {
+                 document.documentElement.style.setProperty('--accent-color', this.value);
+             });
+         });
+ 
+ 
+         document.addEventListener('DOMContentLoaded', function() {
+         // Fonction pour changer la couleur d'accentuation
+         function changeAccentColor(color) {
+         document.documentElement.style.setProperty('--accent-color', color);
+         localStorage.setItem('accentColor', color);
+         }
+ 
+         // Ajouter les écouteurs d'événements aux boutons radio
+         document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+         radio.addEventListener('change', function() {
+             changeAccentColor(this.value);
+         });
+         });
+ 
+         // Fonction pour appliquer la couleur sauvegardée
+         function applyStoredColor() {
+         var storedColor = localStorage.getItem('accentColor');
+         if (storedColor) {
+             document.documentElement.style.setProperty('--accent-color', storedColor);
+             var radioButton = document.querySelector(`input[name="accent-color"][value="${storedColor}"]`);
+             if (radioButton) {
+                 radioButton.checked = true;
+             }
+         }
+         }
+ 
+         // Appliquer la couleur sauvegardée au chargement de la page
+         applyStoredColor();
+ 
+         // Gestion du bouton de paramètres
+         var settingsIcon = document.getElementById('settings-icon');
+         var colorPicker = document.getElementById('color-picker');
+         if (settingsIcon && colorPicker) {
+         settingsIcon.addEventListener('click', function() {
+             colorPicker.style.display = colorPicker.style.display === 'none' ? 'block' : 'none';
+         });
+         }
+         });
+     </script>
+</body>
+</html>

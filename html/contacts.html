@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/contacts_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+        </nav>
+        <div id="color-picker" class="color-picker" style="display: none;">
+            <span>Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
+            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+        </div>
+    </header>
+
+    <!-- Section Contact -->
+    <section class="contact">
+        <h2>Contactez-moi</h2>
+        <p>N'hésitez pas à me contacter pour toute question ou collaboration. Je serai ravi d'échanger avec vous !</p>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label class="form-label" for="name">Nom <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" 
+                       placeholder="Votre nom complet"
+                       pattern="[A-Za-zÀ-ÿ\s]+" title="Veuillez entrer un nom valide">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="exemple@email.com"
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="subject">Sujet <span class="required">*</span></label>
+                <select id="subject" name="subject" required>
+                    <option value="">Sélectionnez un sujet</option>
+                    <option value="collaboration">Proposition de collaboration</option>
+                    <option value="question">Question générale</option>
+                    <option value="projet">Discussion de projet</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000"
+                         placeholder="Votre message ici (10-1000 caractères)"></textarea>
+                <div class="character-count"><span id="charCount">0</span>/1000</div>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" required name="privacy">
+                    <span class="checkmark"></span>
+                    J'accepte que mes données soient utilisées pour être recontacté(e)
+                </label>
+            </div>
+            <button type="submit" class="btn">
+                <span class="btn-text">Envoyer</span>
+                <span class="btn-icon">📨</span>
+            </button>
+        </form>
+
+        <!-- Infos de contact -->
+        <div class="contact-info">
+            <p><strong>Email :</strong> sasha03.lorenc@gmail.com</p>
+            <p><strong>Suivez-moi :</strong>
+                <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+                <a href="https://github.com/tallko9?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+                <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+    </footer>
+    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+ 
+         function scrollFunction() {
+             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                 document.getElementById("scroll-to-top").style.display = "block";
+             } else {
+                 document.getElementById("scroll-to-top").style.display = "none";
+             }
+         }
+ 
+         document.getElementById("scroll-to-top").onclick = function() {
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+         };
+ 
+         // Fonction pour changer la couleur d'accentuation
+         document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+             radio.addEventListener('change', function() {
+                 document.documentElement.style.setProperty('--accent-color', this.value);
+             });
+         });
+ 
+         document.addEventListener('DOMContentLoaded', function() {
+             // Gestion du compteur de caractères
+             const messageTextarea = document.getElementById('message');
+             const charCount = document.getElementById('charCount');
+             
+             messageTextarea.addEventListener('input', function() {
+                 charCount.textContent = this.value.length;
+             });
+
+             // Validation et envoi du formulaire par Email.js
+             const contactForm = document.getElementById('contactForm');
+             
+             contactForm.addEventListener('submit', function(e) {
+                 e.preventDefault();
+                 
+                 if (this.checkValidity()) {
+                     const submitBtn = this.querySelector('button[type="submit"]');
+                     submitBtn.classList.add('sending');
+                     
+                     emailjs.init("pBMgXiG4tpfVkCxhY");
+                     
+                     const templateParams = {
+                         name: document.getElementById('name').value,
+                         email: document.getElementById('email').value,
+                         subject: document.getElementById('subject').value,
+                         message: document.getElementById('message').value
+                     };
+                     
+                     emailjs.send('service_s1wv65t', 'template_391zlnl', templateParams)
+                         .then(function(response) {
+                             alert('Message envoyé avec succès !');
+                             contactForm.reset();
+                             charCount.textContent = '0';
+                             submitBtn.classList.remove('sending');
+                         }, function(error) {
+                             alert('Une erreur est survenue. Veuillez réessayer.');
+                             submitBtn.classList.remove('sending');
+                             console.error('Erreur:', error);
+                         });
+                 }
+             });
+
+             // Gestion des couleurs d'accentuation
+             function changeAccentColor(color) {
+                 document.documentElement.style.setProperty('--accent-color', color);
+                 localStorage.setItem('accentColor', color);
+             }
+ 
+             document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+                 radio.addEventListener('change', function() {
+                     changeAccentColor(this.value);
+                 });
+             });
+ 
+             function applyStoredColor() {
+                 var storedColor = localStorage.getItem('accentColor');
+                 if (storedColor) {
+                     document.documentElement.style.setProperty('--accent-color', storedColor);
+                     var radioButton = document.querySelector(`input[name="accent-color"][value="${storedColor}"]`);
+                     if (radioButton) {
+                         radioButton.checked = true;
+                     }
+                 }
+             }
+ 
+             applyStoredColor();
+ 
+             var settingsIcon = document.getElementById('settings-icon');
+             var colorPicker = document.getElementById('color-picker');
+             if (settingsIcon && colorPicker) {
+                 settingsIcon.addEventListener('click', function() {
+                     colorPicker.style.display = colorPicker.style.display === 'none' ? 'block' : 'none';
+                 });
+             }
+         });
+     </script>
+</body>
+</html>

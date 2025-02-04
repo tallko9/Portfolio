@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À propos de Sasha Lorenc - Développeur web passionné par l'innovation et le design">
+    <title>À propos - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/about_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <ul>
+                <li><a href="accueil.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about" aria-current="page">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <button id="settings-icon" aria-label="Paramètres" aria-expanded="false" aria-controls="color-picker">⚙️</button>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
+            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+        </div>
+    </header>
+
+    <!-- Section À propos -->
+    <main>
+        <section class="about">
+            <h2>À propos de moi</h2>
+            <p>
+                Je m'appelle <strong class="strong_word">Sasha Lorenc</strong>, développeur passionné par l'informatique et le design.
+                Je cherche constamment à apprendre et à m'améliorer.
+                En tant qu'étudiant en Première année de
+                <strong class="strong_word">BUT Informatique</strong> passionné par
+                le développement web, je maîtrise les langages
+                <strong class="strong_word">HTML</strong>,
+                <strong class="strong_word">CSS</strong>, me permettant la création
+                d'applications web. J'apprécie également le développement
+                d'applications bureau avec des langages tels que le
+                <strong class="strong_word">C</strong>. Mon adaptabilité me permet
+                de relever les défis techniques.
+                En combinant mes compétences techniques, incluant des
+                connaissances en
+                <strong class="strong_word">frameworks</strong>, je suis capable
+                de transformer des concepts en applications web de manière
+                <strong class="strong_word">professionnelle</strong>. Pour la
+                rentrée 2025, je suis à la recherche d'une
+                <strong class="strong_word">alternance</strong> dans le domaine
+                du développement web ou autre.
+            </p>
+            <div class="about-details">
+                <h3>Mon parcours</h3>
+                <p>Je suis actuellement étudiant en <strong class="strong_word">BUT Informatique</strong> à l'IUT de <strong class="strong_word">Clermont-Ferrand</strong>. 
+                    Avant cela, j'ai obtenu mon baccalauréat avec les spécialités NSI (Numérique et Sciences Informatiques) et Mathématiques au lycée Albert Londres à Cusset. 
+                    Durant mon parcours lycéen, j'ai eu l'opportunité exceptionnelle de participer à un projet innovant en partenariat avec Samsung dans le cadre du programme "Solve for Tomorrow". 
+                    Notre équipe a fait partie des 5 groupes sélectionnés parmi plus d'un millier de groupes en France pour présenter notre projet devant un jury à Paris, une expérience enrichissante qui a renforcé mes compétences en gestion de projet.
+                </p>
+            </div>
+
+            <div class="motivation">
+                <h3>Ce qui me motive</h3>
+                <p>
+                    J'aime créer des interfaces intuitives et esthétiques, et je cherche à rendre chaque projet innovant et unique
+                    pour permettre aux sites que je crée d'être facilement identifiables par leurs utilisateurs.
+                </p>
+            </div>
+            <a href="contacts.html" class="btn" aria-label="Me contacter">Me contacter</a>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/tallko9?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
+
+    <script>
+        // Gestion du défilement avec animation fluide
+        const scrollToTop = document.getElementById("scroll-to-top");
+
+        const scrollFunction = () => {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTop.style.display = "block";
+            } else {
+                scrollToTop.style.display = "none";
+            }
+        };
+
+        window.addEventListener('scroll', scrollFunction);
+
+        scrollToTop.addEventListener('click', () => {
+            const scrollToTop = () => {
+                const c = document.documentElement.scrollTop || document.body.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, c - c / 8);
+                }
+            };
+            scrollToTop();
+        });
+
+        // Gestion des couleurs d'accentuation
+        const changeAccentColor = (color) => {
+            document.documentElement.style.setProperty('--accent-color', color);
+            localStorage.setItem('accentColor', color);
+            
+            // Feedback visuel
+            const notification = document.createElement('div');
+            notification.className = 'color-change-notification';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        };
+
+        // Application de la couleur sauvegardée
+        const applyStoredColor = () => {
+            const storedColor = localStorage.getItem('accentColor');
+            if (storedColor) {
+                document.documentElement.style.setProperty('--accent-color', storedColor);
+                const radioButton = document.querySelector(`input[name="accent-color"][value="${storedColor}"]`);
+                if (radioButton) radioButton.checked = true;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredColor();
+
+            const settingsIcon = document.getElementById('settings-icon');
+            const colorPicker = document.getElementById('color-picker');
+
+            document.querySelectorAll('input[name="accent-color"]').forEach(radio => {
+                radio.addEventListener('change', () => changeAccentColor(radio.value));
+            });
+
+            if (settingsIcon && colorPicker) {
+                settingsIcon.addEventListener('click', () => {
+                    const isExpanded = colorPicker.style.display !== 'none';
+                    colorPicker.style.display = isExpanded ? 'none' : 'block';
+                    settingsIcon.setAttribute('aria-expanded', !isExpanded);
+                });
+
+                // Fermer le color picker en cliquant en dehors
+                document.addEventListener('click', (e) => {
+                    if (!colorPicker.contains(e.target) && !settingsIcon.contains(e.target)) {
+                        colorPicker.style.display = 'none';
+                        settingsIcon.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

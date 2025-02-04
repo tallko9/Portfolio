@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/skills_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;">
+            <span>Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
+            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+        </div>
+    </header>
+
+    <!-- Section Compétences -->
+    <section class="skills">
+        <h2>Mes Compétences</h2>
+
+        <!-- Compétences Techniques -->
+        <div class="skills-section">
+            <h3>Compétences Techniques</h3>
+            <div class="skill">
+                <p>HTML & CSS</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>PHP & MySQL</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>React & Node.js</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compétences Générales -->
+        <div class="skills-section">
+            <h3>Compétences Générales</h3>
+            <div class="project-list">
+                <div class="project-card">
+                    <h3>Gestion de projet</h3>
+                    <p>Leadership naturel avec expérience dans la coordination d'équipes. Excellente capacité à établir des plannings réalistes et à gérer les ressources efficacement. Compétences avérées en gestion des risques et résolution de conflits.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Communication</h3>
+                    <p>Communication claire et persuasive en français et en anglais. Capacité à vulgariser des concepts techniques complexes. Excellente aptitude à la rédaction de documentation technique et rapports professionnels. Fort esprit d'équipe avec capacité à fédérer autour d'objectifs communs.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Résolution de problèmes</h3>
+                    <p>Capacité à décomposer des problèmes complexes en éléments gérables. Maîtrise des techniques de debugging et d'optimisation. Expérience en analyse de données pour la prise de décision. Capacité à anticiper les problèmes potentiels et à mettre en place des solutions préventives.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Adaptabilité</h3>
+                    <p>Excellente capacité d'adaptation aux changements technologiques et organisationnels. Apprentissage rapide des nouveaux outils et frameworks.Capacité à travailler efficacement dans des environnements multiculturels. Résilience face aux situations stressantes et aux deadlines serrées.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Créativité</h3>
+                    <p>Approche innovante dans la résolution de problèmes techniques. Capacité à concevoir des solutions efficaces. Expérience en design thinking et brainstorming créatif. Aptitude à sortir des sentiers battus pour proposer des solutions originales. Passion pour l'innovation technologique et l'amélioration continue.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Organisation</h3>
+                    <p>Excellence dans la gestion du temps et des priorités. Maîtrise des outils de gestion de projet et de productivité. Capacité à gérer plusieurs projets simultanément. Rigueur dans le suivi des tâches et le respect des délais.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Esprit d'analyse</h3>
+                    <p>Capacité à analyser des situations complexes et à en tirer des conclusions pertinentes. Compétences en analyse de données et en prise de décision basée sur les faits. Approche critique et objective des problèmes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/tallko9?tab=repositories" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+ 
+         function scrollFunction() {
+             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                 document.getElementById("scroll-to-top").style.display = "block";
+             } else {
+                 document.getElementById("scroll-to-top").style.display = "none";
+             }
+         }
+ 
+         document.getElementById("scroll-to-top").onclick = function() {
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+         };
+ 
+         // Fonction pour changer la couleur d'accentuation
+         document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+             radio.addEventListener('change', function() {
+                 document.documentElement.style.setProperty('--accent-color', this.value);
+             });
+         });
+ 
+ 
+         document.addEventListener('DOMContentLoaded', function() {
+         // Fonction pour changer la couleur d'accentuation
+         function changeAccentColor(color) {
+         document.documentElement.style.setProperty('--accent-color', color);
+         localStorage.setItem('accentColor', color);
+         }
+ 
+         // Ajouter les écouteurs d'événements aux boutons radio
+         document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
+         radio.addEventListener('change', function() {
+             changeAccentColor(this.value);
+         });
+         });
+ 
+         // Fonction pour appliquer la couleur sauvegardée
+         function applyStoredColor() {
+         var storedColor = localStorage.getItem('accentColor');
+         if (storedColor) {
+             document.documentElement.style.setProperty('--accent-color', storedColor);
+             var radioButton = document.querySelector(`input[name="accent-color"][value="${storedColor}"]`);
+             if (radioButton) {
+                 radioButton.checked = true;
+             }
+         }
+         }
+ 
+         // Appliquer la couleur sauvegardée au chargement de la page
+         applyStoredColor();
+ 
+         // Gestion du bouton de paramètres
+         var settingsIcon = document.getElementById('settings-icon');
+         var colorPicker = document.getElementById('color-picker');
+         if (settingsIcon && colorPicker) {
+         settingsIcon.addEventListener('click', function() {
+             colorPicker.style.display = colorPicker.style.display === 'none' ? 'block' : 'none';
+         });
+         }
+         });
+     </script>
+</body>
+</html>
