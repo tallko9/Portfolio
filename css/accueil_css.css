@@ -1,0 +1,75 @@
+/* Section Introduction spécifique à l'accueil */
+.intro {
+    padding: 50px 20px;
+    background-color: #121212;
+    color: #e9ecef;
+}
+
+.intro h2 {
+    margin-bottom: 15px;
+    margin-top: -100px;
+    color: var(--accent-color);
+}
+
+.intro p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #e9ecef;
+}
+
+p {
+    color: #e9ecef;
+}
+
+.btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--accent-color);
+    color: #f8f9fa;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Responsive pour les tablettes */
+@media (max-width: 768px) {
+    .intro {
+        padding: 40px 15px;
+    }
+
+    .intro h2 {
+        margin-bottom: 10px;
+    }
+
+    .intro p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
+}
+
+/* Responsive pour les smartphones */
+@media (max-width: 480px) {
+    .intro {
+        padding: 30px 10px;
+    }
+
+    .intro h2 {
+        margin-bottom: 8px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}

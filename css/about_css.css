@@ -1,0 +1,111 @@
+/* Section À propos */
+.about {
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    color: var(--accent-color); /* Utilisation de la variable pour la couleur d'accentuation */
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.about-details {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.about-details h3 {
+    font-size: 24px;
+    color: var(--accent-color); /* Utilisation de la variable pour la couleur d'accentuation */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-details p {
+    font-size: 16px;
+    color: #cccccc;
+    margin-top: 5px;
+}
+
+/* Bouton pour contacter */
+.about .btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: var(--accent-color); /* Utilisation de la variable pour la couleur d'accentuation */
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about .btn:hover {
+    background-color: var(--accent-color); /* Nouvelle variable pour la couleur au survol */
+}
+
+/* Responsive pour les tablettes */
+@media (max-width: 768px) {
+    .about {
+        margin: 80px auto;
+    }
+
+    .about h2 {
+        font-size: 30px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .about-details h3 {
+        font-size: 20px;
+    }
+
+    .about-details p {
+        font-size: 14px;
+    }
+
+    .about .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive pour les smartphones */
+@media (max-width: 480px) {
+    .about {
+        margin: 60px auto;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 14px;
+    }
+
+    .about-details h3 {
+        font-size: 18px;
+    }
+
+    .about-details p {
+        font-size: 12px;
+    }
+
+    .about .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
