@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
         <nav>
             <h1>Sasha Lorenc</h1>
@@ -19,11 +18,13 @@
                 <li><a href="projet.html">Projets</a></li>
                 <li><a href="skills.html">Compétences</a></li>
                 <li><a href="contacts.html">Contact</a></li>
+                
             </ul>
-            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            <button id="settings-icon" aria-label="Paramètres" aria-expanded="false" aria-controls="color-picker">⚙️</button>
         </nav>
-        <div id="color-picker" class="color-picker" style="display: none;">
-            <span>Couleur d'accentuation :</span>
+        
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title">Couleur d'accentuation :</span>
             <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
             <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
             <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
@@ -85,7 +86,7 @@
             <p><strong>Email :</strong> sasha03.lorenc@gmail.com</p>
             <p><strong>Suivez-moi :</strong>
                 <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
-                <a href="https://github.com/tallko9?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener noreferrer">GitHub</a> | 
                 <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
             </p>
         </div>
@@ -192,7 +193,16 @@
              var colorPicker = document.getElementById('color-picker');
              if (settingsIcon && colorPicker) {
                  settingsIcon.addEventListener('click', function() {
-                     colorPicker.style.display = colorPicker.style.display === 'none' ? 'block' : 'none';
+                     const isExpanded = colorPicker.style.display !== 'none';
+                     colorPicker.style.display = isExpanded ? 'none' : 'block';
+                     settingsIcon.setAttribute('aria-expanded', !isExpanded);
+                 });
+
+                 document.addEventListener('click', function(e) {
+                     if (!colorPicker.contains(e.target) && !settingsIcon.contains(e.target)) {
+                         colorPicker.style.display = 'none';
+                         settingsIcon.setAttribute('aria-expanded', 'false');
+                     }
                  });
              }
          });

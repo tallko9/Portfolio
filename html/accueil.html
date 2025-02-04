@@ -22,7 +22,7 @@
             </ul>
             <button id="settings-icon" aria-label="Paramètres" aria-expanded="false" aria-controls="color-picker">⚙️</button>
         </nav>
-        <div id="color-picker" class="color-picker">
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
             <span id="color-picker-title">Couleur d'accentuation :</span>
             <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
             <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
@@ -94,7 +94,7 @@
         <p>&copy; 2024 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-            <a href="https://github.com/tallko9?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
         </div>
     </footer>
 
@@ -166,7 +166,6 @@
                     settingsIcon.setAttribute('aria-expanded', !isExpanded);
                 });
 
-                // Fermer le color picker en cliquant en dehors
                 document.addEventListener('click', (e) => {
                     if (!colorPicker.contains(e.target) && !settingsIcon.contains(e.target)) {
                         colorPicker.style.display = 'none';

@@ -1,4 +1,4 @@
-/* Section Contact */
+
 .contact {
     text-align: center;
     padding: 100px 20px;
@@ -17,7 +17,7 @@
     color: #e0e0e0;
 }
 
-/* Formulaire de contact */
+
 form {
     display: flex;
     flex-direction: column;
@@ -40,10 +40,6 @@ form {
 .required {
     color: #e74c3c;
     margin-left: 4px;
-}
-
-input[type="radio"] {
-    margin-right: 5px;
 }
 
 input, textarea, select {
@@ -90,7 +86,6 @@ textarea {
     width: auto;
 }
 
-/* Bouton d'envoi amélioré */
 button[type="submit"] {
     display: flex;
     align-items: center;
@@ -117,7 +112,6 @@ button[type="submit"] .btn-icon {
     font-size: 20px;
 }
 
-/* Informations de contact */
 .contact-info {
     margin-top: 40px;
     padding-top: 20px;
@@ -138,7 +132,6 @@ button[type="submit"] .btn-icon {
     transform: translateY(-2px);
 }
 
-/* Responsive pour les tablettes */
 @media (max-width: 768px) {
     .contact {
         padding: 80px 15px;
@@ -163,7 +156,6 @@ button[type="submit"] .btn-icon {
     }
 }
 
-/* Responsive pour les smartphones */
 @media (max-width: 480px) {
     .contact {
         padding: 60px 10px;
