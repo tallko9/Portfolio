@@ -32,64 +32,71 @@
         </div>
     </header>
     <main>
-        <section class="intro">
-            <h2 data-translate="welcome">Bienvenue sur mon portfolio !</h2>
-            <p data-translate="intro-text">Développeur passionné par l'innovation et le design web, je vous invite à découvrir mes projets et compétences.</p>
-            <div class="cta-buttons">
-                <a href="contacts.html" class="btn secondary">Me contacter</a>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="animate-text">Sasha Lorenc</h2>
+                <p class="animate-text-delay">Développeur Web & Étudiant en BUT Informatique</p>
+                <div class="hero-buttons">
+                    <a href="projet.html" class="btn primary">Voir mes projets</a>
+                    <a href="contacts.html" class="btn secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/sasha.png" alt="Sasha Lorenc" class="profile-image">
             </div>
         </section>
 
-        <!-- Section À propos -->
-        <section class="about-preview">
-            <h2><strong class="strong_word" data-translate="who-am-i">Qui suis-je ?</strong></h2>
-            <p data-translate="about-preview">Étudiant en première année de BUT Informatique, je suis passionné par le développement web et les nouvelles technologies. Mon objectif est de créer des expériences web innovantes et accessibles.</p>
-            <a href="about.html" class="btn" data-translate="learn-more">En savoir plus</a>
-        </section>
-
-        <!-- Section Compétences -->
-        <section class="skills-preview">
-            <h2><strong class="strong_word" data-translate="key-skills">Mes compétences clés</strong></h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <i class="skill-icon html-icon"></i>
-                    <p data-translate="skill-html-css">HTML5 & CSS3</p>
+        <section class="services">
+            <h2>Ce que je peux faire pour vous</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="service-icon web-dev"></i>
+                    <h3>Développement Web</h3>
+                    <p>Création de sites web responsifs et modernes utilisant les dernières technologies.</p>
                 </div>
-                <div class="skill-item">
-                    <i class="skill-icon js-icon"></i>
-                    <p data-translate="skill-js">JavaScript</p>
+                <div class="service-card">
+                    <i class="service-icon app-dev"></i>
+                    <h3>Applications</h3>
+                    <p>Développement d'applications performantes en C, C++ et autres langages.</p>
                 </div>
-                <div class="skill-item">
-                    <i class="skill-icon c-icon"></i>
-                    <p data-translate="skill-c">Développement C</p>
-                </div>
-                <div class="skill-item">
-                    <i class="skill-icon responsive-icon"></i>
-                    <p data-translate="skill-responsive">Design responsive</p>
+                <div class="service-card">
+                    <i class="service-icon ui-design"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Conception d'interfaces utilisateur intuitives et esthétiques.</p>
                 </div>
             </div>
-            <a href="skills.html" class="btn" data-translate="all-skills">Toutes mes compétences</a>
         </section>
 
-        <section class="recent-projects">
-            <h2><strong data-translate="recent-projects">Projets récents</strong></h2>
-            <div class="project-grid">
-                <article class="project-card" tabindex="0">
-                    <h3 data-translate="project-1-title">Site web responsive</h3>
-                    <p data-translate="project-1-desc">Création d'un site web pour une association locale</p>
-                    <a href="projet.html#site-web" class="project-link">En savoir plus</a>
-                </article>
-                <article class="project-card" tabindex="0">
-                    <h3 data-translate="project-2-title">Application de gestion</h3>
-                    <p data-translate="project-2-desc">Développement d'une application en C pour la gestion de tâches</p>
-                    <a href="projet.html#app-gestion" class="project-link">En savoir plus</a>
-                </article>
+        <section class="skills-highlight">
+            <h2>Expertise Technique</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <p>Année d'expérience en programmation</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3+</span>
+                    <p>Projets réalisés</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <p>Technologies maîtrisées</p>
+                </div>
             </div>
-            <a href="projet.html" class="btn" data-translate="all-projects">Tous mes projets</a>
+            <a href="skills.html" class="btn">Voir toutes mes compétences</a>
+        </section>
+
+        <section class="quick-contact">
+            <h2>Travaillons ensemble</h2>
+            <p>Vous avez un projet en tête ? Je serais ravi d'en discuter !</p>
+            <div class="contact-buttons">
+                <a href="contacts.html" class="btn primary">Me contacter</a>
+                <a href="../documents/Cv.pdf" class="btn secondary" download>Télécharger mon CV</a>
+            </div>
         </section>
     </main>
 
-    <!-- Pied de page -->
     <footer>
         <p>&copy; 2024 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
         <div class="social-links">
