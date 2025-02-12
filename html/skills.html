@@ -18,98 +18,104 @@
         <nav>
             <h1>Sasha Lorenc</h1>
             <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projet.html">Projets</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="contacts.html">Contact</a></li>
+                <li><a href="accueil.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
             </ul>
-            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Changer de langue">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="esp">ESP</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
         </nav>
         
         <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
-            <span id="color-picker-title">Couleur d'accentuation :</span>
-            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
-            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
-            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
-            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
-            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
         </div>
     </header>
 
-    <!-- Section Compétences -->
     <section class="skills">
-        <h2>Mes Compétences</h2>
+        <h2 data-translate="skills-title">Mes Compétences</h2>
 
-        <!-- Compétences Techniques -->
         <div class="skills-section" role="region" aria-labelledby="technical-skills">
-            <h3 id="technical-skills">Compétences Techniques</h3>
+            <h3 id="technical-skills" data-translate="technical-skills">Compétences Techniques</h3>
             <div class="skill">
-                <p id="html-skill">HTML & CSS</p>
+                <p id="html-skill" data-translate="html-css">HTML & CSS</p>
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-labelledby="html-skill">
                     <div class="progress" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="skill">
-                <p>JavaScript</p>
+                <p data-translate="javascript">JavaScript</p>
                 <div class="progress-bar">
                     <div class="progress" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="skill">
-                <p>PHP & MySQL</p>
+                <p data-translate="php-mysql">PHP & MySQL</p>
                 <div class="progress-bar">
                     <div class="progress" style="width: 75%;"></div>
                 </div>
             </div>
             <div class="skill">
-                <p>React & Node.js</p>
+                <p data-translate="react-nodejs">React & Node.js</p>
                 <div class="progress-bar">
                     <div class="progress" style="width: 70%;"></div>
                 </div>
             </div>
             <div class="skill-category">
-                <h4>Frameworks & Outils</h4>
+                <h4 data-translate="frameworks-tools">Frameworks & Outils</h4>
                 <div class="skill-tags">
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">VS Code</span>
                     <span class="skill-tag">React</span>
-                    <!-- Ajouter d'autres tags -->
                 </div>
             </div>
         </div>
 
         <!-- Compétences Générales -->
         <div class="skills-section">
-            <h3>Compétences Générales</h3>
+            <h3 data-translate="general-skills">Compétences Générales</h3>
             <div class="project-list">
                 <div class="project-card">
-                    <h3>Gestion de projet</h3>
-                    <p>Leadership naturel avec expérience dans la coordination d'équipes. Excellente capacité à établir des plannings réalistes et à gérer les ressources efficacement. Compétences avérées en gestion des risques et résolution de conflits.</p>
+                    <h3 data-translate="project-management">Gestion de projet</h3>
+                    <p data-translate="project-management-desc">Leadership naturel avec expérience dans la coordination d'équipes. Excellente capacité à établir des plannings réalistes et à gérer les ressources efficacement. Compétences avérées en gestion des risques et résolution de conflits.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Communication</h3>
-                    <p>Communication claire et persuasive en français et en anglais. Capacité à vulgariser des concepts techniques complexes. Excellente aptitude à la rédaction de documentation technique et rapports professionnels. Fort esprit d'équipe avec capacité à fédérer autour d'objectifs communs.</p>
+                    <h3 data-translate="communication">Communication</h3>
+                    <p data-translate="communication-desc">Communication claire et persuasive en français et en anglais. Capacité à vulgariser des concepts techniques complexes. Excellente aptitude à la rédaction de documentation technique et rapports professionnels. Fort esprit d'équipe avec capacité à fédérer autour d'objectifs communs.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Résolution de problèmes</h3>
-                    <p>Capacité à décomposer des problèmes complexes en éléments gérables. Maîtrise des techniques de debugging et d'optimisation. Expérience en analyse de données pour la prise de décision. Capacité à anticiper les problèmes potentiels et à mettre en place des solutions préventives.</p>
+                    <h3 data-translate="problem-solving">Résolution de problèmes</h3>
+                    <p data-translate="problem-solving-desc">Capacité à décomposer des problèmes complexes en éléments gérables. Maîtrise des techniques de debugging et d'optimisation. Expérience en analyse de données pour la prise de décision. Capacité à anticiper les problèmes potentiels et à mettre en place des solutions préventives.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Adaptabilité</h3>
-                    <p>Excellente capacité d'adaptation aux changements technologiques et organisationnels. Apprentissage rapide des nouveaux outils et frameworks.Capacité à travailler efficacement dans des environnements multiculturels. Résilience face aux situations stressantes et aux deadlines serrées.</p>
+                    <h3 data-translate="adaptability">Adaptabilité</h3>
+                    <p data-translate="adaptability-desc">Excellente capacité d'adaptation aux changements technologiques et organisationnels. Apprentissage rapide des nouveaux outils et frameworks.Capacité à travailler efficacement dans des environnements multiculturels. Résilience face aux situations stressantes et aux deadlines serrées.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Créativité</h3>
-                    <p>Approche innovante dans la résolution de problèmes techniques. Capacité à concevoir des solutions efficaces. Expérience en design thinking et brainstorming créatif. Aptitude à sortir des sentiers battus pour proposer des solutions originales. Passion pour l'innovation technologique et l'amélioration continue.</p>
+                    <h3 data-translate="creativity">Créativité</h3>
+                    <p data-translate="creativity-desc">Approche innovante dans la résolution de problèmes techniques. Capacité à concevoir des solutions efficaces. Expérience en design thinking et brainstorming créatif. Aptitude à sortir des sentiers battus pour proposer des solutions originales. Passion pour l'innovation technologique et l'amélioration continue.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Organisation</h3>
-                    <p>Excellence dans la gestion du temps et des priorités. Maîtrise des outils de gestion de projet et de productivité. Capacité à gérer plusieurs projets simultanément. Rigueur dans le suivi des tâches et le respect des délais.</p>
+                    <h3 data-translate="organization">Organisation</h3>
+                    <p data-translate="organization-desc">Excellence dans la gestion du temps et des priorités. Maîtrise des outils de gestion de projet et de productivité. Capacité à gérer plusieurs projets simultanément. Rigueur dans le suivi des tâches et le respect des délais.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Esprit d'analyse</h3>
-                    <p>Capacité à analyser des situations complexes et à en tirer des conclusions pertinentes. Compétences en analyse de données et en prise de décision basée sur les faits. Approche critique et objective des problèmes.</p>
+                    <h3 data-translate="analysis">Esprit d'analyse</h3>
+                    <p data-translate="analysis-desc">Capacité à analyser des situations complexes et à en tirer des conclusions pertinentes. Compétences en analyse de données et en prise de décision basée sur les faits. Approche critique et objective des problèmes.</p>
                 </div>
             </div>
         </div>
@@ -117,7 +123,7 @@
 
     <!-- Pied de page -->
     <footer>
-        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <p data-translate="copyright">&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
             <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank">GitHub</a>
@@ -186,6 +192,148 @@
          });
          }
          });
-     </script>
+
+        // Ajout du système de traduction
+        const translations = {
+            fr: {
+                "nav-home": "Accueil",
+                "nav-about": "À propos",
+                "nav-projects": "Projets",
+                "nav-skills": "Compétences",
+                "nav-contact": "Contact",
+                "accent-color": "Couleur d'accentuation :",
+                "default": "Défaut",
+                "red": "Rouge",
+                "orange": "Orange", 
+                "green": "Vert",
+                "pink": "Rose",
+                "skills-title": "Mes Compétences",
+                "technical-skills": "Compétences Techniques",
+                "general-skills": "Compétences Générales",
+                "html-css": "HTML & CSS",
+                "javascript": "JavaScript",
+                "php-mysql": "PHP & MySQL",
+                "react-nodejs": "React & Node.js",
+                "frameworks-tools": "Frameworks & Outils",
+                "project-management": "Gestion de projet",
+                "communication": "Communication",
+                "problem-solving": "Résolution de problèmes",
+                "adaptability": "Adaptabilité",
+                "creativity": "Créativité",
+                "organization": "Organisation",
+                "analysis": "Esprit d'analyse",
+                "project-management-desc": "Leadership naturel avec expérience dans la coordination d'équipes. Excellente capacité à établir des plannings réalistes et à gérer les ressources efficacement. Compétences avérées en gestion des risques et résolution de conflits.",
+                "communication-desc": "Communication claire et persuasive en français et en anglais. Capacité à vulgariser des concepts techniques complexes. Excellente aptitude à la rédaction de documentation technique et rapports professionnels. Fort esprit d'équipe avec capacité à fédérer autour d'objectifs communs.",
+                "problem-solving-desc": "Capacité à décomposer des problèmes complexes en éléments gérables. Maîtrise des techniques de debugging et d'optimisation. Expérience en analyse de données pour la prise de décision. Capacité à anticiper les problèmes potentiels et à mettre en place des solutions préventives.",
+                "adaptability-desc": "Excellente capacité d'adaptation aux changements technologiques et organisationnels. Apprentissage rapide des nouveaux outils et frameworks.Capacité à travailler efficacement dans des environnements multiculturels. Résilience face aux situations stressantes et aux deadlines serrées.",
+                "creativity-desc": "Approche innovante dans la résolution de problèmes techniques. Capacité à concevoir des solutions efficaces. Expérience en design thinking et brainstorming créatif. Aptitude à sortir des sentiers battus pour proposer des solutions originales. Passion pour l'innovation technologique et l'amélioration continue.",
+                "organization-desc": "Excellence dans la gestion du temps et des priorités. Maîtrise des outils de gestion de projet et de productivité. Capacité à gérer plusieurs projets simultanément. Rigueur dans le suivi des tâches et le respect des délais.",
+                "analysis-desc": "Capacité à analyser des situations complexes et à en tirer des conclusions pertinentes. Compétences en analyse de données et en prise de décision basée sur les faits. Approche critique et objective des problèmes.",
+                "copyright": "© 2024 Sasha Lorenc. Tous droits réservés.",
+            },
+            en: {
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-projects": "Projects",
+                "nav-skills": "Skills",
+                "nav-contact": "Contact",
+                "accent-color": "Accent color:",
+                "default": "Default",
+                "red": "Red",
+                "orange": "Orange",
+                "green": "Green", 
+                "pink": "Pink",
+                "skills-title": "My Skills",
+                "technical-skills": "Technical Skills",
+                "general-skills": "General Skills",
+                "html-css": "HTML & CSS",
+                "javascript": "JavaScript",
+                "php-mysql": "PHP & MySQL",
+                "react-nodejs": "React & Node.js",
+                "frameworks-tools": "Frameworks & Tools",
+                "project-management": "Project Management",
+                "communication": "Communication",
+                "problem-solving": "Problem Solving",
+                "adaptability": "Adaptability",
+                "creativity": "Creativity",
+                "organization": "Organization",
+                "analysis": "Analysis",
+                "project-management-desc": "Natural leadership with team coordination experience. Excellent ability to establish realistic schedules and efficiently manage resources. Proven skills in risk management and conflict resolution.",
+                "communication-desc": "Clear and persuasive communication in both French and English. Ability to explain complex technical concepts. Excellent technical documentation and professional report writing skills. Strong team spirit with ability to unite around common goals.",
+                "problem-solving-desc": "Ability to break down complex problems into manageable elements. Mastery of debugging and optimization techniques. Experience in data analysis for decision making. Ability to anticipate potential problems and implement preventive solutions.",
+                "adaptability-desc": "Excellent adaptability to technological and organizational changes. Quick learning of new tools and frameworks. Ability to work effectively in multicultural environments. Resilience in stressful situations and tight deadlines.",
+                "creativity-desc": "Innovative approach to technical problem solving. Ability to design effective solutions. Experience in design thinking and creative brainstorming. Aptitude for thinking outside the box to propose original solutions. Passion for technological innovation and continuous improvement.",
+                "organization-desc": "Excellence in time and priority management. Mastery of project management and productivity tools. Ability to manage multiple projects simultaneously. Rigorous in task tracking and meeting deadlines.",
+                "analysis-desc": "Ability to analyze complex situations and draw relevant conclusions. Skills in data analysis and fact-based decision making. Critical and objective approach to problems.",
+                "copyright": "© 2024 Sasha Lorenc. All rights reserved.",
+            },
+            esp: {
+                "nav-home": "Inicio",
+                "nav-about": "Acerca de",
+                "nav-projects": "Proyectos",
+                "nav-skills": "Habilidades",
+                "nav-contact": "Contacto",
+                "accent-color": "Color de acento:",
+                "default": "Predeterminado",
+                "red": "Rojo",
+                "orange": "Naranja",
+                "green": "Verde",
+                "pink": "Rosa",
+                "skills-title": "Mis Habilidades",
+                "technical-skills": "Habilidades Técnicas",
+                "general-skills": "Habilidades Generales",
+                "html-css": "HTML & CSS",
+                "javascript": "JavaScript",
+                "php-mysql": "PHP & MySQL",
+                "react-nodejs": "React & Node.js",
+                "frameworks-tools": "Frameworks & Herramientas",
+                "project-management": "Gestión de proyectos",
+                "communication": "Comunicación",
+                "problem-solving": "Resolución de problemas",
+                "adaptability": "Adaptabilidad",
+                "creativity": "Creatividad",
+                "organization": "Organización",
+                "analysis": "Espíritu analítico",
+                "project-management-desc": "Liderazgo natural con experiencia en la coordinación de equipos. Excelente capacidad para establecer programas realistas y gestionar recursos de manera eficiente. Habilidades probadas en la gestión de riesgos y resolución de conflictos.",
+                "communication-desc": "Comunicación clara y persuasiva en ambos idiomas. Capacidad para explicar conceptos técnicos complejos. Excelentes habilidades en la redacción de documentación técnica y reportes profesionales. Espíritu de equipo fuerte con capacidad para unirse a objetivos comunes.",
+                "problem-solving-desc": "Capacidad para descomponer problemas complejos en elementos manejables. Maestría en técnicas de depuración y optimización. Experiencia en análisis de datos para la toma de decisiones. Capacidad para anticipar problemas potenciales y implementar soluciones preventivas.",
+                "adaptability-desc": "Excelente capacidad de adaptación a cambios tecnológicos y organizativos. Aprendizaje rápido de nuevas herramientas y frameworks. Capacidad para trabajar efectivamente en entornos multicultural",
+                "creativity-desc": "Enfoque innovador en la resolución de problemas técnicos. Capacidad para diseñar soluciones efectivas. Experiencia en pensamiento de diseño y brainstorming creativo. Aptitud para salir de los caminos convencionales para proponer soluciones originales. Pasión por la innovación tecnológica y la mejora continua.",
+                "organization-desc": "Excelencia en la gestión del tiempo y las prioridades. Maestría en herramientas de gestión de proyectos y productividad. Capacidad para administrar varios proyectos simultáneamente. Rigor en el seguimiento de tareas y cumplimiento de plazos.",
+                "analysis-desc": "Capacidad para analizar situaciones complejas y extraer conclusiones relevantes. Habilidades en análisis de datos y toma de decisiones basadas en hechos. Enfoque crítico y objetivo en los problemas.",
+                "copyright": "© 2024 Sasha Lorenc. Todos los derechos reservados.",
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelector = document.getElementById('language-selector');
+            
+            // Appliquer la langue sauvegardée
+            const savedLanguage = localStorage.getItem('language') || 'fr';
+            languageSelector.value = savedLanguage;
+            updateLanguage(savedLanguage);
+            
+            // Écouteur d'événement pour le changement de langue
+            languageSelector.addEventListener('change', (e) => {
+                const language = e.target.value;
+                localStorage.setItem('language', language);
+                updateLanguage(language);
+            });
+        });
+
+        function updateLanguage(language) {
+            document.documentElement.lang = language;
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[language][key];
+                    } else {
+                        element.textContent = translations[language][key];
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

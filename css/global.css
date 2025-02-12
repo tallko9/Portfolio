@@ -66,7 +66,7 @@ header.scroll-down {
 
 nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 95%;
     max-width: 1200px;
@@ -76,7 +76,6 @@ nav {
 nav h1 {
     font-size: 24px;
     color: #e9ecef;
-    margin-right: auto;
     transition: transform 0.3s ease;
 }
 
@@ -87,10 +86,12 @@ nav h1:hover {
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0 auto;
+    gap: 2rem;
 }
 
 nav ul li {
-    margin-left: 15px;
+    margin-left: 0;
     position: relative;
 }
 
@@ -123,7 +124,7 @@ nav ul li a:hover::after {
 }
 
 #settings-icon {
-    margin-left: 15px;
+    margin-left: 0;
     transition: transform 0.3s ease;
 }
 
@@ -388,4 +389,49 @@ h3 {
 .project-card, .skill-item {
     border-color: #2d2d2d;
     transition: all 0.3s ease;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.language-selector-container {
+    position: relative;
+}
+
+#language-selector {
+    background-color: #2d2d2d;
+    color: #e9ecef;
+    border: none;
+    padding: 8px 25px 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#language-selector:hover {
+    background-color: #3d3d3d;
+    transform: scale(1.05);
+}
+
+.language-selector-container::after {
+    content: '▼';
+    font-size: 10px;
+    color: #e9ecef;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.language-selector-container:hover::after {
+    transform: translateY(-50%) rotate(180deg);
 }

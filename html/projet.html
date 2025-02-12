@@ -3,78 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets - Portfolio de Sasha Lorenc</title>
+    <title data-translate="page-title">Projets - Portfolio de Sasha Lorenc</title>
     <link rel="stylesheet" href="../css/projet_css.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
         <nav>
             <h1>Sasha Lorenc</h1>
             <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projet.html">Projets</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="contacts.html">Contact</a></li>
-                
+                <li><a href="accueil.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
             </ul>
-            <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Changer de langue">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="esp">ESP</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
         </nav>
         
         <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
-            <span id="color-picker-title">Couleur d'accentuation :</span>
-            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
-            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
-            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
-            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
-            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
         </div>
     </header>
 
     <!-- Section Projets -->
     <section class="projects">
-        <h2>Mes Projets</h2>
+        <h2 data-translate="projects-title">Mes Projets</h2>
         <div class="project-list">
             <!-- projet 1 -->
             <div class="project-card">
-                <h3>Projet 1 : Jeux vidéo</h3>
-                <p>Un jeux vidéo médieval en tour par tour basé sur le pierre feuille cisceau. </p>
-                <p><strong class="strong_word">Technologies :</strong> C</p>
-                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="btn">Voir le projet</a>
+                <h3 data-translate="project1-title">Projet 1 : Jeux vidéo</h3>
+                <p data-translate="project1-desc">Un jeux vidéo médieval en tour par tour basé sur le pierre feuille cisceau.</p>
+                <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> C</p>
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="btn" data-translate="view-project">Voir le projet</a>
             </div>
 
             <!-- projet 2 -->
             <div class="project-card">
-                <h3>Projet 2 : Application de Gestion</h3>
-                <p>Une application pour gérer stages au sein du département informatique de l'IUT de Clermont-Ferrand.</p>
-                <p><strong class="strong_word">Technologies :</strong> C</p>
-                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.01_algo" class="btn">Voir le projet</a>
+                <h3 data-translate="project2-title">Projet 2 : Application de Gestion</h3>
+                <p data-translate="project2-desc">Une application pour gérer stages au sein du département informatique de l'IUT de Clermont-Ferrand.</p>
+                <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> C</p>
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.01_algo" class="btn" data-translate="view-project">Voir le projet</a>
             </div>
 
             <!-- projet 3 -->
             <div class="project-card">
-                <h3>Projet 3 : Portfolio Interactif</h3>
-                <p>Un portfolio interactif pour présenter mes compétences et projets de manière visuelle.</p>
-                <p><strong class="strong_word">Technologies :</strong> HTML, CSS, JavaScript</p>
-                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/portfolio" class="btn">Voir le projet</a>
+                <h3 data-translate="project3-title">Projet 3 : Portfolio Interactif</h3>
+                <p data-translate="project3-desc">Un portfolio interactif pour présenter mes compétences et projets de manière visuelle.</p>
+                <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> HTML, CSS, JavaScript</p>
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/portfolio" class="btn" data-translate="view-project">Voir le projet</a>
             </div>
 
             <!-- projet 4 -->
             <div class="project-card">
-                <h3>Projet 4 : TaskShade</h3>
-                <p>Une To Do List en ligne permettant d'organiser vos tâches par importance et date d'échéance, tout en suivant vos performances via des statistiques détaillées.</p>
-                <p><strong class="strong_word">Technologies :</strong> HTML, CSS, JavaScript</p>
-                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/portfolio" class="btn">Voir le projet</a>
+                <h3 data-translate="project4-title">Projet 4 : TaskShade</h3>
+                <p data-translate="project4-desc">Une To Do List en ligne permettant d'organiser vos tâches par importance et date d'échéance, tout en suivant vos performances via des statistiques détaillées.</p>
+                <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> HTML, CSS, JavaScript</p>
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/portfolio" class="btn" data-translate="view-project">Voir le projet</a>
             </div>
         </div>
     </section>
 
-    <!-- Pied de page -->
     <footer>
-        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <p>&copy; 2024 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
             <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank">GitHub</a>
@@ -143,6 +149,119 @@
          });
          }
          });
-     </script>
+
+        // Système de traduction
+        const translations = {
+            fr: {
+                "page-title": "Projets - Portfolio de Sasha Lorenc",
+                "nav-home": "Accueil",
+                "nav-about": "À propos",
+                "nav-projects": "Projets",
+                "nav-skills": "Compétences",
+                "nav-contact": "Contact",
+                "accent-color": "Couleur d'accentuation :",
+                "default": "Default",
+                "red": "Rouge",
+                "orange": "Orange",
+                "green": "Vert",
+                "pink": "Rose",
+                "projects-title": "Mes Projets",
+                "project1-title": "Projet 1 : Jeux vidéo",
+                "project1-desc": "Un jeux vidéo médieval en tour par tour basé sur le pierre feuille cisceau.",
+                "project2-title": "Projet 2 : Application de Gestion",
+                "project2-desc": "Une application pour gérer stages au sein du département informatique de l'IUT de Clermont-Ferrand.",
+                "project3-title": "Projet 3 : Portfolio Interactif",
+                "project3-desc": "Un portfolio interactif pour présenter mes compétences et projets de manière visuelle.",
+                "project4-title": "Projet 4 : TaskShade",
+                "project4-desc": "Une To Do List en ligne permettant d'organiser vos tâches par importance et date d'échéance.",
+                "view-project": "Voir le projet",
+                "technologies": "Technologies :",
+                "rights-reserved": "Tous droits réservés.",
+            },
+            en: {
+                "page-title": "Projects - Sasha Lorenc's Portfolio",
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-projects": "Projects",
+                "nav-skills": "Skills",
+                "nav-contact": "Contact",
+                "accent-color": "Accent color:",
+                "default": "Default",
+                "red": "Red",
+                "orange": "Orange",
+                "green": "Green",
+                "pink": "Pink",
+                "projects-title": "My Projects",
+                "project1-title": "Project 1: Video Game",
+                "project1-desc": "A medieval turn-based video game based on rock paper scissors.",
+                "project2-title": "Project 2: Management Application",
+                "project2-desc": "An application to manage internships within the IT department of the IUT of Clermont-Ferrand.",
+                "project3-title": "Project 3: Interactive Portfolio",
+                "project3-desc": "An interactive portfolio to showcase my skills and projects visually.",
+                "project4-title": "Project 4: TaskShade",
+                "project4-desc": "An online To Do List allowing you to organize your tasks by importance and due date.",
+                "view-project": "View project",
+                "technologies": "Technologies:",
+                "rights-reserved": "All rights reserved.",
+            },
+            esp: {
+                "page-title": "Proyectos - Portafolio de Sasha Lorenc",
+                "nav-home": "Inicio",
+                "nav-about": "Acerca de",
+                "nav-projects": "Proyectos",
+                "nav-skills": "Habilidades",
+                "nav-contact": "Contacto",
+                "accent-color": "Color de acento:",
+                "default": "Predeterminado",
+                "red": "Rojo",
+                "orange": "Naranja",
+                "green": "Verde",
+                "pink": "Rosa",
+                "projects-title": "Mis Proyectos",
+                "project1-title": "Proyecto 1: Juego de Video",
+                "project1-desc": "Un juego de video medieval en turnos basado en piedra, papel y tijera.",
+                "project2-title": "Proyecto 2: Aplicación de Gestión",
+                "project2-desc": "Una aplicación para gestionar pasantías en el departamento de informática del IUT de Clermont-Ferrand.",
+                "project3-title": "Proyecto 3: Portafolio Interactivo",
+                "project3-desc": "Un portafolio interactivo para mostrar mis habilidades y proyectos de manera visual.",
+                "project4-title": "Proyecto 4: TaskShade",
+                "project4-desc": "Una lista de tareas en línea para organizar tus tareas por importancia y fecha de vencimiento.",
+                "view-project": "Ver proyecto",
+                "technologies": "Tecnologías:",
+                "rights-reserved": "Todos los derechos reservados."
+
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelector = document.getElementById('language-selector');
+            
+            // Appliquer la langue sauvegardée
+            const savedLanguage = localStorage.getItem('language') || 'fr';
+            languageSelector.value = savedLanguage;
+            updateLanguage(savedLanguage);
+            
+            // Écouteur d'événement pour le changement de langue
+            languageSelector.addEventListener('change', (e) => {
+                const language = e.target.value;
+                localStorage.setItem('language', language);
+                updateLanguage(language);
+            });
+        });
+
+        function updateLanguage(language) {
+            document.documentElement.lang = language;
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[language][key];
+                    } else {
+                        element.textContent = translations[language][key];
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

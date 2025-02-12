@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Portfolio de Sasha Lorenc</title>
+    <title>Contact - Sasha Lorenc's Portfolio</title>
     <link rel="stylesheet" href="../css/contacts_css.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,78 +13,84 @@
         <nav>
             <h1>Sasha Lorenc</h1>
             <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projet.html">Projets</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="contacts.html">Contact</a></li>
-                
+                <li><a href="accueil.html" data-translate="nav-home">Home</a></li>
+                <li><a href="about.html" data-translate="nav-about">About</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projects</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Skills</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
             </ul>
-            <button id="settings-icon" aria-label="Paramètres" aria-expanded="false" aria-controls="color-picker">⚙️</button>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Change language">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="esp">ESP</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Settings">⚙️</button>
+            </div>
         </nav>
         
         <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
-            <span id="color-picker-title">Couleur d'accentuation :</span>
-            <label><input type="radio" name="accent-color" value="#1abc9c" checked> Default</label>
-            <label><input type="radio" name="accent-color" value="#e74c3c"> Rouge</label>
-            <label><input type="radio" name="accent-color" value="#f39c12"> Orange</label>
-            <label><input type="radio" name="accent-color" value="#2ecc71"> Vert</label>
-            <label><input type="radio" name="accent-color" value="#e84393"> Rose</label>
+            <span id="color-picker-title" data-translate="accent-color">Accent color:</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">défaut</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">rose</span></label>
         </div>
     </header>
 
-    <!-- Section Contact -->
+
     <section class="contact">
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter pour toute question ou collaboration. Je serai ravi d'échanger avec vous !</p>
+        <h2 data-translate="contact-title">Contact Me</h2>
+        <p data-translate="contact-desc">Don't hesitate to contact me for any questions or collaboration. I would be happy to discuss with you!</p>
 
         <form id="contactForm">
             <div class="form-group">
-                <label class="form-label" for="name">Nom <span class="required">*</span></label>
+                <label class="form-label" for="name" data-translate="name">Name <span class="required">*</span></label>
                 <input type="text" id="name" name="name" required minlength="2" maxlength="50" 
-                       placeholder="Votre nom complet"
-                       pattern="[A-Za-zÀ-ÿ\s]+" title="Veuillez entrer un nom valide">
+                       data-translate="name-placeholder" placeholder="Your full name"
+                       pattern="[A-Za-zÀ-ÿ\s]+" title="Please enter a valid name">
             </div>
             <div class="form-group">
                 <label class="form-label" for="email">Email <span class="required">*</span></label>
                 <input type="email" id="email" name="email" required 
-                       placeholder="exemple@email.com"
+                       data-translate="email-placeholder" placeholder="example@email.com"
                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-
             </div>
             <div class="form-group">
-                <label class="form-label" for="subject">Sujet <span class="required">*</span></label>
+                <label class="form-label" for="subject" data-translate="subject">Subject <span class="required">*</span></label>
                 <select id="subject" name="subject" required>
-                    <option value="">Sélectionnez un sujet</option>
-                    <option value="collaboration">Proposition de collaboration</option>
-                    <option value="question">Question générale</option>
-                    <option value="projet">Discussion de projet</option>
-                    <option value="autre">Autre</option>
+                    <option value="" data-translate="select-subject">Select a subject</option>
+                    <option value="collaboration" data-translate="collaboration">Collaboration proposal</option>
+                    <option value="question" data-translate="general-question">General question</option>
+                    <option value="projet" data-translate="project-discussion">Project discussion</option>
+                    <option value="autre" data-translate="other">Other</option>
                 </select>
             </div>
             <div class="form-group">
-                <label class="form-label" for="message">Message <span class="required">*</span></label>
+                <label class="form-label" for="message" data-translate="message">Message <span class="required">*</span></label>
                 <textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000"
-                         placeholder="Votre message ici (10-1000 caractères)"></textarea>
+                         data-translate="message-placeholder" placeholder="Your message here (10-1000 characters)"></textarea>
                 <div class="character-count"><span id="charCount">0</span>/1000</div>
             </div>
             <div class="form-group">
                 <label class="checkbox-container">
                     <input type="checkbox" required name="privacy">
                     <span class="checkmark"></span>
-                    J'accepte que mes données soient utilisées pour être recontacté(e)
+                    <span data-translate="privacy-policy">I agree that my data will be used to be contacted</span>
                 </label>
             </div>
             <button type="submit" class="btn">
-                <span class="btn-text">Envoyer</span>
+                <span class="btn-text" data-translate="send">Send</span>
                 <span class="btn-icon">📨</span>
             </button>
         </form>
 
-        <!-- Infos de contact -->
         <div class="contact-info">
-            <p><strong>Email :</strong> sasha03.lorenc@gmail.com</p>
-            <p><strong>Suivez-moi :</strong>
+            <p><strong>Email:</strong> sasha.LORENC@etu.uca.fr</p>
+            <p><strong data-translate="follow-me">Follow me:</strong>
                 <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
                 <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener noreferrer">GitHub</a> | 
                 <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
@@ -92,11 +98,11 @@
         </div>
     </section>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Sasha Lorenc. Tous droits réservés.</p>
+        <p><span data-translate="copyright">&copy; 2024 Sasha Lorenc. All rights reserved.</span></p>
     </footer>
-    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+    <button id="scroll-to-top" title="Scroll to top">↑</button>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -115,7 +121,7 @@
              document.documentElement.scrollTop = 0;
          };
  
-         // Fonction pour changer la couleur d'accentuation
+         // Function to change accent color
          document.querySelectorAll('input[name="accent-color"]').forEach(function(radio) {
              radio.addEventListener('change', function() {
                  document.documentElement.style.setProperty('--accent-color', this.value);
@@ -123,7 +129,7 @@
          });
  
          document.addEventListener('DOMContentLoaded', function() {
-             // Gestion du compteur de caractères
+             // Character counter management
              const messageTextarea = document.getElementById('message');
              const charCount = document.getElementById('charCount');
              
@@ -131,7 +137,7 @@
                  charCount.textContent = this.value.length;
              });
 
-             // Validation et envoi du formulaire par Email.js
+             // Form validation and submission via Email.js
              const contactForm = document.getElementById('contactForm');
              
              contactForm.addEventListener('submit', function(e) {
@@ -152,19 +158,19 @@
                      
                      emailjs.send('service_s1wv65t', 'template_391zlnl', templateParams)
                          .then(function(response) {
-                             alert('Message envoyé avec succès !');
+                             alert('Message sent successfully!');
                              contactForm.reset();
                              charCount.textContent = '0';
                              submitBtn.classList.remove('sending');
                          }, function(error) {
-                             alert('Une erreur est survenue. Veuillez réessayer.');
+                             alert('An error occurred. Please try again.');
                              submitBtn.classList.remove('sending');
-                             console.error('Erreur:', error);
+                             console.error('Error:', error);
                          });
                  }
              });
 
-             // Gestion des couleurs d'accentuation
+             // Accent color management
              function changeAccentColor(color) {
                  document.documentElement.style.setProperty('--accent-color', color);
                  localStorage.setItem('accentColor', color);
@@ -204,6 +210,110 @@
                          settingsIcon.setAttribute('aria-expanded', 'false');
                      }
                  });
+             }
+
+             // Translation system
+             const translations = {
+                fr: {
+                    "contact-title": "Contactez-moi",
+                    "contact-desc": "N'hésitez pas à me contacter pour toute question ou collaboration. Je serai ravi d'échanger avec vous !",
+                    "name": "Nom",
+                    "name-placeholder": "Votre nom complet",
+                    "email-placeholder": "exemple@email.com",
+                    "subject": "Sujet",
+                    "select-subject": "Sélectionnez un sujet",
+                    "collaboration": "Proposition de collaboration",
+                    "general-question": "Question générale",
+                    "project-discussion": "Discussion de projet",
+                    "other": "Autre",
+                    "message": "Message",
+                    "message-placeholder": "Votre message ici (10-1000 caractères)",
+                    "privacy-policy": "J'accepte que mes données soient utilisées pour être recontacté(e)",
+                    "send": "Envoyer",
+                    "follow-me": "Suivez-moi :",
+                    "copyright": "© 2024 Sasha Lorenc. Tous droits réservés.",
+                    "default": "Défaut",
+                    "red": "Rouge",
+                    "orange": "Orange",
+                    "green": "Vert",
+                    "pink": "Rose"
+                },
+                en: {
+                    "contact-title": "Contact Me",
+                    "contact-desc": "Don't hesitate to contact me for any questions or collaboration. I would be happy to discuss with you!",
+                    "name": "Name",
+                    "name-placeholder": "Your full name",
+                    "email-placeholder": "example@email.com",
+                    "subject": "Subject",
+                    "select-subject": "Select a subject",
+                    "collaboration": "Collaboration proposal",
+                    "general-question": "General question",
+                    "project-discussion": "Project discussion",
+                    "other": "Other",
+                    "message": "Message",
+                    "message-placeholder": "Your message here (10-1000 characters)",
+                    "privacy-policy": "I agree that my data will be used to be contacted",
+                    "send": "Send",
+                    "follow-me": "Follow me:",
+                    "copyright": "© 2024 Sasha Lorenc. All rights reserved.",
+                    "default": "Default",
+                    "red": "Red",
+                    "orange": "Orange",
+                    "green": "Green",
+                    "pink": "Pink"
+                },
+                esp: {
+                    "contact-title": "Contactame",
+                    "contact-desc": "No dudes en contactarme para cualquier pregunta o colaboración. ¡Estoy feliz de discutir contigo!",
+                    "name": "Nombre",
+                    "name-placeholder": "Tu nombre completo",
+                    "email-placeholder": "ejemplo@email.com",
+                    "subject": "Asunto",
+                    "select-subject": "Selecciona un asunto",
+                    "collaboration": "Propuesta de colaboración",
+                    "general-question": "Pregunta general",
+                    "project-discussion": "Discusión de proyecto",
+                    "other": "Otro",
+                    "message": "Mensaje",
+                    "message-placeholder": "Tu mensaje aquí (10-1000 caracteres)",
+                    "privacy-policy": "Acepto que mis datos se utilicen para ser contactado(a)",
+                    "send": "Enviar",
+                    "follow-me": "Sígueme:",
+                    "copyright": "© 2024 Sasha Lorenc. Todos los derechos reservados.",
+                    "default": "Predeterminado",
+                    "red": "Rojo",
+                    "orange": "Naranja",
+                    "green": "Verde",
+                    "pink": "Rosa"
+                }
+             };
+
+             const languageSelector = document.getElementById('language-selector');
+             
+             // Apply saved language
+             const savedLanguage = localStorage.getItem('language') || 'fr';
+             languageSelector.value = savedLanguage;
+             updateLanguage(savedLanguage);
+             
+             // Language change event listener
+             languageSelector.addEventListener('change', (e) => {
+                 const language = e.target.value;
+                 localStorage.setItem('language', language);
+                 updateLanguage(language);
+             });
+
+             function updateLanguage(language) {
+                document.documentElement.lang = language;
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translations[language][key]) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translations[language][key];
+                        } else {
+                            element.textContent = translations[language][key];
+                        }
+                    }
+                });
              }
          });
      </script>
