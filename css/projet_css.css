@@ -4,22 +4,21 @@
 }
 
 .project-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px; /* Réduction de la marge supérieure de 40px à 20px */
+    padding: 20px;
 }
 
 .project-card {
     background-color: #1f1f1f;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
     color: #e0e0e0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     text-align: left;
-    margin: 15px;
+    margin: 0;
     transition: all 0.3s ease;
     position: relative;
 }
@@ -112,5 +111,17 @@
     .project-card .btn {
         padding: 6px 10px;
         font-size: 12px;
+    }
+}
+
+@media (min-width: 576px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .project-list {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

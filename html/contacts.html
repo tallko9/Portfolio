@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="../css/contacts_css.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <h1>Sasha Lorenc</h1>
             <ul>
-                <li><a href="accueil.html" data-translate="nav-home">Home</a></li>
+                <li><a href="../index.html" data-translate="nav-home">Home</a></li>
                 <li><a href="about.html" data-translate="nav-about">About</a></li>
                 <li><a href="projet.html" data-translate="nav-projects">Projects</a></li>
                 <li><a href="skills.html" data-translate="nav-skills">Skills</a></li>
@@ -48,42 +49,69 @@
 
         <form id="contactForm">
             <div class="form-group">
-                <label class="form-label" for="name" data-translate="name">Name <span class="required">*</span></label>
-                <input type="text" id="name" name="name" required minlength="2" maxlength="50" 
-                       data-translate="name-placeholder" placeholder="Your full name"
-                       pattern="[A-Za-zÀ-ÿ\s]+" title="Please enter a valid name">
+                <label class="form-label" for="name">
+                    <span data-translate="name">Nom</span>
+                    <span class="required">*</span>
+                </label>
+                <input type="text" 
+                       id="name" 
+                       name="name" 
+                       required 
+                       placeholder="John Doe"
+                       data-translate="name-placeholder">
             </div>
+
             <div class="form-group">
-                <label class="form-label" for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required 
-                       data-translate="email-placeholder" placeholder="example@email.com"
-                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <label class="form-label" for="email">
+                    <span data-translate="email">Email</span>
+                    <span class="required">*</span>
+                </label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       required 
+                       placeholder="john.doe@example.com"
+                       data-translate="email-placeholder">
             </div>
+
             <div class="form-group">
-                <label class="form-label" for="subject" data-translate="subject">Subject <span class="required">*</span></label>
+                <label class="form-label" for="subject">
+                    <span data-translate="subject">Sujet</span>
+                    <span class="required">*</span>
+                </label>
                 <select id="subject" name="subject" required>
-                    <option value="" data-translate="select-subject">Select a subject</option>
-                    <option value="collaboration" data-translate="collaboration">Collaboration proposal</option>
-                    <option value="question" data-translate="general-question">General question</option>
-                    <option value="projet" data-translate="project-discussion">Project discussion</option>
-                    <option value="autre" data-translate="other">Other</option>
+                    <option value="" disabled selected data-translate="subject-placeholder">Sélectionnez un sujet</option>
+                    <option value="collaboration" data-translate="subject-collaboration">Proposition de collaboration</option>
+                    <option value="job" data-translate="subject-job">Opportunité professionnelle</option>
+                    <option value="project" data-translate="subject-project">Discussion de projet</option>
+                    <option value="question" data-translate="subject-question">Question générale</option>
+                    <option value="other" data-translate="subject-other">Autre</option>
                 </select>
             </div>
+
             <div class="form-group">
-                <label class="form-label" for="message" data-translate="message">Message <span class="required">*</span></label>
-                <textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000"
-                         data-translate="message-placeholder" placeholder="Your message here (10-1000 characters)"></textarea>
+                <label class="form-label" for="message">
+                    <span data-translate="message">Message</span>
+                    <span class="required">*</span>
+                </label>
+                <textarea id="message" 
+                         name="message" 
+                         required 
+                         placeholder="Je souhaiterais discuter d'une opportunité de collaboration..."
+                         data-translate="message-placeholder"></textarea>
                 <div class="character-count"><span id="charCount">0</span>/1000</div>
             </div>
+
             <div class="form-group">
                 <label class="checkbox-container">
-                    <input type="checkbox" required name="privacy">
+                    <input type="checkbox" required name="privacy" id="privacy">
                     <span class="checkmark"></span>
-                    <span data-translate="privacy-policy">I agree that my data will be used to be contacted</span>
+                    <span data-translate="privacy-policy">J'accepte que mes informations soient utilisées pour être recontacté(e)</span>
                 </label>
             </div>
+
             <button type="submit" class="btn">
-                <span class="btn-text" data-translate="send">Send</span>
+                <span class="btn-text" data-translate="send">Envoyer</span>
                 <span class="btn-icon">📨</span>
             </button>
         </form>
@@ -100,13 +128,13 @@
 
     <!-- Footer -->
     <footer>
-        <p><span data-translate="copyright">&copy; 2024 Sasha Lorenc. All rights reserved.</span></p>
+        <p><span data-translate="copyright">&copy; 2025 Sasha Lorenc. All rights reserved.</span></p>
     </footer>
     <button id="scroll-to-top" title="Scroll to top">↑</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="../js/translations.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/contact.js"></script>
 </body>
 </html>
+

@@ -44,8 +44,8 @@ const translations = {
         "contact-title": "Contactez-moi",
         "contact-desc": "N'hésitez pas à me contacter pour toute question ou collaboration. Je serai ravi d'échanger avec vous !",
         "name": "Nom",
-        "name-placeholder": "Votre nom complet",
-        "email-placeholder": "exemple@email.com",
+        "name-placeholder": "John Doe",
+        "email-placeholder": "john.doe@example.com",
         "subject": "Sujet",
         "select-subject": "Sélectionnez un sujet",
         "collaboration": "Proposition de collaboration",
@@ -53,7 +53,7 @@ const translations = {
         "project-discussion": "Discussion de projet",
         "other": "Autre",
         "message": "Message",
-        "message-placeholder": "Votre message ici (10-1000 caractères)",
+        "message-placeholder": "Je souhaiterais discuter d'une opportunité de collaboration...",
         "privacy-policy": "J'accepte que mes données soient utilisées pour être recontacté(e)",
         "send": "Envoyer",
 
@@ -110,7 +110,13 @@ const translations = {
         "project4-title": "Projet 4 : TaskShade",
         "project4-desc": "Une To Do List en ligne permettant d'organiser vos tâches par importance et date d'échéance.",
         "view-project": "Voir le projet",
-        "technologies": "Technologies :"
+        "technologies": "Technologies :",
+        "subject-placeholder": "Sélectionnez un sujet",
+        "subject-collaboration": "Proposition de collaboration",
+        "subject-job": "Opportunité professionnelle",
+        "subject-project": "Discussion de projet",
+        "subject-question": "Question générale",
+        "subject-other": "Autre",
     },
 
     // English translations 
@@ -158,8 +164,8 @@ const translations = {
         "contact-title": "Contact Me",
         "contact-desc": "Don't hesitate to contact me for any questions or collaboration. I would be happy to discuss with you!",
         "name": "Name",
-        "name-placeholder": "Your full name",
-        "email-placeholder": "example@email.com",
+        "name-placeholder": "John Doe",
+        "email-placeholder": "john.doe@example.com",
         "subject": "Subject",
         "select-subject": "Select a subject",
         "collaboration": "Collaboration proposal",
@@ -167,7 +173,7 @@ const translations = {
         "project-discussion": "Project discussion",
         "other": "Other",
         "message": "Message",
-        "message-placeholder": "Your message here (10-1000 characters)",
+        "message-placeholder": "I would like to discuss a collaboration opportunity...",
         "privacy-policy": "I agree that my data will be used to be contacted",
         "send": "Send",
 
@@ -209,7 +215,7 @@ const translations = {
         "problem-solving-desc": "Ability to break down complex problems into manageable elements. Mastery of debugging and optimization techniques. Experience in data analysis for decision making. Ability to anticipate potential problems and implement preventive solutions.",
         "adaptability-desc": "Excellent adaptability to technological and organizational changes. Quick learning of new tools and frameworks. Ability to work effectively in multicultural environments. Resilience in stressful situations and tight deadlines.",
         "creativity-desc": "Innovative approach to technical problem solving. Ability to design effective solutions. Experience in design thinking and creative brainstorming. Aptitude for thinking outside the box to propose original solutions. Passion for technological innovation and continuous improvement.",
-        "organization-desc": "Excellence in time and priority management. Mastery of project management and productivity tools. Ability to manage multiple projects simultaneously. Rigorous in task tracking and meeting deadlines.",
+        "organization-desc": "Excellence in time and priority management. Maestría en herramientas de gestión de proyectos y productividad. Capacidad para administrar varios proyectos simultáneamente. Rigor en el seguimiento de tareas y cumplimiento de plazos.",
         "analysis-desc": "Ability to analyze complex situations and draw relevant conclusions. Skills in data analysis and fact-based decision making. Critical and objective approach to problems.",
 
         // Projects page
@@ -224,7 +230,13 @@ const translations = {
         "project4-title": "Project 4: TaskShade",
         "project4-desc": "An online To Do List allowing you to organize your tasks by importance and due date.",
         "view-project": "View project",
-        "technologies": "Technologies:"
+        "technologies": "Technologies:",
+        "subject-placeholder": "Select a subject",
+        "subject-collaboration": "Collaboration proposal",
+        "subject-job": "Job opportunity",
+        "subject-project": "Project discussion",
+        "subject-question": "General question",
+        "subject-other": "Other",
     },
 
     // Spanish translations
@@ -272,8 +284,8 @@ const translations = {
         "contact-title": "Contactame",
         "contact-desc": "No dudes en contactarme para cualquier pregunta o colaboración. ¡Estoy feliz de discutir contigo!",
         "name": "Nombre",
-        "name-placeholder": "Tu nombre completo",
-        "email-placeholder": "ejemplo@email.com",
+        "name-placeholder": "John Doe",
+        "email-placeholder": "john.doe@example.com",
         "subject": "Asunto",
         "select-subject": "Selecciona un asunto",
         "collaboration": "Propuesta de colaboración",
@@ -281,7 +293,7 @@ const translations = {
         "project-discussion": "Discusión de proyecto",
         "other": "Otro",
         "message": "Mensaje",
-        "message-placeholder": "Tu mensaje aquí (10-1000 caracteres)",
+        "message-placeholder": "Me gustaría discutir una oportunidad de colaboración...",
         "privacy-policy": "Acepto que mis datos se utilicen para ser contactado(a)",
         "send": "Enviar",
 
@@ -338,6 +350,12 @@ const translations = {
         "project4-title": "Proyecto 4: TaskShade",
         "project4-desc": "Una lista de tareas en línea para organizar tus tareas por importancia y fecha de vencimiento.",
         "view-project": "Ver proyecto",
-        "technologies": "Tecnologías:"
+        "technologies": "Tecnologías:",
+        "subject-placeholder": "Seleccione un tema",
+        "subject-collaboration": "Propuesta de colaboración",
+        "subject-job": "Oportunidad laboral",
+        "subject-project": "Discusión de proyecto",
+        "subject-question": "Pregunta general",
+        "subject-other": "Otro",
     }
 };

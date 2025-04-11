@@ -1,4 +1,3 @@
-/* Réinitialisation et styles de base */
 :root {
     --accent-color: #1abc9c;
 }
@@ -434,4 +433,58 @@ h3 {
 
 .language-selector-container:hover::after {
     transform: translateY(-50%) rotate(180deg);
+}
+
+/* Breakpoints standards */
+@media (min-width: 1400px) {
+    /* Grand écran */
+    nav {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Laptop */
+    nav {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Tablette large */
+    nav ul {
+        gap: 1.5rem;
+    }
+    
+    nav h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablette */
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .nav-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mobile */
+    section {
+        width: 95%;
+        margin: 50px auto;
+    }
 }
