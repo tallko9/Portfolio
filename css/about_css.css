@@ -247,3 +247,105 @@
         padding: 0;
     }
 }
+
+/* Nouvelles sections - Valeurs, Objectifs, Soft Skills */
+.values-list,
+.alternance-reasons,
+.soft-skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.value-item,
+.reason-item,
+.skill-example {
+    padding: 20px;
+    background: rgba(26, 188, 156, 0.05);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.value-item:hover,
+.reason-item:hover,
+.skill-example:hover {
+    transform: translateX(5px);
+    background: rgba(26, 188, 156, 0.1);
+}
+
+.value-item strong,
+.reason-item strong,
+.skill-example strong {
+    display: block;
+    color: var(--accent-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.value-item p,
+.reason-item p,
+.skill-example p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.goals-list li {
+    padding: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.goals-list li:last-child {
+    border-bottom: none;
+}
+
+.goals-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.goals-list li strong {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .value-item,
+    .reason-item,
+    .skill-example {
+        padding: 15px;
+    }
+    
+    .value-item strong,
+    .reason-item strong,
+    .skill-example strong {
+        font-size: 16px;
+    }
+    
+    .value-item p,
+    .reason-item p,
+    .skill-example p {
+        font-size: 14px;
+    }
+    
+    .goals-list li {
+        font-size: 14px;
+    }
+}

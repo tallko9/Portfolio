@@ -275,6 +275,103 @@
     object-fit: contain;
 }
 
+/* Sections Défis et Apprentissages */
+.project-challenges,
+.project-learning {
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-challenges h3,
+.project-learning h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.challenges-list,
+.learning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.challenge-item,
+.learning-item {
+    padding: 1.5rem;
+    background: rgba(26, 188, 156, 0.05);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.challenge-item:hover,
+.learning-item:hover {
+    transform: translateX(5px);
+    background: rgba(26, 188, 156, 0.1);
+}
+
+.challenge-item h4,
+.learning-item strong {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.challenge-item p,
+.learning-item p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.challenge-item p strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Métriques dans les projets */
+.metrics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.metrics-list li {
+    padding: 0.5rem 0;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.metrics-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-links .project-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
 /* Conclusion du projet */
 .project-conclusion {
     background-color: #1f1f1f;
@@ -417,8 +514,25 @@
     .project-features h3,
     .project-gallery h3,
     .development-process h3,
+    .project-challenges h3,
+    .project-learning h3,
     .project-conclusion h3 {
         font-size: 1.5rem;
+    }
+    
+    .challenge-item,
+    .learning-item {
+        padding: 1rem;
+    }
+    
+    .challenge-item h4,
+    .learning-item strong {
+        font-size: 1rem;
+    }
+    
+    .challenge-item p,
+    .learning-item p {
+        font-size: 0.9rem;
     }
 }
 

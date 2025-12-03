@@ -73,17 +73,30 @@
                     <div class="metadata-item">
                         <h4 data-translate="project-technologies-label">Technologies</h4>
                         <ul class="technologies-list">
-                            <li data-translate="tech-language-c">Langage C</li>
-                            <li data-translate="tech-data-structures">Structures de données</li>
+                            <li><strong>Langage C</strong> - Confirmé (pointeurs, structures, fichiers)</li>
+                            <li><strong>Structures de données</strong> - Confirmé (listes chaînées, tableaux dynamiques)</li>
+                            <li><strong>Algorithmes</strong> - Intermédiaire (tri, recherche, manipulation de données)</li>
                         </ul>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-duration-label">Durée</h4>
+                        <p data-translate="gestion-duration">6 semaines</p>
                     </div>
                     <div class="metadata-item">
                         <h4 data-translate="project-year-label">Année</h4>
                         <p>2024</p>
                     </div>
                     <div class="metadata-item">
+                        <h4 data-translate="project-metrics-label">Résultats</h4>
+                        <ul class="metrics-list">
+                            <li data-translate="gestion-metric-1">~2000 lignes de code C</li>
+                            <li data-translate="gestion-metric-2">5 modules fonctionnels</li>
+                            <li data-translate="gestion-metric-3">Gestion complète CRUD</li>
+                        </ul>
+                    </div>
+                    <div class="metadata-item">
                         <h4 data-translate="project-link-label">Lien</h4>
-                        <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.01_algo" class="project-link" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                        <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.01_algo" class="project-link" target="_blank" data-translate="project-view-code">📦 Code source</a>
                     </div>
                 </div>
             </div>
@@ -142,12 +155,52 @@
                     <img src="../../images/projects/gestionC-structure.png" alt="Schéma de conception des structures de données en C pour l'application de gestion" loading="lazy">
                 </div>
             </div>
+            <section class="project-challenges">
+                <h3 data-translate="project-challenges-title">Défis rencontrés et solutions</h3>
+                <div class="challenges-list">
+                    <div class="challenge-item">
+                        <h4 data-translate="gestion-challenge-1-title">🔍 Gestion de la mémoire</h4>
+                        <p data-translate="gestion-challenge-1-desc"><strong>Défi :</strong> Éviter les fuites mémoire avec les structures dynamiques. <strong>Solution :</strong> J'ai implémenté des fonctions de libération systématiques et testé rigoureusement chaque allocation/désallocation.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h4 data-translate="gestion-challenge-2-title">📊 Conception des structures de données</h4>
+                        <p data-translate="gestion-challenge-2-desc"><strong>Défi :</strong> Concevoir des structures efficaces pour gérer étudiants, entreprises et stages. <strong>Solution :</strong> Analyse approfondie des besoins, création de schémas, puis implémentation de structures optimisées avec listes chaînées.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h4 data-translate="gestion-challenge-3-title">💾 Persistance des données</h4>
+                        <p data-translate="gestion-challenge-3-desc"><strong>Défi :</strong> Sauvegarder et charger les données depuis des fichiers. <strong>Solution :</strong> Implémentation d'un système de sérialisation/désérialisation avec gestion d'erreurs robuste.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-learning">
+                <h3 data-translate="project-learning-title">Ce que j'ai appris</h3>
+                <div class="learning-list">
+                    <div class="learning-item">
+                        <strong data-translate="gestion-learning-1">🎯 Fondamentaux du langage C</strong>
+                        <p data-translate="gestion-learning-1-desc">Ce projet m'a permis de maîtriser les concepts essentiels du C : pointeurs, allocation dynamique, structures, et gestion des fichiers.</p>
+                    </div>
+                    <div class="learning-item">
+                        <strong data-translate="gestion-learning-2">📐 Conception de structures de données</strong>
+                        <p data-translate="gestion-learning-2-desc">J'ai appris à concevoir et implémenter des structures de données adaptées aux besoins réels d'une application, en pensant à l'efficacité et à la maintenabilité.</p>
+                    </div>
+                    <div class="learning-item">
+                        <strong data-translate="gestion-learning-3">🔧 Analyse de besoins</strong>
+                        <p data-translate="gestion-learning-3-desc">Avant de coder, j'ai dû analyser les besoins du département, identifier les points de friction, et proposer une solution adaptée. Une compétence essentielle en développement.</p>
+                    </div>
+                    <div class="learning-item">
+                        <strong data-translate="gestion-learning-4">🐛 Debugging en C</strong>
+                        <p data-translate="gestion-learning-4-desc">J'ai développé mes compétences en debugging, notamment pour détecter les erreurs de pointeurs et les fuites mémoire, en utilisant Valgrind et GDB.</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="project-conclusion">
                 <h3 data-translate="project-conclusion-title">Conclusion</h3>
-                <p data-translate="gestion-conclusion-text">Ce projet m'as permis d'apprendre les bases du C et de manipuler différentes structures de données dans un contexte professionnel. </p>
+                <p data-translate="gestion-conclusion-text">Ce projet m'a permis d'apprendre les bases du C et de manipuler différentes structures de données dans un contexte professionnel. Il m'a également enseigné l'importance de l'analyse de besoins avant le développement.</p>
                 
                 <div class="cta-buttons">
-                    <a href="https://github.com/tallko9/SAE1.01" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                    <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.01_algo" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
                     <a href="../projet.html" class="btn primary" data-translate="project-back">Retour aux projets</a>
                 </div>
             </section>

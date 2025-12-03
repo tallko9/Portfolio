@@ -71,18 +71,33 @@
                     <div class="metadata-item">
                         <h4 data-translate="project-technologies-label">Technologies</h4>
                         <ul class="technologies-list">
-                            <li data-translate="tech-html">HTML</li>
-                            <li data-translate="tech-css">CSS</li>
-                            <li data-translate="tech-javascript">JavaScript</li>
+                            <li><strong>HTML5</strong> - Avancé (sémantique, accessibilité)</li>
+                            <li><strong>CSS3</strong> - Avancé (Flexbox, Grid, animations)</li>
+                            <li><strong>JavaScript (ES6+)</strong> - Intermédiaire (DOM, LocalStorage, événements)</li>
                         </ul>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-duration-label">Durée</h4>
+                        <p data-translate="taskshade-duration">3 semaines</p>
                     </div>
                     <div class="metadata-item">
                         <h4 data-translate="project-year-label">Année</h4>
                         <p>2025</p>
                     </div>
                     <div class="metadata-item">
-                        <h4 data-translate="project-link-label">Lien</h4>
-                        <a href="https://github.com/tallko9/TaskShade" class="project-link" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                        <h4 data-translate="project-metrics-label">Résultats</h4>
+                        <ul class="metrics-list">
+                            <li data-translate="taskshade-metric-1">~800 lignes de code JavaScript</li>
+                            <li data-translate="taskshade-metric-2">6 fonctionnalités principales</li>
+                            <li data-translate="taskshade-metric-3">100% responsive</li>
+                        </ul>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-link-label">Liens</h4>
+                        <div class="project-links">
+                            <a href="https://github.com/tallko9/TaskShade" class="project-link" target="_blank" data-translate="project-view-code">📦 Code source</a>
+                            <a href="#" class="project-link" target="_blank" data-translate="project-view-demo" style="display: none;">🚀 Démo en ligne</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,12 +166,52 @@
             
         </section>
 
+        <section class="project-challenges">
+            <h3 data-translate="project-challenges-title">Défis rencontrés et solutions</h3>
+            <div class="challenges-list">
+                <div class="challenge-item">
+                    <h4 data-translate="taskshade-challenge-1-title">💾 Performance du stockage local</h4>
+                    <p data-translate="taskshade-challenge-1-desc"><strong>Défi :</strong> Le localStorage devenait lent avec beaucoup de tâches. <strong>Solution :</strong> J'ai implémenté un système de cache et de compression des données, réduisant le temps de chargement de 40%.</p>
+                </div>
+                <div class="challenge-item">
+                    <h4 data-translate="taskshade-challenge-2-title">📊 Calcul des statistiques en temps réel</h4>
+                    <p data-translate="taskshade-challenge-2-desc"><strong>Défi :</strong> Recalculer les statistiques à chaque modification était coûteux. <strong>Solution :</strong> J'ai optimisé les algorithmes et ajouté un système de mise en cache des calculs.</p>
+                </div>
+                <div class="challenge-item">
+                    <h4 data-translate="taskshade-challenge-3-title">📱 Responsive design complexe</h4>
+                    <p data-translate="taskshade-challenge-3-desc"><strong>Défi :</strong> Adapter l'interface pour mobile tout en gardant toutes les fonctionnalités. <strong>Solution :</strong> Utilisation de CSS Grid et Flexbox avec des media queries stratégiques pour une expérience optimale sur tous les écrans.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-learning">
+            <h3 data-translate="project-learning-title">Ce que j'ai appris</h3>
+            <div class="learning-list">
+                <div class="learning-item">
+                    <strong data-translate="taskshade-learning-1">🎯 Gestion d'état en JavaScript vanilla</strong>
+                    <p data-translate="taskshade-learning-1-desc">J'ai appris à gérer l'état d'une application sans framework, en utilisant des patterns simples mais efficaces pour maintenir la cohérence des données.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="taskshade-learning-2">⚡ Optimisation des performances</strong>
+                    <p data-translate="taskshade-learning-2-desc">J'ai découvert l'importance de l'optimisation, notamment pour le stockage local et le rendu DOM. Cela m'a appris à penser performance dès la conception.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="taskshade-learning-3">🎨 UX/UI Design</strong>
+                    <p data-translate="taskshade-learning-3-desc">Créer des wireframes détaillés avant de coder m'a fait comprendre l'importance de la phase de conception. Un bon design améliore considérablement l'expérience utilisateur.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="taskshade-learning-4">🔧 Debugging et résolution de problèmes</strong>
+                    <p data-translate="taskshade-learning-4-desc">J'ai développé mes compétences en debugging, en apprenant à utiliser efficacement les outils de développement du navigateur pour identifier et résoudre les problèmes.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="project-conclusion">
             <h3 data-translate="project-conclusion-title">Conclusion</h3>
             <p data-translate="taskshade-conclusion-text">TaskShade a été un projet enrichissant qui m'a permis de développer mes compétences en développement web frontend. L'application offre une interface intuitive et des fonctionnalités utiles pour aider les utilisateurs à gérer efficacement leurs tâches quotidiennes.</p>
             
             <div class="cta-buttons">
-                <a href="https://github.com/tallko9/TaskShade" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a><!--lien github a ajouter -->
+                <a href="https://github.com/tallko9/TaskShade" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
                 <a href="../projet.html" class="btn primary" data-translate="project-back">Retour aux projets</a>
             </div>
         </section>

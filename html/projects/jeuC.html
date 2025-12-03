@@ -73,16 +73,30 @@
                     <div class="metadata-item">
                         <h4 data-translate="project-technologies-label">Technologies</h4>
                         <ul class="technologies-list">
-                            <li data-translate="tech-language-c">Langage C</li>
+                            <li><strong>Langage C</strong> - Confirmé (pointeurs, structures, algorithmes)</li>
+                            <li><strong>Algorithmes de jeu</strong> - Intermédiaire (logique de combat, IA basique)</li>
+                            <li><strong>Gestion d'état</strong> - Intermédiaire (machine à états pour le gameplay)</li>
                         </ul>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-duration-label">Durée</h4>
+                        <p data-translate="jeu-duration">4 semaines</p>
                     </div>
                     <div class="metadata-item">
                         <h4 data-translate="project-year-label">Année</h4>
                         <p>2024-2025</p>
                     </div>
                     <div class="metadata-item">
+                        <h4 data-translate="project-metrics-label">Résultats</h4>
+                        <ul class="metrics-list">
+                            <li data-translate="jeu-metric-1">~1500 lignes de code C</li>
+                            <li data-translate="jeu-metric-2">Système de combat complet</li>
+                            <li data-translate="jeu-metric-3">3 types d'armes avec logique équilibrée</li>
+                        </ul>
+                    </div>
+                    <div class="metadata-item">
                         <h4 data-translate="project-link-label">Lien</h4>
-                        <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="project-link" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                        <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="project-link" target="_blank" data-translate="project-view-code">📦 Code source</a>
                     </div>
                 </div>
             </div>
@@ -146,12 +160,52 @@
         </section>
 
 
+        <section class="project-challenges">
+            <h3 data-translate="project-challenges-title">Défis rencontrés et solutions</h3>
+            <div class="challenges-list">
+                <div class="challenge-item">
+                    <h4 data-translate="jeu-challenge-1-title">⚔️ Équilibrage du système de combat</h4>
+                    <p data-translate="jeu-challenge-1-desc"><strong>Défi :</strong> Créer un système équilibré où chaque arme a ses forces et faiblesses. <strong>Solution :</strong> J'ai testé différentes configurations, créé des matrices de forces/faiblesses, et itéré jusqu'à obtenir un gameplay équilibré et amusant.</p>
+                </div>
+                <div class="challenge-item">
+                    <h4 data-translate="jeu-challenge-2-title">🎲 Gestion de l'aléatoire</h4>
+                    <p data-translate="jeu-challenge-2-desc"><strong>Défi :</strong> Implémenter un système d'IA aléatoire mais cohérent pour l'adversaire. <strong>Solution :</strong> Utilisation de fonctions de génération de nombres aléatoires avec seed, permettant un comportement prévisible pour les tests tout en restant aléatoire en jeu.</p>
+                </div>
+                <div class="challenge-item">
+                    <h4 data-translate="jeu-challenge-3-title">🔄 Gestion des états du jeu</h4>
+                    <p data-translate="jeu-challenge-3-desc"><strong>Défi :</strong> Gérer les différents états (menu, combat, fin de partie) de manière claire. <strong>Solution :</strong> Implémentation d'une machine à états simple mais efficace, avec des fonctions dédiées pour chaque état.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-learning">
+            <h3 data-translate="project-learning-title">Ce que j'ai appris</h3>
+            <div class="learning-list">
+                <div class="learning-item">
+                    <strong data-translate="jeu-learning-1">🎮 Conception de gameplay</strong>
+                    <p data-translate="jeu-learning-1-desc">J'ai appris à penser comme un game designer : équilibrer les mécaniques, tester les interactions, et itérer pour améliorer l'expérience de jeu.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="jeu-learning-2">🧮 Algorithmes et logique</strong>
+                    <p data-translate="jeu-learning-2-desc">Ce projet m'a permis d'approfondir mes compétences en algorithmie, notamment pour la logique de combat et la gestion des interactions entre éléments.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="jeu-learning-3">💾 Optimisation mémoire</strong>
+                    <p data-translate="jeu-learning-3-desc">J'ai appris à optimiser l'utilisation de la mémoire, en réutilisant des structures et en évitant les allocations inutiles, crucial pour les performances.</p>
+                </div>
+                <div class="learning-item">
+                    <strong data-translate="jeu-learning-4">🧪 Tests et itération</strong>
+                    <p data-translate="jeu-learning-4-desc">J'ai découvert l'importance des tests répétés et de l'itération. Changer une petite valeur peut complètement transformer l'expérience de jeu.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="project-conclusion">
             <h3 data-translate="project-conclusion-title">Conclusion</h3>
             <p data-translate="game-conclusion-text">Ce projet de jeu vidéo médiéval en C a été une excellente opportunité pour approfondir mes connaissances en programmation et en conception de jeux. Il m'a permis de développer mes compétences en algorithmie, en gestion de la mémoire et en manipulation de structures de données.</p>
             
             <div class="cta-buttons">
-                <a href="https://github.com/tallko9/SAE1.02" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
                 <a href="../projet.html" class="btn primary" data-translate="project-back">Retour aux projets</a>
             </div>
         </section>
