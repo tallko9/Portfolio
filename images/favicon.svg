@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a085;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond arrondi -->
+  <rect width="200" height="200" rx="40" ry="40" fill="url(#gradient)"/>
+  
+  <!-- Initiales SL stylisées -->
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold">
+    <!-- S -->
+    <text x="50" y="120" font-size="80" font-weight="700" letter-spacing="-2">S</text>
+    <!-- L -->
+    <text x="110" y="120" font-size="80" font-weight="700" letter-spacing="-2">L</text>
+  </g>
+  
+  <!-- Point décoratif -->
+  <circle cx="170" cy="50" r="8" fill="#ffffff" opacity="0.8"/>
+</svg>
+
