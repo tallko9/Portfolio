@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/skills_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="page-loader">
+        <div class="loader-content"></div>
+    </div>
+
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="../index.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+            <div class="language-selector-container">
+                <select id="language-selector" aria-label="Changer de langue">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
+        </div>
+    </header>
+
+    <section class="skills">
+        <div class="section-heading">
+            <p class="eyebrow" data-translate="skills-eyebrow">Compétences</p>
+            <h2 data-translate="skills-title">Mes Compétences</h2>
+        </div>
+
+        <div class="skills-panels">
+            <div class="skills-section" role="region" aria-labelledby="technical-skills">
+                <h3 id="technical-skills" data-translate="technical-skills">Compétences Techniques</h3>
+                <div class="skill-matrix">
+                    <article class="skill-card" style="--value:0.9" aria-label="HTML & CSS maîtrisé à 90%">
+                        <div class="skill-ring">
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-details">
+                            <p id="html-skill" data-translate="html-css">HTML & CSS</p>
+                            <span class="skill-level" data-translate="skill-level-advanced">Avancé</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" style="--value:0.65" aria-label="JavaScript maîtrisé à 65%">
+                        <div class="skill-ring">
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-details">
+                            <p data-translate="javascript">JavaScript</p>
+                            <span class="skill-level" data-translate="skill-level-intermediate">Intermédiaire</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" style="--value:0.75" aria-label="C et C++ maîtrisés à 75%">
+                        <div class="skill-ring">
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-details">
+                            <p data-translate="c-cpp">C &amp; C++</p>
+                            <span class="skill-level" data-translate="skill-level-confirmed">Confirmé</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" style="--value:0.55" aria-label="C# maîtrisé à 55%">
+                        <div class="skill-ring">
+                            <span>55%</span>
+                        </div>
+                        <div class="skill-details">
+                            <p data-translate="csharp">C#</p>
+                            <span class="skill-level" data-translate="skill-level-intermediate">Intermédiaire</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="skill-category">
+                    <h4 data-translate="frameworks-tools">Frameworks &amp; Outils</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">MAUI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3 data-translate="general-skills">Compétences Générales</h3>
+                <div class="project-list">
+                    <article class="project-card">
+                        <h3 data-translate="communication">Communication</h3>
+                        <p data-translate="communication-desc">Communication claire et persuasive en français et en anglais. Capacité à vulgariser des concepts techniques complexes. Excellente aptitude à la rédaction de documentation technique et rapports professionnels. Fort esprit d'équipe avec capacité à fédérer autour d'objectifs communs.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3 data-translate="problem-solving">Résolution de problèmes</h3>
+                        <p data-translate="problem-solving-desc">Capacité à décomposer des problèmes complexes en éléments gérables. Maîtrise des techniques de debugging et d'optimisation. Expérience en analyse de données pour la prise de décision. Capacité à anticiper les problèmes potentiels et à mettre en place des solutions préventives.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3 data-translate="adaptability">Adaptabilité</h3>
+                        <p data-translate="adaptability-desc">Excellente capacité d'adaptation aux changements technologiques et organisationnels. Apprentissage rapide des nouveaux outils et frameworks.Capacité à travailler efficacement dans des environnements multiculturels. Résilience face aux situations stressantes et aux deadlines serrées.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3 data-translate="analysis">Esprit d'analyse</h3>
+                        <p data-translate="analysis-desc">Capacité à analyser des situations complexes et à en tirer des conclusions pertinentes. Compétences en analyse de données et en prise de décision basée sur les faits. Approche critique et objective des problèmes.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p data-translate="copyright">&copy; 2025 Sasha Lorenc. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
+            <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>

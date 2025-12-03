@@ -1,0 +1,317 @@
+.projects {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+/* Container du carrousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    overflow: visible; /* Permet au hover de dépasser sans être coupé */
+}
+
+/* Wrapper du carrousel */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 12px 4rem; /* Padding vertical pour éviter que le hover soit coupé */
+}
+
+/* Track du carrousel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    will-change: transform;
+}
+
+/* Slides du carrousel */
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    padding: 12px 0; /* Padding vertical pour éviter que le hover soit coupé */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Cartes de projet */
+.project-card {
+    background: rgba(15, 19, 37, 0.9);
+    backdrop-filter: blur(18px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    color: var(--text-primary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    margin: 0 auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.project-card p {
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.project-card .strong_word {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.project-card .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0.85rem 1.8rem;
+    background: linear-gradient(120deg, var(--accent-color), #71f7d1);
+    color: #05060a !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+}
+
+.project-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(72, 224, 184, 0.35);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(72, 224, 184, 0.2);
+    border-color: rgba(72, 224, 184, 0.3);
+}
+
+/* Boutons de navigation */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 19, 37, 0.9);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    padding: 0;
+}
+
+.carousel-btn:hover {
+    background: rgba(72, 224, 184, 0.15);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Indicateurs */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    position: relative;
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.indicator:hover {
+    background: rgba(72, 224, 184, 0.4);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: var(--accent-color);
+    width: 32px;
+    border-radius: 6px;
+}
+
+.indicator.active::before {
+    opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects {
+        padding: 40px 15px;
+    }
+
+    .carousel-wrapper {
+        padding: 0 3.5rem;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects {
+        padding: 30px 10px;
+    }
+
+    .carousel-wrapper {
+        padding: 0 2.5rem;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .project-card p {
+        font-size: 0.85rem;
+    }
+
+    .project-card .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .carousel-indicators {
+        gap: 0.5rem;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .indicator.active {
+        width: 24px;
+    }
+}

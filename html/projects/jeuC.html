@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design">
+    <title>Jeu Vidéo Médiéval - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/project_detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="../../index.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="../about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="../projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="../skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="../contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Changer de langue">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
+        </nav>
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
+        </div>
+    </header>
+    <main>
+
+        <section class="project-banner">
+            <div class="project-title">
+                <h2 data-translate="game-banner-title">Jeu Vidéo Médiéval</h2>
+                <p class="project-category" data-translate="project-category-turnbased">Jeu tour par tour</p>
+            </div>
+        </section>
+
+
+        <section class="project-overview">
+            <div class="overview-content">
+                <h3 data-translate="project-overview-title">Aperçu du projet</h3>
+                <p data-translate="game-overview-text">Ce projet est un jeu vidéo médiéval en tour par tour basé sur le principe du pierre-feuille-ciseaux. Le joueur affronte l'ordinateur dans differentes situations où chaque choix d'arme peut faire la différence entre victoire et défaite.</p>
+                
+                <div class="project-metadata">
+                    <div class="metadata-item">
+                        <h4 data-translate="project-technologies-label">Technologies</h4>
+                        <ul class="technologies-list">
+                            <li data-translate="tech-language-c">Langage C</li>
+                        </ul>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-year-label">Année</h4>
+                        <p>2024-2025</p>
+                    </div>
+                    <div class="metadata-item">
+                        <h4 data-translate="project-link-label">Lien</h4>
+                        <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc/sae1.02" class="project-link" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="project-features">
+            <h3 data-translate="project-features-title">Fonctionnalités principales</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h4 data-translate="game-feature1-title">Système de combat</h4>
+                    <p data-translate="game-feature1-desc">Mécaniques inspirées de pierre-feuille-ciseaux .</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4 data-translate="game-feature2-title">Adversaire aléatoire</h4>
+                    <p data-translate="game-feature2-desc">Choix des armes par l'ordinateur aléatoire.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="project-gallery">
+            <h3 data-translate="project-gallery-title">Galerie</h3>
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="../../images/projects/jeuc-screen1.png" alt="Écran de combat">
+                </div>
+                <div class="gallery-item">
+                    <img src="../../images/projects/jeuc-screen2.png" alt="Sélection des armes">
+                </div>
+            </div>
+        </section>
+
+        <section class="development-process">
+            <h3 data-translate="project-process-title">Processus de développement</h3>
+            
+            <div class="process-step">
+                <div class="step-content">
+                    <h4 data-translate="game-process1-title">1. Conception du gameplay</h4>
+                    <p data-translate="game-process1-desc">J'ai commencé par conceptualiser les mécaniques de jeu, en créant un système équilibré de forces et faiblesses entre les différentes armes.</p>
+                </div>
+                <div class="step-image">
+                    <img src="../../images/projects/jeuc-conception.png" alt="Conception du gameplay">
+                </div>
+            </div>
+            
+            <div class="process-step reverse">
+                <div class="step-content">
+                    <h4 data-translate="game-process2-title">2. Développement en C</h4>
+                    <p data-translate="game-process2-desc">J'ai implémenté le jeu en langage C, en mettant l'accent sur la fluidité des mécaniques et l'utilisation optiamale des différentes structures de données</p>
+                </div>
+                <div class="step-image">
+                    <img src="../../images/projects/jeuc-dev.png" alt="Développement en C">
+                </div>
+            </div>
+            
+            
+        </section>
+
+
+        <section class="project-conclusion">
+            <h3 data-translate="project-conclusion-title">Conclusion</h3>
+            <p data-translate="game-conclusion-text">Ce projet de jeu vidéo médiéval en C a été une excellente opportunité pour approfondir mes connaissances en programmation et en conception de jeux. Il m'a permis de développer mes compétences en algorithmie, en gestion de la mémoire et en manipulation de structures de données.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com/tallko9/SAE1.02" class="btn primary" target="_blank" data-translate="project-view-code">Voir le code source</a>
+                <a href="../projet.html" class="btn primary" data-translate="project-back">Retour aux projets</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
+
+    <script src="../../js/translations.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

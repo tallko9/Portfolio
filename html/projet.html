@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">Projets - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="../css/projet_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="../index.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Changer de langue">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
+        </div>
+    </header>
+
+    <!-- Section Projets -->
+    <section class="projects">
+        <h2 data-translate="projects-title">Mes Projets</h2>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Projet précédent">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                
+                <div class="carousel-track">
+                    <!-- projet 1 -->
+                    <div class="carousel-slide active">
+                        <div class="project-card">
+                            <h3 data-translate="project2-title">Projet SAE1.01 : Application de Gestion</h3>
+                            <p data-translate="project2-desc">Une application pour gérer stages au sein du département informatique de l'IUT de Clermont-Ferrand.</p>
+                            <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> C</p>
+                            <a href="projects/gestionC.html" class="btn" data-translate="view-project">Voir le projet</a>
+                        </div>
+                    </div>
+
+                    <!-- projet 2 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <h3 data-translate="project1-title">Projet SAE1.02 : Jeux vidéo</h3>
+                            <p data-translate="project1-desc">Un jeux vidéo médieval en tour par tour basé sur le pierre feuille cisceau.</p>
+                            <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> C</p>
+                            <a href="projects/jeuC.html" class="btn" data-translate="view-project">Voir le projet</a>
+                        </div>
+                    </div>
+
+                    <!-- projet 3 -->
+                    <div class="carousel-slide">
+                        <div class="project-card">
+                            <h3 data-translate="project4-title">Projet 3 : TaskShade</h3>
+                            <p data-translate="project4-desc">Une To Do List en ligne permettant d'organiser vos tâches par importance et date d'échéance.</p>
+                            <p><strong class="strong_word" data-translate="technologies">Technologies :</strong> HTML, CSS, JavaScript</p>
+                            <a href="projects/taskShade.html" class="btn" data-translate="view-project">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" aria-label="Projet suivant">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Indicateurs de navigation -->
+            <div class="carousel-indicators">
+                <button class="indicator active" aria-label="Projet 1" data-slide="0"></button>
+                <button class="indicator" aria-label="Projet 2" data-slide="1"></button>
+                <button class="indicator" aria-label="Projet 3" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank">LinkedIn</a>
+            <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <button id="scroll-to-top" title="Remonter en haut">↑</button>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/carousel.js"></script>
+</body>
+</html>

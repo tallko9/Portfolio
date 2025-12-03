@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sasha Lorenc's Portfolio</title>
+    <link rel="stylesheet" href="../css/contacts_css.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="../index.html" data-translate="nav-home">Accueil</a></li>
+                <li><a href="about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+            <div class="language-selector-container">
+                <select id="language-selector" aria-label="Changer de langue">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+                <button id="settings-icon" aria-label="Settings">⚙️</button>
+            </div>
+        </nav>
+        
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title" data-translate="accent-color">Accent color:</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">défaut</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">rose</span></label>
+        </div>
+    </header>
+
+
+    <section class="contact">
+        <h2 data-translate="contact-title">Me contacter</h2>
+        <p data-translate="contact-desc">N'hésitez pas à me contacter pour toute question ou proposition de collaboration. Je serais ravi d'en discuter avec vous !</p>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label class="form-label" for="name">
+                    <span data-translate="name">Nom</span>
+                    <span class="required">*</span>
+                </label>
+                <input type="text" 
+                       id="name" 
+                       name="name" 
+                       required 
+                       placeholder="John Doe"
+                       data-translate="name-placeholder">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">
+                    <span data-translate="email">Email</span>
+                    <span class="required">*</span>
+                </label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       required 
+                       placeholder="john.doe@example.com"
+                       data-translate="email-placeholder">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="subject">
+                    <span data-translate="subject">Sujet</span>
+                    <span class="required">*</span>
+                </label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected data-translate="subject-placeholder">Sélectionnez un sujet</option>
+                    <option value="collaboration" data-translate="subject-collaboration">Proposition de collaboration</option>
+                    <option value="job" data-translate="subject-job">Opportunité professionnelle</option>
+                    <option value="project" data-translate="subject-project">Discussion de projet</option>
+                    <option value="question" data-translate="subject-question">Question générale</option>
+                    <option value="other" data-translate="subject-other">Autre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="message">
+                    <span data-translate="message">Message</span>
+                    <span class="required">*</span>
+                </label>
+                <textarea id="message" 
+                         name="message" 
+                         required 
+                         placeholder="Je souhaiterais discuter d'une opportunité de collaboration..."
+                         data-translate="message-placeholder"></textarea>
+                <div class="character-count"><span id="charCount">0</span>/1000</div>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" required name="privacy" id="privacy">
+                    <span class="checkmark"></span>
+                    <span data-translate="privacy-policy">J'accepte que mes informations soient utilisées pour être recontacté(e)</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn">
+                <span class="btn-text" data-translate="send">Envoyer</span>
+                <span class="btn-icon">📨</span>
+            </button>
+        </form>
+
+        <div class="contact-info">
+            <p><strong data-translate="contact-email-label">Email :</strong> sasha.LORENC@etu.uca.fr</p>
+            <p><strong data-translate="follow-me">Follow me:</strong>
+                <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+                <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+                <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><span data-translate="copyright">&copy; 2025 Sasha Lorenc. All rights reserved.</span></p>
+    </footer>
+    <button id="scroll-to-top" title="Scroll to top">↑</button>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>
+

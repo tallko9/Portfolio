@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design">
+    <title>Accueil - Portfolio de Sasha Lorenc</title>
+    <link rel="stylesheet" href="css/accueil_css.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Sasha Lorenc</h1>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="index.html" data-translate="nav-home" aria-current="page">Accueil</a></li>
+                <li><a href="html/about.html" data-translate="nav-about">À propos</a></li>
+                <li><a href="html/projet.html" data-translate="nav-projects">Projets</a></li>
+                <li><a href="html/skills.html" data-translate="nav-skills">Compétences</a></li>
+                <li><a href="html/contacts.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-selector-container">
+                    <select id="language-selector" aria-label="Changer de langue">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+                <button id="settings-icon" aria-label="Paramètres">⚙️</button>
+            </div>
+        </nav>
+        <div id="color-picker" class="color-picker" style="display: none;" role="dialog" aria-labelledby="color-picker-title">
+            <span id="color-picker-title" data-translate="accent-color">Couleur d'accentuation :</span>
+            <label><input type="radio" name="accent-color" value="#1abc9c" checked> <span data-translate="default">Default</span></label>
+            <label><input type="radio" name="accent-color" value="#e74c3c"> <span data-translate="red">Rouge</span></label>
+            <label><input type="radio" name="accent-color" value="#f39c12"> <span data-translate="orange">Orange</span></label>
+            <label><input type="radio" name="accent-color" value="#2ecc71"> <span data-translate="green">Vert</span></label>
+            <label><input type="radio" name="accent-color" value="#e84393"> <span data-translate="pink">Rose</span></label>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow" data-translate="hero-eyebrow">Développeur Mobile & Web</p>
+                <h2 class="animate-text">Sasha Lorenc</h2>
+                <p class="animate-text-delay hero-lead" data-translate="hero-subtitle">Étudiant en BUT Informatique</p>
+                <div class="hero-meta">
+                    <span data-translate="hero-availability">Disponible pour des collaborations</span>
+                    <span data-translate="hero-location">Clermont-Ferrand, France</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="html/projet.html" class="btn primary" data-translate="view-projects">Voir mes projets</a>
+                    <a href="html/contacts.html" class="btn secondary" data-translate="contact-me">Me contacter</a>
+                </div>
+                <ul class="hero-highlights">
+                    <li data-translate="hero-highlight-1">Front-end & UI System</li>
+                    <li data-translate="hero-highlight-2">Applications natives (C / C++)</li>
+                    <li data-translate="hero-highlight-3">Expérience utilisateur réfléchie</li>
+                </ul>
+            </div>
+            <div class="hero-image">
+                <div class="hero-visual">
+                    <img src="images/sasha.png" alt="Sasha Lorenc" class="profile-image">
+                    <div class="floating-card orbit">
+                        <p data-translate="hero-status-label">Projets livrés</p>
+                        <strong>3+</strong>
+                    </div>
+                    <div class="floating-card availability">
+                        <span class="dot"></span>
+                        <p data-translate="hero-status-availability">Ouvert aux opportunités</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="section-heading">
+                <p class="eyebrow" data-translate="services-eyebrow">Expertises ciblées</p>
+                <h2 data-translate="services-title">Ce que je peux faire pour vous</h2>
+                <p class="section-lead" data-translate="services-lead">Des solutions réfléchies, alignées sur vos enjeux business.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon web-dev"></div>
+                    <h3 data-translate="web-dev-title">Développement Web</h3>
+                    <p data-translate="web-dev-desc">Création de sites web responsifs et modernes utilisant les dernières technologies.</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon app-dev"></div>
+                    <h3 data-translate="app-dev-title">Applications</h3>
+                    <p data-translate="app-dev-desc">Développement d'applications performantes en C, C++ et autres langages.</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon ui-design"></div>
+                    <h3 data-translate="ui-design-title">UI/UX Design</h3>
+                    <p data-translate="ui-design-desc">Conception d'interfaces utilisateur intuitives et esthétiques.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="skills-highlight">
+            <div class="section-heading">
+                <p class="eyebrow" data-translate="technical-eyebrow">Données clés</p>
+                <h2 data-translate="technical-expertise">Expertise Technique</h2>
+            </div>
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-number">1</span>
+                    <p data-translate="years-experience">Année d'expérience en programmation</p>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">3+</span>
+                    <p data-translate="completed-projects">Projets réalisés</p>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <p data-translate="technologies-mastered">Technologies maîtrisées</p>
+                </article>
+            </div>
+            <a href="html/skills.html" class="btn" data-translate="view-all-skills">Voir toutes mes compétences</a>
+        </section>
+
+        <section class="quick-contact">
+            <div class="contact-card">
+                <div>
+                    <p class="eyebrow" data-translate="cta-eyebrow">Parlons de votre prochain produit</p>
+                    <h2 data-translate="lets-work">Travaillons ensemble</h2>
+                    <p data-translate="project-idea">Vous avez un projet en tête ? Je serais ravi d'en discuter !</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="html/contacts.html" class="btn primary" data-translate="contact-me">Me contacter</a>
+                    <a href="documents/Cv.pdf" class="btn secondary" id="cv-download-btn" download data-translate="download-cv">Télécharger mon CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sasha Lorenc. <span data-translate="rights-reserved">Tous droits réservés.</span></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://codefirst.iut.uca.fr/git/sasha.lorenc" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
+    <script src="js/translations.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
