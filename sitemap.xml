@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.sasha-lorenc.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.sasha-lorenc.com/?lang=en" />
+    </url>
+    
+    <!-- Page À propos -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/about.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.sasha-lorenc.com/html/about.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.sasha-lorenc.com/html/about.html?lang=en" />
+    </url>
+    
+    <!-- Page Projets -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/projet.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.sasha-lorenc.com/html/projet.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.sasha-lorenc.com/html/projet.html?lang=en" />
+    </url>
+    
+    <!-- Page Compétences -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/skills.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.sasha-lorenc.com/html/skills.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.sasha-lorenc.com/html/skills.html?lang=en" />
+    </url>
+    
+    <!-- Page Contact -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/contacts.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.sasha-lorenc.com/html/contacts.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.sasha-lorenc.com/html/contacts.html?lang=en" />
+    </url>
+    
+    <!-- Projet TaskShade -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/projects/taskShade.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Projet Gestion C -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/projects/gestionC.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Projet Jeu C -->
+    <url>
+        <loc>https://www.sasha-lorenc.com/html/projects/jeuC.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>
+

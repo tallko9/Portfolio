@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design">
+    <meta name="description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design. Étudiant en BUT Informatique à Clermont-Ferrand.">
+    <meta name="keywords" content="développeur web, portfolio, Sasha Lorenc, BUT informatique, Clermont-Ferrand, développement front-end, C, C++, JavaScript, HTML, CSS">
+    <meta name="author" content="Sasha Lorenc">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sasha-lorenc.com/">
+    <meta property="og:title" content="Portfolio de Sasha Lorenc - Développeur Web">
+    <meta property="og:description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design. Étudiant en BUT Informatique à Clermont-Ferrand.">
+    <meta property="og:image" content="https://www.sasha-lorenc.com/images/sasha.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio Sasha Lorenc">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.sasha-lorenc.com/">
+    <meta name="twitter:title" content="Portfolio de Sasha Lorenc - Développeur Web">
+    <meta name="twitter:description" content="Portfolio de Sasha Lorenc - Développeur web passionné par l'innovation et le design.">
+    <meta name="twitter:image" content="https://www.sasha-lorenc.com/images/sasha.png">
+    
     <title>Accueil - Portfolio de Sasha Lorenc</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1abc9c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sasha Lorenc">
+    
     <link rel="stylesheet" href="css/accueil_css.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TRWMC5CP');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRWMC5CP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <nav>
             <h1>Sasha Lorenc</h1>
@@ -68,7 +108,7 @@
             </div>
             <div class="hero-image">
                 <div class="hero-visual">
-                    <img src="images/sasha.png" alt="Sasha Lorenc" class="profile-image">
+                    <img src="images/sasha.png" alt="Photo de profil de Sasha Lorenc, développeur web et étudiant en BUT Informatique" class="profile-image" loading="lazy" width="380" height="380">
                     <div class="floating-card orbit">
                         <p data-translate="hero-status-label">Projets livrés</p>
                         <strong>3+</strong>
@@ -152,6 +192,42 @@
     </footer>
 
     <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sasha Lorenc",
+      "jobTitle": "Développeur Web",
+      "url": "https://www.sasha-lorenc.com",
+      "image": "https://www.sasha-lorenc.com/images/sasha.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/sasha-lorenc-9a073b278/",
+        "https://codefirst.iut.uca.fr/git/sasha.lorenc"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Clermont-Ferrand",
+        "addressCountry": "FR"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "IUT Clermont-Ferrand",
+        "department": "Département Informatique"
+      },
+      "knowsAbout": [
+        "Développement Web",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "C",
+        "C++",
+        "UI/UX Design"
+      ]
+    }
+    </script>
+    
     <script src="js/translations.js"></script>
     <script src="js/common.js"></script>
 </body>

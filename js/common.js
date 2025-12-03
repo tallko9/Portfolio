@@ -206,4 +206,38 @@ function updateLanguage(language) {
             }
         }
     });
+}
+
+// Tracking du téléchargement du CV
+document.addEventListener('DOMContentLoaded', () => {
+    const cvButton = document.getElementById('cv-download-btn');
+    if (cvButton) {
+        cvButton.addEventListener('click', () => {
+            // Google Tag Manager event tracking
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': 'cv_download',
+                    'event_category': 'engagement',
+                    'event_label': 'CV Download',
+                    'value': 1
+                });
+            }
+            
+            // Console log pour debug (peut être retiré en production)
+            console.log('CV download tracked');
+        });
+    }
+});
+
+// Enregistrement du Service Worker pour PWA
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+                console.log('Service Worker enregistré avec succès:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Échec de l\'enregistrement du Service Worker:', error);
+            });
+    });
 } 

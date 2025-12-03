@@ -1,0 +1,18 @@
+# robots.txt pour le portfolio de Sasha Lorenc
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.sasha-lorenc.com/sitemap.xml
+
+# Désactiver l'indexation des fichiers de configuration et autres fichiers sensibles
+Disallow: /documents/
+Disallow: /*.pdf$
+
+# Autoriser les ressources CSS et JS pour le rendu
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
