@@ -53,10 +53,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Ignorer les requêtes vers des APIs externes (analytics, etc.)
-  if (event.request.url.includes('google-analytics') || 
-      event.request.url.includes('googletagmanager')) {
-    return;
-  }
+  // Les analytics Vercel sont gérés automatiquement par Vercel
 
   event.respondWith(
     caches.match(event.request)

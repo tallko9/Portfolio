@@ -208,19 +208,14 @@ function updateLanguage(language) {
     });
 }
 
-// Tracking du téléchargement du CV
+// Tracking du téléchargement du CV (via Vercel Analytics)
 document.addEventListener('DOMContentLoaded', () => {
     const cvButton = document.getElementById('cv-download-btn');
     if (cvButton) {
         cvButton.addEventListener('click', () => {
-            // Google Tag Manager event tracking
-            if (typeof dataLayer !== 'undefined') {
-                dataLayer.push({
-                    'event': 'cv_download',
-                    'event_category': 'engagement',
-                    'event_label': 'CV Download',
-                    'value': 1
-                });
+            // Vercel Analytics tracking
+            if (typeof window.va !== 'undefined') {
+                window.va('track', 'CV Download');
             }
             
             // Console log pour debug (peut être retiré en production)
