@@ -198,6 +198,15 @@
     background: rgba(72, 224, 184, 0.18);
     border: 1px solid rgba(72, 224, 184, 0.25);
     margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color, #48e0b8);
+}
+
+.service-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .service-card p {

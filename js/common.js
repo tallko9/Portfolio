@@ -210,18 +210,25 @@ function updateLanguage(language) {
 
 // Tracking du téléchargement du CV (via Vercel Analytics)
 document.addEventListener('DOMContentLoaded', () => {
-    const cvButton = document.getElementById('cv-download-btn');
-    if (cvButton) {
-        cvButton.addEventListener('click', () => {
-            // Vercel Analytics tracking
-            if (typeof window.va !== 'undefined') {
-                window.va('track', 'CV Download');
-            }
-            
-            // Console log pour debug (peut être retiré en production)
-            console.log('CV download tracked');
-        });
-    }
+    const cvButtons = [
+        document.getElementById('cv-download-btn'),
+        document.getElementById('nav-cv-download-btn'),
+        document.getElementById('hero-cv-download-btn')
+    ];
+    
+    cvButtons.forEach(cvButton => {
+        if (cvButton) {
+            cvButton.addEventListener('click', () => {
+                // Vercel Analytics tracking
+                if (typeof window.va !== 'undefined') {
+                    window.va('track', 'CV Download');
+                }
+                
+                // Console log pour debug (peut être retiré en production)
+                console.log('CV download tracked');
+            });
+        }
+    });
 });
 
 // Enregistrement du Service Worker pour PWA

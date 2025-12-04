@@ -1,7 +1,7 @@
 {
   "name": "portfolio-sasha-lorenc",
   "version": "1.0.0",
-  "description": "Portfolio de Sasha Lorenc - Développeur web",
+  "description": "Portfolio de Sasha Lorenc - Développeur",
   "type": "module",
   "scripts": {
     "build": "echo 'Static site - no build required'"

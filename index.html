@@ -43,6 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     
     <!-- Vercel Analytics -->
     <script>
@@ -72,6 +73,20 @@
                 <li><a href="html/contacts.html" data-translate="nav-contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
+                <a href="documents/Cv.pdf" class="nav-cv-btn" download id="nav-cv-download-btn" aria-label="Télécharger mon CV" data-translate="download-cv">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>CV</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sasha-lorenc-9a073b278/" target="_blank" rel="noopener" class="nav-linkedin-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
                 <div class="language-selector-container">
                     <select id="language-selector" aria-label="Changer de langue">
                         <option value="fr">FR</option>
@@ -97,12 +112,20 @@
                 <h2 class="animate-text">Sasha Lorenc</h2>
                 <p class="animate-text-delay hero-lead" data-translate="hero-subtitle">Étudiant en BUT Informatique</p>
                 <div class="hero-meta">
-                    <span data-translate="hero-availability">Disponible pour des collaborations</span>
+                    <span data-translate="hero-availability">Recherche alternance</span>
                     <span data-translate="hero-location">Clermont-Ferrand, France</span>
                 </div>
                 <div class="hero-buttons">
                     <a href="html/projet.html" class="btn primary" data-translate="view-projects">Voir mes projets</a>
                     <a href="html/contacts.html" class="btn secondary" data-translate="contact-me">Me contacter</a>
+                    <a href="documents/Cv.pdf" class="btn secondary" id="hero-cv-download-btn" download data-translate="download-cv">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span data-translate="download-cv">Télécharger mon CV</span>
+                    </a>
                 </div>
                 <ul class="hero-highlights">
                     <li data-translate="hero-highlight-1">Front-end & UI System</li>
@@ -119,7 +142,7 @@
                     </div>
                     <div class="floating-card availability">
                         <span class="dot"></span>
-                        <p data-translate="hero-status-availability">Ouvert aux opportunités</p>
+                        <p data-translate="hero-status-availability">Recherche alternance</p>
                     </div>
                 </div>
             </div>
@@ -133,17 +156,36 @@
             </div>
             <div class="services-grid">
                 <article class="service-card">
-                    <div class="service-icon web-dev"></div>
+                    <div class="service-icon web-dev">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                            <path d="M7 8h10M7 12h10M7 16h4"></path>
+                        </svg>
+                    </div>
                     <h3 data-translate="web-dev-title">Développement Web</h3>
                     <p data-translate="web-dev-desc">Création de sites web responsifs et modernes utilisant les dernières technologies.</p>
                 </article>
                 <article class="service-card">
-                    <div class="service-icon app-dev"></div>
+                    <div class="service-icon app-dev">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            <path d="M9 8h6M9 12h6M9 16h4"></path>
+                        </svg>
+                    </div>
                     <h3 data-translate="app-dev-title">Applications</h3>
                     <p data-translate="app-dev-desc">Développement d'applications performantes en C, C++ et autres langages.</p>
                 </article>
                 <article class="service-card">
-                    <div class="service-icon ui-design"></div>
+                    <div class="service-icon ui-design">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <path d="M21 15l-5-5L5 21"></path>
+                        </svg>
+                    </div>
                     <h3 data-translate="ui-design-title">UI/UX Design</h3>
                     <p data-translate="ui-design-desc">Conception d'interfaces utilisateur intuitives et esthétiques.</p>
                 </article>
@@ -197,6 +239,43 @@
 
     <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
     
+    <!-- Floating contact button -->
+    <button id="floating-contact-btn" aria-label="Me contacter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span data-translate="contact-me">Me contacter</span>
+    </button>
+
+    <!-- Contact popup modal -->
+    <div class="contact-popup-overlay" id="contact-popup-overlay" role="dialog" aria-labelledby="contact-popup-title" aria-modal="true">
+        <div class="contact-popup">
+            <div class="contact-popup-header">
+                <h3 id="contact-popup-title" data-translate="contact-me">Me contacter</h3>
+                <button class="contact-popup-close" aria-label="Fermer" id="contact-popup-close">×</button>
+            </div>
+            <form class="contact-popup-form" id="contact-popup-form">
+                <input type="text" id="popup-name" name="name" placeholder="Votre nom" required data-translate="name-placeholder">
+                <input type="email" id="popup-email" name="email" placeholder="Votre email" required data-translate="email-placeholder">
+                <input type="text" id="popup-subject" name="subject" placeholder="Sujet" required data-translate="subject-placeholder">
+                <textarea id="popup-message" name="message" placeholder="Votre message" required data-translate="message-placeholder"></textarea>
+                <button type="submit" class="btn primary" data-translate="send">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- QR Code modal -->
+    <div class="qr-code-overlay" id="qr-code-overlay" role="dialog" aria-labelledby="qr-code-title" aria-modal="true">
+        <div class="qr-code-modal">
+            <div class="qr-code-modal-header">
+                <h3 id="qr-code-title" data-translate="qr-code-title">QR Code - Mon CV</h3>
+                <button class="qr-code-close" aria-label="Fermer" id="qr-code-close">×</button>
+            </div>
+            <canvas id="qr-code-canvas"></canvas>
+            <p class="qr-code-info" data-translate="qr-code-info">Scannez ce code pour télécharger mon CV</p>
+        </div>
+    </div>
+    
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -234,5 +313,6 @@
     
     <script src="js/translations.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/contact-popup.js"></script>
 </body>
 </html>

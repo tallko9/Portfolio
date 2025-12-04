@@ -373,11 +373,274 @@ footer p {
     display: none;
     cursor: pointer;
     transition: transform var(--transition), background var(--transition);
+    z-index: 99;
 }
 
 #scroll-to-top:hover {
     transform: translateY(-4px);
     background: rgba(72, 224, 184, 0.15);
+}
+
+/* Floating contact button */
+#floating-contact-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    padding: 16px 24px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(120deg, var(--accent-color), #71f7d1);
+    color: #05060a;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(72, 224, 184, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    #scroll-to-top {
+        bottom: 80px;
+    }
+}
+
+#floating-contact-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(72, 224, 184, 0.35);
+}
+
+#floating-contact-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Contact popup modal */
+.contact-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.contact-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.contact-popup {
+    background: rgba(7, 9, 18, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform var(--transition);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.contact-popup-overlay.active .contact-popup {
+    transform: scale(1);
+}
+
+.contact-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.contact-popup-header h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.contact-popup-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all var(--transition);
+}
+
+.contact-popup-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.contact-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-popup-form input,
+.contact-popup-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color var(--transition);
+}
+
+.contact-popup-form input:focus,
+.contact-popup-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact-popup-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-popup-form button[type="submit"] {
+    margin-top: 8px;
+}
+
+/* CV and LinkedIn buttons in header */
+.nav-cv-btn,
+.nav-linkedin-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.nav-cv-btn:hover,
+.nav-linkedin-btn:hover {
+    background: rgba(72, 224, 184, 0.15);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.nav-cv-btn svg,
+.nav-linkedin-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* QR Code modal */
+.qr-code-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.qr-code-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.qr-code-modal {
+    background: rgba(7, 9, 18, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform var(--transition);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.qr-code-overlay.active .qr-code-modal {
+    transform: scale(1);
+}
+
+.qr-code-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.qr-code-modal-header h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.qr-code-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all var(--transition);
+}
+
+.qr-code-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+#qr-code-canvas {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 0 auto 16px;
+    display: block;
+}
+
+.qr-code-info {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 16px;
 }
 
 /* Color picker */
@@ -537,6 +800,39 @@ footer p {
         font-size: 0.9rem;
     }
 
+    .nav-cv-btn,
+    .nav-linkedin-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .nav-cv-btn svg,
+    .nav-linkedin-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav-cv-btn span,
+    .nav-linkedin-btn span {
+        display: none;
+    }
+
+    #floating-contact-btn {
+        bottom: 80px;
+        left: 16px;
+        padding: 12px 18px;
+        font-size: 0.8rem;
+    }
+
+    #floating-contact-btn span {
+        display: none;
+    }
+
+    #floating-contact-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
     main {
         width: 90%;
         padding: 40px 16px 120px;
@@ -598,5 +894,21 @@ footer p {
 
     .btn {
         width: 100%;
+    }
+
+    .nav-cv-btn span,
+    .nav-linkedin-btn span {
+        display: none;
+    }
+
+    #floating-contact-btn {
+        bottom: 70px;
+        left: 12px;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+    }
+
+    #floating-contact-btn span {
+        display: none;
     }
 }
