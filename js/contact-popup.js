@@ -1,6 +1,15 @@
 // Contact popup functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Masquer le bouton flottant sur la page de contact
+    const isContactPage = window.location.pathname.includes('contacts.html') || 
+                          window.location.pathname.includes('contact') ||
+                          document.querySelector('section.contact');
+    
     const floatingBtn = document.getElementById('floating-contact-btn');
+    if (floatingBtn && isContactPage) {
+        floatingBtn.style.display = 'none';
+    }
+    
     const popupOverlay = document.getElementById('contact-popup-overlay');
     const popupClose = document.getElementById('contact-popup-close');
     const popupForm = document.getElementById('contact-popup-form');
