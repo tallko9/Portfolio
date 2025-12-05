@@ -182,14 +182,8 @@ const initCommonFeatures = () => {
 // Export pour init.js
 window.initCommonFeatures = initCommonFeatures;
 
-// Initialiser si init.js n'est pas chargé
-if (!window.initLoaded) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCommonFeatures);
-    } else {
-        initCommonFeatures();
-    }
-}
+// Initialiser automatiquement (fonctionne avec defer)
+initCommonFeatures();
 
 function updateLanguage(language) {
     const safeLanguage = getValidLanguage(language);

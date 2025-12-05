@@ -209,12 +209,6 @@ const initCarousel = () => {
 // Export pour init.js
 window.initCarousel = initCarousel;
 
-// Initialiser si init.js n'est pas chargé
-if (!window.initLoaded) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCarousel);
-    } else {
-        initCarousel();
-    }
-}
+// Initialiser automatiquement (fonctionne avec defer)
+initCarousel();
 

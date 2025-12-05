@@ -63,11 +63,5 @@ const initContactForm = function() {
 // Export pour init.js
 window.initContactForm = initContactForm;
 
-// Initialiser si init.js n'est pas chargé
-if (!window.initLoaded) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initContactForm);
-    } else {
-        initContactForm();
-    }
-} 
+// Initialiser automatiquement (fonctionne avec defer)
+initContactForm(); 

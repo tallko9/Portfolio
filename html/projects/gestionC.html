@@ -244,27 +244,29 @@
     
         <button id="scroll-to-top" title="Remonter en haut" aria-label="Retourner en haut de la page">↑</button>
 
-        <!-- Floating contact button -->
-        <button id="floating-contact-btn" aria-label="Me contacter">
+        <!-- Bouton flottant de contact -->
+        <button id="floating-contact-btn" aria-label="Me contacter" title="Me contacter">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
             <span data-translate="contact-me">Me contacter</span>
         </button>
 
-        <!-- Contact popup modal -->
+        <!-- Popup de contact -->
         <div class="contact-popup-overlay" id="contact-popup-overlay" role="dialog" aria-labelledby="contact-popup-title" aria-modal="true">
             <div class="contact-popup">
                 <div class="contact-popup-header">
                     <h3 id="contact-popup-title" data-translate="contact-me">Me contacter</h3>
-                    <button class="contact-popup-close" aria-label="Fermer" id="contact-popup-close">×</button>
+                    <button class="contact-popup-close" aria-label="Fermer" id="contact-popup-close" type="button">×</button>
                 </div>
                 <form class="contact-popup-form" id="contact-popup-form">
-                    <input type="text" id="popup-name" name="name" placeholder="Votre nom" required data-translate="name-placeholder">
-                    <input type="email" id="popup-email" name="email" placeholder="Votre email" required data-translate="email-placeholder">
-                    <input type="text" id="popup-subject" name="subject" placeholder="Sujet" required data-translate="subject-placeholder">
-                    <textarea id="popup-message" name="message" placeholder="Votre message" required data-translate="message-placeholder"></textarea>
-                    <button type="submit" class="btn primary" data-translate="send">Envoyer</button>
+                    <input type="text" id="popup-name" name="name" placeholder="Votre nom" required>
+                    <input type="email" id="popup-email" name="email" placeholder="Votre email" required>
+                    <input type="text" id="popup-subject" name="subject" placeholder="Sujet" required>
+                    <textarea id="popup-message" name="message" placeholder="Votre message" required rows="5"></textarea>
+                    <button type="submit" class="btn primary">
+                        <span class="btn-text" data-translate="send">Envoyer</span>
+                    </button>
                 </form>
             </div>
         </div>

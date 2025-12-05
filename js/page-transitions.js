@@ -92,12 +92,6 @@ const initPageTransitions = () => {
 // Export pour init.js
 window.initPageTransitions = initPageTransitions;
 
-// Initialiser si init.js n'est pas chargé
-if (!window.initLoaded) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPageTransitions);
-    } else {
-        initPageTransitions();
-    }
-}
+// Initialiser automatiquement (fonctionne avec defer)
+initPageTransitions();
 
