@@ -212,7 +212,6 @@ function updateLanguage(language) {
 document.addEventListener('DOMContentLoaded', () => {
     const cvButtons = [
         document.getElementById('cv-download-btn'),
-        document.getElementById('nav-cv-download-btn'),
         document.getElementById('hero-cv-download-btn')
     ];
     
