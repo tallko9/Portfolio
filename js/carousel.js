@@ -1,5 +1,5 @@
 // Carrousel moderne pour la page projets
-document.addEventListener('DOMContentLoaded', () => {
+const initCarousel = () => {
     const carouselTrack = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.carousel-btn-prev');
@@ -204,5 +204,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(currentSlide);
     // Autoplay désactivé
     // startAutoplay();
-});
+};
+
+// Export pour init.js
+window.initCarousel = initCarousel;
+
+// Initialiser si init.js n'est pas chargé
+if (!window.initLoaded) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    } else {
+        initCarousel();
+    }
+}
 

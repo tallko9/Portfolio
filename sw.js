@@ -1,15 +1,26 @@
 // Service Worker pour le portfolio de Sasha Lorenc
 // Version 1.0.0
 
-const CACHE_NAME = 'portfolio-sasha-lorenc-v1';
+const CACHE_NAME = 'portfolio-sasha-lorenc-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/css/global.css',
   '/css/accueil_css.css',
+  '/css/about_css.css',
+  '/css/contacts_css.css',
+  '/css/projet_css.css',
+  '/css/skills_css.css',
+  '/css/project_detail.css',
   '/js/common.js',
   '/js/translations.js',
+  '/js/page-transitions.js',
+  '/js/contact-popup.js',
+  '/js/carousel.js',
+  '/js/contact.js',
   '/images/sasha.png',
+  '/images/favicon.svg',
+  '/images/logo.svg',
   '/manifest.json'
 ];
 
@@ -18,11 +29,10 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Cache ouvert');
         return cache.addAll(urlsToCache);
       })
-      .catch((error) => {
-        console.error('Erreur lors de la mise en cache:', error);
+      .catch(() => {
+        // Erreur silencieuse lors de la mise en cache
       })
   );
   self.skipWaiting();
@@ -35,7 +45,6 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Suppression de l\'ancien cache:', cacheName);
             return caches.delete(cacheName);
           }
         })

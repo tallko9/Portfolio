@@ -1,5 +1,5 @@
 // Page transitions animations
-document.addEventListener('DOMContentLoaded', () => {
+const initPageTransitions = () => {
     // Animation d'entrée de page (fade-in)
     const main = document.querySelector('main');
     const body = document.body;
@@ -87,5 +87,17 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(section);
     });
-});
+};
+
+// Export pour init.js
+window.initPageTransitions = initPageTransitions;
+
+// Initialiser si init.js n'est pas chargé
+if (!window.initLoaded) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageTransitions);
+    } else {
+        initPageTransitions();
+    }
+}
 

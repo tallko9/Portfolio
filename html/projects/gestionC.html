@@ -19,7 +19,22 @@
     <link rel="stylesheet" href="../../css/project_detail.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- EmailJS chargé en lazy load uniquement si nécessaire -->
+    <script>
+        window.loadEmailJS = function() {
+            if (!window.emailjsLoaded) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                script.onload = function() {
+                    window.emailjsLoaded = true;
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.init("pBMgXiG4tpfVkCxhY");
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        };
+    </script>
     
     <!-- Vercel Analytics -->
     <script>
@@ -137,10 +152,10 @@
             <div class="gallery-grid">
 
                 <div class="gallery-item">
-                    <img src="../../images/projects/gestionC-screen1.jpg" alt="Capture d'écran de l'application de gestion de stages - Interface principale" loading="lazy">
+                    <img src="../../images/projects/gestionC-screen1.jpg" alt="Capture d'écran de l'application de gestion de stages - Interface principale" loading="lazy" width="800" height="600">
                 </div>
                 <div class="gallery-item">
-                    <img src="../../images/projects/gestionC-screen2.jpg" alt="Capture d'écran de l'application de gestion de stages - Gestion des étudiants" loading="lazy">
+                    <img src="../../images/projects/gestionC-screen2.jpg" alt="Capture d'écran de l'application de gestion de stages - Gestion des étudiants" loading="lazy" width="800" height="600">
                 </div>
             </div>
         </section>
@@ -155,7 +170,7 @@
                     <p data-translate="gestion-process1-desc">J'ai commencé par une analyse approfondie des besoins du département informatique concernant la gestion des stages, en identifiant les points de friction dans le processus existant.</p>
                 </div>
                 <div class="step-image">
-                    <img src="../../images/projects/gestionC-analyse.png" alt="Diagramme d'analyse des besoins pour l'application de gestion de stages" loading="lazy">
+                    <img src="../../images/projects/gestionC-analyse.png" alt="Diagramme d'analyse des besoins pour l'application de gestion de stages" loading="lazy" width="800" height="600">
                 </div>
             </div>
             
@@ -165,7 +180,7 @@
                     <p data-translate="gestion-process2-desc">J'ai conçu des structures de données optimisées pour stocker et manipuler efficacement les informations relatives aux étudiants, entreprises et stages.</p>
                 </div>
                 <div class="step-image">
-                    <img src="../../images/projects/gestionC-structure.png" alt="Schéma de conception des structures de données en C pour l'application de gestion" loading="lazy">
+                    <img src="../../images/projects/gestionC-structure.png" alt="Schéma de conception des structures de données en C pour l'application de gestion" loading="lazy" width="800" height="600">
                 </div>
             </div>
             <section class="project-challenges">

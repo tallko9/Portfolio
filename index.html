@@ -45,8 +45,25 @@
     <link rel="stylesheet" href="css/global.css?v=1.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <!-- EmailJS chargé en lazy load uniquement si nécessaire -->
+    <script>
+        // Charger EmailJS uniquement quand le popup est ouvert
+        window.loadEmailJS = function() {
+            if (!window.emailjsLoaded) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                script.onload = function() {
+                    window.emailjsLoaded = true;
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.init("pBMgXiG4tpfVkCxhY");
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        };
+    </script>
     
     <!-- Vercel Analytics -->
     <script>
@@ -300,9 +317,9 @@
     }
     </script>
     
-    <script src="js/translations.js?v=1.2"></script>
-    <script src="js/common.js?v=1.2"></script>
-    <script src="js/contact-popup.js?v=1.2"></script>
-    <script src="js/page-transitions.js?v=1.2"></script>
+    <script src="js/translations.js?v=1.3" defer></script>
+    <script src="js/common.js?v=1.3" defer></script>
+    <script src="js/contact-popup.js?v=1.3" defer></script>
+    <script src="js/page-transitions.js?v=1.3" defer></script>
 </body>
 </html>

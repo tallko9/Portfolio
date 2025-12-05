@@ -72,12 +72,8 @@ const initScrollToTop = () => {
     });
 };
 
-// Initialiser après le chargement du DOM
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollToTop);
-} else {
-    initScrollToTop();
-}
+// Export pour init.js
+window.initScrollToTop = initScrollToTop;
 
 // Color theme management
 const changeAccentColor = (color) => {
@@ -107,7 +103,8 @@ const supportedLanguages = ['fr', 'en'];
 
 const getValidLanguage = (language) => supportedLanguages.includes(language) ? language : 'fr';
 
-document.addEventListener('DOMContentLoaded', () => {
+// Fonction d'initialisation des fonctionnalités communes
+const initCommonFeatures = () => {
     applyStoredColor();
     
     // Menu hamburger pour mobile
@@ -180,7 +177,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         updateLanguage(savedLanguage);
     }
-});
+};
+
+// Export pour init.js
+window.initCommonFeatures = initCommonFeatures;
+
+// Initialiser si init.js n'est pas chargé
+if (!window.initLoaded) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCommonFeatures);
+    } else {
+        initCommonFeatures();
+    }
+}
 
 function updateLanguage(language) {
     const safeLanguage = getValidLanguage(language);
@@ -208,37 +217,16 @@ function updateLanguage(language) {
     });
 }
 
-// Tracking du téléchargement du CV (via Vercel Analytics)
-document.addEventListener('DOMContentLoaded', () => {
-    const cvButtons = [
-        document.getElementById('cv-download-btn'),
-        document.getElementById('hero-cv-download-btn')
-    ];
-    
-    cvButtons.forEach(cvButton => {
-        if (cvButton) {
-            cvButton.addEventListener('click', () => {
-                // Vercel Analytics tracking
-                if (typeof window.va !== 'undefined') {
-                    window.va('track', 'CV Download');
-                }
-                
-                // Console log pour debug (peut être retiré en production)
-                console.log('CV download tracked');
-            });
-        }
-    });
-});
 
 // Enregistrement du Service Worker pour PWA
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-                console.log('Service Worker enregistré avec succès:', registration.scope);
+            .then(() => {
+                // Service Worker enregistré silencieusement
             })
-            .catch((error) => {
-                console.log('Échec de l\'enregistrement du Service Worker:', error);
+            .catch(() => {
+                // Échec silencieux du Service Worker
             });
     });
 } 

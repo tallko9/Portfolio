@@ -18,7 +18,22 @@
     <link rel="stylesheet" href="../css/skills_css.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- EmailJS chargé en lazy load uniquement si nécessaire -->
+    <script>
+        window.loadEmailJS = function() {
+            if (!window.emailjsLoaded) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                script.onload = function() {
+                    window.emailjsLoaded = true;
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.init("pBMgXiG4tpfVkCxhY");
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        };
+    </script>
     
     <!-- Vercel Analytics -->
     <script>

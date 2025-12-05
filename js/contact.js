@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+const initContactForm = function() {
     // Initialisation d'EmailJS
     emailjs.init("pBMgXiG4tpfVkCxhY");
 
@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     contactForm.reset();
                     charCount.textContent = '0';
                 })
-                .catch(function(error) {
-                    console.error('Erreur:', error);
+                .catch(function() {
                     alert('Une erreur est survenue. Veuillez réessayer.');
                 })
                 .finally(function() {
@@ -59,4 +58,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
     }
-}); 
+};
+
+// Export pour init.js
+window.initContactForm = initContactForm;
+
+// Initialiser si init.js n'est pas chargé
+if (!window.initLoaded) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initContactForm);
+    } else {
+        initContactForm();
+    }
+} 

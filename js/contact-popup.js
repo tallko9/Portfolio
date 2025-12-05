@@ -1,5 +1,5 @@
 // Contact popup functionality
-document.addEventListener('DOMContentLoaded', function() {
+const initContactPopup = function() {
     // Masquer le bouton flottant sur la page de contact
     const isContactPage = window.location.pathname.includes('contacts.html') || 
                           window.location.pathname.includes('contact') ||
@@ -52,9 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Gestion du formulaire popup
     if (popupForm) {
-        // Initialiser EmailJS si disponible
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init("pBMgXiG4tpfVkCxhY");
+        // Charger EmailJS quand le popup est ouvert
+        if (floatingBtn && popupOverlay) {
+            floatingBtn.addEventListener('click', () => {
+                if (typeof window.loadEmailJS === 'function') {
+                    window.loadEmailJS();
+                }
+            });
         }
         
         popupForm.addEventListener('submit', function(e) {
@@ -80,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         popupForm.reset();
                         closePopup();
                     })
-                    .catch(function(error) {
-                        console.error('Erreur:', error);
+                    .catch(function() {
                         alert('Une erreur est survenue. Veuillez réessayer.');
                     })
                     .finally(function() {
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // QR Code functionality
-document.addEventListener('DOMContentLoaded', function() {
+const initQRCode = function() {
     // Fonction pour générer le QR code
     function generateQRCode(text, canvasId) {
         // Utiliser une API en ligne pour générer le QR code
@@ -192,5 +195,24 @@ document.addEventListener('DOMContentLoaded', function() {
             closeQRCodeModal();
         }
     });
-});
+};
+
+// Intégrer initQRCode dans initContactPopup
+const originalInitContactPopup = initContactPopup;
+initContactPopup = function() {
+    if (originalInitContactPopup) originalInitContactPopup();
+    initQRCode();
+};
+
+// Export pour init.js
+window.initContactPopup = initContactPopup;
+
+// Initialiser si init.js n'est pas chargé
+if (!window.initLoaded) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initContactPopup);
+    } else {
+        initContactPopup();
+    }
+}
 
