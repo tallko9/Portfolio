@@ -75,10 +75,65 @@ const initScrollToTop = () => {
 // Export pour init.js
 window.initScrollToTop = initScrollToTop;
 
+// Fonction pour convertir hex en RGB
+const hexToRgb = (hex) => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+};
+
+// Fonction pour créer une nuance plus claire d'une couleur
+const lightenColor = (hex, percent) => {
+    const rgb = hexToRgb(hex);
+    if (!rgb) return hex;
+    const r = Math.min(255, Math.round(rgb.r + (255 - rgb.r) * percent));
+    const g = Math.min(255, Math.round(rgb.g + (255 - rgb.g) * percent));
+    const b = Math.min(255, Math.round(rgb.b + (255 - rgb.b) * percent));
+    return `rgb(${r}, ${g}, ${b})`;
+};
+
+// Fonction pour créer une nuance plus foncée d'une couleur
+const darkenColor = (hex, percent) => {
+    const rgb = hexToRgb(hex);
+    if (!rgb) return hex;
+    const r = Math.max(0, Math.round(rgb.r * (1 - percent)));
+    const g = Math.max(0, Math.round(rgb.g * (1 - percent)));
+    const b = Math.max(0, Math.round(rgb.b * (1 - percent)));
+    return `rgb(${r}, ${g}, ${b})`;
+};
+
+// Fonction pour créer une couleur avec opacité
+const colorWithOpacity = (hex, opacity) => {
+    const rgb = hexToRgb(hex);
+    if (!rgb) return hex;
+    return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
+};
+
 // Color theme management
 const changeAccentColor = (color) => {
     document.documentElement.style.setProperty('--accent-color', color);
     localStorage.setItem('accentColor', color);
+    
+    // Mettre à jour les dégradés avec des nuances de la couleur choisie
+    const lighterColor = lightenColor(color, 0.3);
+    const accentRgba = colorWithOpacity(color, 0.15);
+    const accentRgbaLight = colorWithOpacity(color, 0.2);
+    const accentRgbaHover = colorWithOpacity(color, 0.25);
+    const accentRgbaBorder = colorWithOpacity(color, 0.3);
+    
+    // Mettre à jour les variables CSS pour les dégradés
+    document.documentElement.style.setProperty('--accent-lighter', lighterColor);
+    document.documentElement.style.setProperty('--accent-rgba', accentRgba);
+    document.documentElement.style.setProperty('--accent-rgba-light', accentRgbaLight);
+    document.documentElement.style.setProperty('--accent-rgba-hover', accentRgbaHover);
+    document.documentElement.style.setProperty('--accent-rgba-border', accentRgbaBorder);
+    
+    // Mettre à jour le dégradé de fond
+    document.documentElement.style.setProperty('--bg-gradient', 
+        `radial-gradient(circle at top, ${accentRgba}, transparent 45%), var(--bg-color)`);
     
     const notification = document.createElement('div');
     notification.className = 'color-change-notification';
@@ -91,12 +146,12 @@ const changeAccentColor = (color) => {
 
 const applyStoredColor = () => {
     const storedColor = localStorage.getItem('accentColor');
-    if (storedColor) {
-        document.documentElement.style.setProperty('--accent-color', storedColor);
-        const radioButton = document.querySelector(`input[name="accent-color"][value="${storedColor}"]`);
-        if (radioButton) radioButton.checked = true;
-    }
+    const color = storedColor || '#48e0b8';
+    changeAccentColor(color);
+    const radioButton = document.querySelector(`input[name="accent-color"][value="${color}"]`);
+    if (radioButton) radioButton.checked = true;
 };
+
 
 // Settings and color picker initialization
 const supportedLanguages = ['fr', 'en'];
@@ -113,7 +168,9 @@ const initCommonFeatures = () => {
     const navUl = nav ? nav.querySelector('ul') : null;
     
     if (menuToggle && navUl) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.classList.toggle('active');
             navUl.classList.toggle('active');
@@ -132,7 +189,9 @@ const initCommonFeatures = () => {
         
         // Fermer le menu quand on clique en dehors
         document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && navUl.classList.contains('active')) {
+            if (navUl.classList.contains('active') && 
+                !nav.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
                 menuToggle.classList.remove('active');
                 navUl.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');

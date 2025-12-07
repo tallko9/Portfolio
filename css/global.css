@@ -1,5 +1,10 @@
 :root {
     --accent-color: #48e0b8;
+    --accent-lighter: #71f7d1;
+    --accent-rgba: rgba(72, 224, 184, 0.15);
+    --accent-rgba-light: rgba(72, 224, 184, 0.2);
+    --accent-rgba-hover: rgba(72, 224, 184, 0.25);
+    --accent-rgba-border: rgba(72, 224, 184, 0.3);
     --bg-color: #05060a;
     --bg-gradient: radial-gradient(circle at top, rgba(72, 224, 184, 0.15), transparent 45%), #05060a;
     --surface-color: rgba(14, 17, 32, 0.75);
@@ -7,6 +12,12 @@
     --text-primary: #f6f7fb;
     --text-secondary: #94a3b8;
     --border-color: rgba(255, 255, 255, 0.08);
+    --nav-bg: rgba(6, 7, 14, 0.65);
+    --nav-border: rgba(255, 255, 255, 0.08);
+    --footer-bg: rgba(5, 6, 10, 0.9);
+    --popup-bg: rgba(7, 9, 18, 0.95);
+    --popup-overlay: rgba(0, 0, 0, 0.75);
+    --input-bg: rgba(255, 255, 255, 0.05);
     --glass-blur: blur(18px);
     --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -102,8 +113,8 @@ nav {
     margin: 0 auto;
     padding: 14px 24px;
     border-radius: 999px;
-    border: 1px solid var(--border-color);
-    background: rgba(6, 7, 14, 0.65);
+    border: 1px solid var(--nav-border);
+    background: var(--nav-bg);
     backdrop-filter: var(--glass-blur);
     overflow: hidden;
     isolation: isolate;
@@ -189,7 +200,7 @@ nav ul li a[aria-current="page"] {
 }
 
 #language-selector {
-    background: rgba(6, 7, 14, 0.85);
+    background: var(--surface-color);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 0.5rem 2.5rem 0.5rem 1rem;
@@ -203,19 +214,19 @@ nav ul li a[aria-current="page"] {
 }
 
 #language-selector:hover {
-    background: rgba(6, 7, 14, 0.95);
-    border-color: rgba(72, 224, 184, 0.3);
+    background: var(--card-color);
+    border-color: var(--accent-rgba-border);
     color: var(--accent-color);
 }
 
 #language-selector:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(72, 224, 184, 0.15);
+    box-shadow: 0 0 0 2px var(--accent-rgba);
 }
 
 #language-selector option {
-    background: rgba(6, 7, 14, 0.98);
+    background: var(--card-color);
     color: var(--text-primary);
     padding: 0.75rem;
     border-radius: 12px;
@@ -240,7 +251,7 @@ nav ul li a[aria-current="page"] {
 }
 
 #settings-icon {
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--surface-color);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     border-radius: 50%;
@@ -253,7 +264,7 @@ nav ul li a[aria-current="page"] {
 
 #settings-icon:hover {
     transform: rotate(90deg);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--card-color);
 }
 
 /* Buttons */
@@ -268,7 +279,7 @@ nav ul li a[aria-current="page"] {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    background: linear-gradient(120deg, var(--accent-color), #71f7d1);
+    background: linear-gradient(120deg, var(--accent-color), var(--accent-lighter));
     color: #05060a !important;
     position: relative;
     overflow: hidden;
@@ -296,7 +307,7 @@ nav ul li a[aria-current="page"] {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(72, 224, 184, 0.25);
+    box-shadow: 0 12px 30px var(--accent-rgba-hover);
 }
 
 .btn:hover::before {
@@ -349,7 +360,7 @@ footer {
     border-top: 1px solid var(--border-color);
     padding: 40px 0;
     text-align: center;
-    background: rgba(5, 6, 10, 0.9);
+    background: var(--footer-bg);
 }
 
 footer p {
@@ -380,7 +391,7 @@ footer p {
     height: 48px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: rgba(5, 6, 10, 0.8);
+    background: var(--card-color);
     color: var(--text-primary);
     font-size: 1.2rem;
     display: none;
@@ -391,7 +402,7 @@ footer p {
 
 #scroll-to-top:hover {
     transform: translateY(-4px);
-    background: rgba(72, 224, 184, 0.15);
+    background: var(--accent-rgba);
 }
 
 /* Floating contact button */
@@ -402,7 +413,7 @@ footer p {
     padding: 16px 24px;
     border-radius: 999px;
     border: 1px solid var(--border-color);
-    background: linear-gradient(120deg, var(--accent-color), #71f7d1);
+    background: linear-gradient(120deg, var(--accent-color), var(--accent-lighter));
     color: #05060a;
     font-weight: 600;
     text-transform: uppercase;
@@ -411,7 +422,7 @@ footer p {
     cursor: pointer;
     transition: transform var(--transition), box-shadow var(--transition);
     z-index: 100;
-    box-shadow: 0 8px 24px rgba(72, 224, 184, 0.2);
+    box-shadow: 0 8px 24px var(--accent-rgba-light);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -425,7 +436,7 @@ footer p {
 
 #floating-contact-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(72, 224, 184, 0.35);
+    box-shadow: 0 12px 32px var(--accent-rgba-hover);
 }
 
 #floating-contact-btn svg {
@@ -437,7 +448,7 @@ footer p {
 .contact-popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: var(--popup-overlay);
     backdrop-filter: blur(8px);
     z-index: 1000;
     display: none;
@@ -454,7 +465,7 @@ footer p {
 }
 
 .contact-popup {
-    background: rgba(7, 9, 18, 0.95);
+    background: var(--popup-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     border-radius: 24px;
@@ -502,7 +513,7 @@ footer p {
 }
 
 .contact-popup-close:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--surface-color);
     color: var(--text-primary);
 }
 
@@ -518,7 +529,7 @@ footer p {
     padding: 12px 16px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--input-bg);
     color: var(--text-primary);
     font-size: 0.95rem;
     font-family: inherit;
@@ -549,7 +560,7 @@ footer p {
     padding: 8px 16px;
     border-radius: 999px;
     border: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--surface-color);
     color: var(--text-primary);
     font-size: 0.85rem;
     font-weight: 500;
@@ -559,7 +570,7 @@ footer p {
 
 .nav-cv-btn:hover,
 .nav-linkedin-btn:hover {
-    background: rgba(72, 224, 184, 0.15);
+    background: var(--accent-rgba);
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
@@ -574,7 +585,7 @@ footer p {
 .qr-code-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: var(--popup-overlay);
     backdrop-filter: blur(8px);
     z-index: 1000;
     display: none;
@@ -591,7 +602,7 @@ footer p {
 }
 
 .qr-code-modal {
-    background: rgba(7, 9, 18, 0.95);
+    background: var(--popup-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     border-radius: 24px;
@@ -638,7 +649,7 @@ footer p {
 }
 
 .qr-code-close:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--surface-color);
     color: var(--text-primary);
 }
 
@@ -664,13 +675,14 @@ footer p {
     padding: 18px 22px;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    background: rgba(5, 6, 10, 0.9);
+    background: var(--card-color);
     backdrop-filter: blur(16px);
     color: var(--text-primary);
     display: none;
     min-width: 220px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
+
 
 .color-picker label {
     display: flex;
@@ -680,9 +692,18 @@ footer p {
     padding: 6px 0;
     cursor: pointer;
     transition: color var(--transition);
+    color: var(--text-primary);
+}
+
+.color-picker label span {
+    color: var(--text-primary);
 }
 
 .color-picker label:hover {
+    color: var(--accent-color);
+}
+
+.color-picker label:hover span {
     color: var(--accent-color);
 }
 
@@ -691,7 +712,7 @@ footer p {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--border-color);
     position: relative;
     cursor: pointer;
 }
@@ -767,13 +788,14 @@ footer p {
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        background: rgba(6, 7, 14, 0.95);
+        background: var(--card-color);
         backdrop-filter: blur(20px);
         border: 1px solid var(--border-color);
         border-radius: 16px;
         padding: 8px;
         margin: 0;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        z-index: 101;
     }
 
     nav ul.active {
@@ -792,9 +814,9 @@ footer p {
         text-align: left;
     }
 
-    nav ul li a:hover {
-        background: rgba(72, 224, 184, 0.1);
-    }
+nav ul li a:hover {
+    background: var(--accent-rgba);
+}
 
     .nav-controls {
         display: flex;
