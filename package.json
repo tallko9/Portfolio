@@ -4,7 +4,9 @@
   "description": "Portfolio de Sasha Lorenc - Développeur",
   "type": "module",
   "scripts": {
-    "build": "echo 'Static site - no build required'"
+    "cache-bust": "node scripts/cache-bust.js",
+    "build": "npm run cache-bust",
+    "predeploy": "npm run cache-bust"
   },
   "keywords": [
     "portfolio",
