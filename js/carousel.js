@@ -41,12 +41,17 @@ const initCarousel = () => {
         
         isTransitioning = true;
         
-        // Calculer la position de translation de manière synchrone
-        const slideWidth = getSlideWidth();
-        const translateX = -(index * slideWidth);
+        const isMobile = window.innerWidth <= 768;
         
-        // Appliquer la translation au track
-        carouselTrack.style.transform = `translateX(${translateX}px)`;
+        if (isMobile) {
+            // Sur mobile, pas de translation, juste changer l'affichage
+            // La translation sera gérée par CSS (display: none/block)
+        } else {
+            // Sur desktop, utiliser la translation
+            const slideWidth = getSlideWidth();
+            const translateX = -(index * slideWidth);
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+        }
         
         // Mettre à jour les classes et indicateurs
         updateCarouselUI(index);
@@ -65,10 +70,19 @@ const initCarousel = () => {
             // Sur mobile, masquer complètement les slides inactifs
             if (isMobile) {
                 slide.style.display = i === index ? 'block' : 'none';
+                slide.style.width = '100%';
+                slide.style.maxWidth = '100%';
             } else {
                 slide.style.display = 'block';
             }
         });
+        
+        // Sur mobile, s'assurer que le track ne fait pas de translation
+        if (isMobile && carouselTrack) {
+            carouselTrack.style.transform = 'none';
+            carouselTrack.style.width = '100%';
+            carouselTrack.style.maxWidth = '100%';
+        }
         
         // Mettre à jour les indicateurs
         indicators.forEach((indicator, i) => {
@@ -82,7 +96,7 @@ const initCarousel = () => {
         // Réinitialiser la transition après l'animation
         setTimeout(() => {
             isTransitioning = false;
-        }, 600);
+        }, isMobile ? 300 : 600);
     };
     
     // Fonction pour aller au slide suivant
@@ -202,19 +216,34 @@ const initCarousel = () => {
     // Fonction pour recalculer la position après redimensionnement
     const handleResize = () => {
         if (!isTransitioning) {
-            // Réinitialiser l'affichage des slides sur mobile
             const isMobile = window.innerWidth <= 768;
+            
+            // Réinitialiser l'affichage des slides sur mobile
             slides.forEach((slide, i) => {
                 if (isMobile) {
                     slide.style.display = i === currentSlide ? 'block' : 'none';
+                    slide.style.width = '100%';
+                    slide.style.maxWidth = '100%';
                 } else {
                     slide.style.display = 'block';
                 }
             });
             
-            const slideWidth = getSlideWidth();
-            const translateX = -(currentSlide * slideWidth);
-            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            if (isMobile) {
+                // Sur mobile, pas de translation
+                if (carouselTrack) {
+                    carouselTrack.style.transform = 'none';
+                    carouselTrack.style.width = '100%';
+                    carouselTrack.style.maxWidth = '100%';
+                }
+            } else {
+                // Sur desktop, recalculer la position
+                const slideWidth = getSlideWidth();
+                const translateX = -(currentSlide * slideWidth);
+                if (carouselTrack) {
+                    carouselTrack.style.transform = `translateX(${translateX}px)`;
+                }
+            }
             
             // Mettre à jour l'UI pour s'assurer que les slides sont correctement affichés
             updateCarouselUI(currentSlide);
