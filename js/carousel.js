@@ -21,7 +21,11 @@ const initCarousel = () => {
         // Utiliser offsetWidth qui est plus stable que getBoundingClientRect
         // car il ne change pas pendant les transitions
         const slideWidth = slides[0].offsetWidth;
-        const gap = 32; // 2rem en pixels
+        
+        // Sur mobile, pas de gap visible (slides masqués)
+        // Sur desktop, gap de 2rem (32px)
+        const isMobile = window.innerWidth <= 768;
+        const gap = isMobile ? 0 : 32;
         
         // La distance entre le début de deux slides consécutifs
         // est la largeur d'un slide + le gap
@@ -50,12 +54,19 @@ const initCarousel = () => {
     
     // Fonction pour mettre à jour l'UI du carrousel
     const updateCarouselUI = (index) => {
+        const isMobile = window.innerWidth <= 768;
         
         // Retirer la classe active de tous les slides
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
             if (i === index) {
                 slide.classList.add('active');
+            }
+            // Sur mobile, masquer complètement les slides inactifs
+            if (isMobile) {
+                slide.style.display = i === index ? 'block' : 'none';
+            } else {
+                slide.style.display = 'block';
             }
         });
         
@@ -191,14 +202,31 @@ const initCarousel = () => {
     // Fonction pour recalculer la position après redimensionnement
     const handleResize = () => {
         if (!isTransitioning) {
+            // Réinitialiser l'affichage des slides sur mobile
+            const isMobile = window.innerWidth <= 768;
+            slides.forEach((slide, i) => {
+                if (isMobile) {
+                    slide.style.display = i === currentSlide ? 'block' : 'none';
+                } else {
+                    slide.style.display = 'block';
+                }
+            });
+            
             const slideWidth = getSlideWidth();
             const translateX = -(currentSlide * slideWidth);
             carouselTrack.style.transform = `translateX(${translateX}px)`;
+            
+            // Mettre à jour l'UI pour s'assurer que les slides sont correctement affichés
+            updateCarouselUI(currentSlide);
         }
     };
     
-    // Écouter les changements de taille de fenêtre
-    window.addEventListener('resize', handleResize);
+    // Écouter les changements de taille de fenêtre avec debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 150);
+    });
     
     // Initialisation
     updateCarousel(currentSlide);
