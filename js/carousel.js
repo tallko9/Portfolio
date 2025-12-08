@@ -13,6 +13,7 @@ const initCarousel = () => {
     let isTransitioning = false;
     let autoplayInterval = null;
     const autoplayDelay = 5000; // 5 secondes
+    const pendingTimeouts = new Map(); // Stocker les timeouts pour pouvoir les annuler
     
     // Fonction pour obtenir la largeur d'un slide avec le gap
     const getSlideWidth = () => {
@@ -69,6 +70,12 @@ const initCarousel = () => {
             }
             // Sur mobile uniquement, appliquer les styles inline pour masquer/afficher
             if (isMobile) {
+                // Annuler les timeouts en attente pour ce slide
+                if (pendingTimeouts.has(i)) {
+                    clearTimeout(pendingTimeouts.get(i));
+                    pendingTimeouts.delete(i);
+                }
+                
                 if (i === index) {
                     // Afficher le slide actif avec animation de fondu
                     slide.style.display = 'block';
@@ -80,11 +87,13 @@ const initCarousel = () => {
                     // Masquer les slides inactifs avec animation de fondu
                     slide.style.opacity = '0';
                     // Masquer après la transition
-                    setTimeout(() => {
+                    const timeoutId = setTimeout(() => {
                         if (!slide.classList.contains('active')) {
                             slide.style.display = 'none';
                         }
+                        pendingTimeouts.delete(i);
                     }, 400);
+                    pendingTimeouts.set(i, timeoutId);
                 }
                 slide.style.width = '100%';
                 slide.style.maxWidth = '100%';
@@ -125,9 +134,11 @@ const initCarousel = () => {
         if (nextBtn) nextBtn.style.opacity = index === totalSlides - 1 ? '0.5' : '1';
         
         // Réinitialiser la transition après l'animation
+        // Sur mobile, l'animation CSS prend 400ms, donc on attend 400ms
+        // Sur desktop, l'animation prend 600ms
         setTimeout(() => {
             isTransitioning = false;
-        }, isMobile ? 300 : 600);
+        }, isMobile ? 400 : 600);
     };
     
     // Fonction pour aller au slide suivant
@@ -250,6 +261,12 @@ const initCarousel = () => {
             const isMobile = window.innerWidth <= 768;
             
             // Réinitialiser l'affichage des slides selon le mode
+            // Annuler tous les timeouts en attente avant de réinitialiser
+            pendingTimeouts.forEach((timeoutId) => {
+                clearTimeout(timeoutId);
+            });
+            pendingTimeouts.clear();
+            
             slides.forEach((slide, i) => {
                 if (isMobile) {
                     // Sur mobile, gérer l'affichage avec styles inline et animation de fondu
@@ -260,11 +277,13 @@ const initCarousel = () => {
                         });
                     } else {
                         slide.style.opacity = '0';
-                        setTimeout(() => {
+                        const timeoutId = setTimeout(() => {
                             if (!slide.classList.contains('active')) {
                                 slide.style.display = 'none';
                             }
+                            pendingTimeouts.delete(i);
                         }, 400);
+                        pendingTimeouts.set(i, timeoutId);
                     }
                     slide.style.width = '100%';
                     slide.style.maxWidth = '100%';
