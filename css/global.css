@@ -764,6 +764,7 @@ footer p {
         padding: 10px 16px;
         gap: 1rem;
         border-radius: 16px;
+        overflow: visible;
     }
 
     nav h1 {
@@ -799,7 +800,7 @@ footer p {
     }
 
     nav ul.active {
-        display: flex;
+        display: flex !important;
     }
 
     nav ul li {
