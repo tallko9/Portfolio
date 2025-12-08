@@ -67,21 +67,32 @@ const initCarousel = () => {
             if (i === index) {
                 slide.classList.add('active');
             }
-            // Sur mobile, masquer complètement les slides inactifs
+            // Sur mobile uniquement, appliquer les styles inline pour masquer/afficher
             if (isMobile) {
                 slide.style.display = i === index ? 'block' : 'none';
                 slide.style.width = '100%';
                 slide.style.maxWidth = '100%';
             } else {
-                slide.style.display = 'block';
+                // Sur desktop, laisser le CSS gérer l'affichage (pas de style inline)
+                slide.style.display = '';
+                slide.style.width = '';
+                slide.style.maxWidth = '';
             }
         });
         
-        // Sur mobile, s'assurer que le track ne fait pas de translation
-        if (isMobile && carouselTrack) {
-            carouselTrack.style.transform = 'none';
-            carouselTrack.style.width = '100%';
-            carouselTrack.style.maxWidth = '100%';
+        // Gérer les styles du track selon le mode
+        if (carouselTrack) {
+            if (isMobile) {
+                // Sur mobile, s'assurer que le track ne fait pas de translation
+                carouselTrack.style.transform = 'none';
+                carouselTrack.style.width = '100%';
+                carouselTrack.style.maxWidth = '100%';
+            } else {
+                // Sur desktop, restaurer les propriétés par défaut (le CSS gère display: flex)
+                carouselTrack.style.width = '';
+                carouselTrack.style.maxWidth = '';
+                // La transform est gérée par updateCarousel
+            }
         }
         
         // Mettre à jour les indicateurs
@@ -218,29 +229,36 @@ const initCarousel = () => {
         if (!isTransitioning) {
             const isMobile = window.innerWidth <= 768;
             
-            // Réinitialiser l'affichage des slides sur mobile
+            // Réinitialiser l'affichage des slides selon le mode
             slides.forEach((slide, i) => {
                 if (isMobile) {
+                    // Sur mobile, gérer l'affichage avec styles inline
                     slide.style.display = i === currentSlide ? 'block' : 'none';
                     slide.style.width = '100%';
                     slide.style.maxWidth = '100%';
                 } else {
-                    slide.style.display = 'block';
+                    // Sur desktop, supprimer les styles inline pour laisser le CSS gérer
+                    slide.style.display = '';
+                    slide.style.width = '';
+                    slide.style.maxWidth = '';
                 }
             });
             
-            if (isMobile) {
-                // Sur mobile, pas de translation
-                if (carouselTrack) {
+            // Gérer les styles du track selon le mode
+            if (carouselTrack) {
+                if (isMobile) {
+                    // Sur mobile, pas de translation et styles spécifiques
                     carouselTrack.style.transform = 'none';
                     carouselTrack.style.width = '100%';
                     carouselTrack.style.maxWidth = '100%';
-                }
-            } else {
-                // Sur desktop, recalculer la position
-                const slideWidth = getSlideWidth();
-                const translateX = -(currentSlide * slideWidth);
-                if (carouselTrack) {
+                    // Note: display: block est géré par le CSS media query
+                } else {
+                    // Sur desktop, restaurer display: flex et recalculer la position
+                    carouselTrack.style.display = 'flex';
+                    carouselTrack.style.width = '';
+                    carouselTrack.style.maxWidth = '';
+                    const slideWidth = getSlideWidth();
+                    const translateX = -(currentSlide * slideWidth);
                     carouselTrack.style.transform = `translateX(${translateX}px)`;
                 }
             }
