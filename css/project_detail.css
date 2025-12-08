@@ -7,7 +7,7 @@
     gap: 2rem;
     margin-bottom: 3rem;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    background: rgba(7, 9, 18, 0.85);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     backdrop-filter: blur(18px);
@@ -54,7 +54,7 @@
 
 /* Aperçu du projet */
 .project-overview {
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    background: rgba(7, 9, 18, 0.85);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
@@ -146,7 +146,7 @@
 }
 
 .feature-card {
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    background: rgba(7, 9, 18, 0.85);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
@@ -284,7 +284,7 @@
 /* Sections Défis et Apprentissages */
 .project-challenges,
 .project-learning {
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    background: rgba(7, 9, 18, 0.85);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
@@ -382,7 +382,7 @@
 
 /* Conclusion du projet */
 .project-conclusion {
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    background: rgba(7, 9, 18, 0.85);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
@@ -557,7 +557,7 @@
     display: flex !important;
     align-items: center !important;
     padding: 1rem 1.5rem !important;
-    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9)) !important;
+    background: rgba(7, 9, 18, 0.85) !important;
     border: 1px solid var(--border-color) !important;
     border-radius: 50px !important;
     text-decoration: none !important;
