@@ -7,8 +7,10 @@
     gap: 2rem;
     margin-bottom: 3rem;
     padding: 2rem 1rem;
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    border: 1px solid var(--border-color);
     border-radius: 10px;
+    backdrop-filter: blur(18px);
 }
 
 
@@ -52,11 +54,13 @@
 
 /* Aperçu du projet */
 .project-overview {
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 3rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px);
 }
 
 .overview-content h3 {
@@ -142,12 +146,14 @@
 }
 
 .feature-card {
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px);
 }
 
 .feature-card:hover {
@@ -278,11 +284,13 @@
 /* Sections Défis et Apprentissages */
 .project-challenges,
 .project-learning {
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 3rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px);
 }
 
 .project-challenges h3,
@@ -374,12 +382,14 @@
 
 /* Conclusion du projet */
 .project-conclusion {
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9));
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 3rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px);
 }
 
 .project-conclusion h3 {
@@ -547,13 +557,15 @@
     display: flex !important;
     align-items: center !important;
     padding: 1rem 1.5rem !important;
-    background-color: #1f1f1f !important;
+    background: linear-gradient(135deg, var(--accent-rgba-light), rgba(15, 19, 37, 0.9)) !important;
+    border: 1px solid var(--border-color) !important;
     border-radius: 50px !important;
     text-decoration: none !important;
     border-bottom: none !important;
     color: #e0e0e0 !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(18px) !important;
 }
 
 .nav-button:hover {

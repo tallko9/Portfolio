@@ -119,6 +119,52 @@
     text-align: right;
 }
 
+@media (max-width: 768px) {
+    .floating-card.orbit {
+        top: -20px;
+        right: -10px;
+        padding: 12px 16px;
+        font-size: 0.85rem;
+    }
+
+    .floating-card.orbit strong {
+        font-size: 1.5rem;
+    }
+
+    .floating-card.availability {
+        bottom: 16px;
+        left: -20px;
+        padding: 12px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-card.orbit {
+        top: -15px;
+        right: -5px;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+        max-width: 120px;
+    }
+
+    .floating-card.orbit strong {
+        font-size: 1.25rem;
+    }
+
+    .floating-card.orbit p {
+        margin: 0;
+        font-size: 0.7rem;
+    }
+
+    .floating-card.availability {
+        bottom: 12px;
+        left: -15px;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+    }
+}
+
 .floating-card.orbit strong {
     font-size: 2rem;
     color: var(--accent-color);

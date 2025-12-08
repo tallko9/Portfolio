@@ -1,4 +1,4 @@
-﻿const translations = {
+const translations = {
     fr: {
         "nav-home": "Accueil",
         "nav-about": "À propos",
@@ -119,6 +119,9 @@
         "tech-html": "HTML",
         "tech-css": "CSS",
         "tech-javascript": "JavaScript",
+        "tech-game-algorithms-title": "Algorithmes de jeu",
+        "tech-state-management-title": "Gestion d'état",
+        "tech-algorithms-title": "Algorithmes",
         "gestion-banner-title": "Application de Gestion",
         "gestion-overview-text": "Cette application permet de gérer les stages au sein du département informatique de l'IUT de Clermont-Ferrand. Elle facilite le suivi des étudiants, des entreprises partenaires et des offres de stage.",
         "gestion-feature1-title": "Gestion des étudiants",
@@ -249,7 +252,16 @@
         "jeu-learning-3": "💾 Optimisation mémoire",
         "jeu-learning-3-desc": "J'ai appris à optimiser l'utilisation de la mémoire, en réutilisant des structures et en évitant les allocations inutiles, crucial pour les performances.",
         "jeu-learning-4": "🧪 Tests et itération",
-        "jeu-learning-4-desc": "J'ai découvert l'importance des tests répétés et de l'itération. Changer une petite valeur peut complètement transformer l'expérience de jeu."
+        "jeu-learning-4-desc": "J'ai découvert l'importance des tests répétés et de l'itération. Changer une petite valeur peut complètement transformer l'expérience de jeu.",
+        "tech-c-confirmed": "(pointeurs, structures, algorithmes)",
+        "tech-game-algorithms": "(logique de combat, IA basique)",
+        "tech-state-management": "(machine à états pour le gameplay)",
+        "tech-c-confirmed-files": "(pointeurs, structures, fichiers)",
+        "tech-data-structures-confirmed": "(listes chaînées, tableaux dynamiques)",
+        "tech-algorithms-intermediate": "(tri, recherche, manipulation de données)",
+        "tech-html5-advanced": "(sémantique, accessibilité)",
+        "tech-css3-advanced": "(Flexbox, Grid, animations)",
+        "tech-js-intermediate": "(DOM, LocalStorage, événements)"
     },
     en: {
         "nav-home": "Home",
@@ -371,6 +383,9 @@
         "tech-html": "HTML",
         "tech-css": "CSS",
         "tech-javascript": "JavaScript",
+        "tech-game-algorithms-title": "Game algorithms",
+        "tech-state-management-title": "State management",
+        "tech-algorithms-title": "Algorithms",
         "gestion-banner-title": "Management Application",
         "gestion-overview-text": "This application manages internships for the Computer Science department at IUT Clermont-Ferrand. It centralizes students, partner companies and internship offers.",
         "gestion-feature1-title": "Student management",
@@ -501,6 +516,15 @@
         "jeu-learning-3": "💾 Memory optimization",
         "jeu-learning-3-desc": "I learned to optimize memory usage, reusing structures and avoiding unnecessary allocations, crucial for performance.",
         "jeu-learning-4": "🧪 Testing and iteration",
-        "jeu-learning-4-desc": "I discovered the importance of repeated testing and iteration. Changing a small value can completely transform the gaming experience."
+        "jeu-learning-4-desc": "I discovered the importance of repeated testing and iteration. Changing a small value can completely transform the gaming experience.",
+        "tech-c-confirmed": "(pointers, structures, algorithms)",
+        "tech-game-algorithms": "(combat logic, basic AI)",
+        "tech-state-management": "(state machine for gameplay)",
+        "tech-c-confirmed-files": "(pointers, structures, files)",
+        "tech-data-structures-confirmed": "(linked lists, dynamic arrays)",
+        "tech-algorithms-intermediate": "(sorting, search, data manipulation)",
+        "tech-html5-advanced": "(semantics, accessibility)",
+        "tech-css3-advanced": "(Flexbox, Grid, animations)",
+        "tech-js-intermediate": "(DOM, LocalStorage, events)"
     }
 };
