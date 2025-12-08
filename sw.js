@@ -1,8 +1,7 @@
 // Service Worker pour le portfolio de Sasha Lorenc
 // Version 1.0.0
-// Ce fichier est mis à jour automatiquement à chaque build
 
-const CACHE_NAME = 'portfolio-sasha-lorenc-v' + Date.now();
+const CACHE_NAME = 'portfolio-sasha-lorenc-v5';
 
 // Installation du Service Worker
 self.addEventListener('install', (event) => {
@@ -15,25 +14,19 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     Promise.all([
-      // Supprimer TOUS les anciens caches pour forcer le rechargement
+      // Supprimer les anciens caches
       caches.keys().then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            // Supprimer tous les caches, même le cache actuel pour forcer le rechargement
-            return caches.delete(cacheName);
+            if (cacheName !== CACHE_NAME) {
+              return caches.delete(cacheName);
+            }
           })
         );
       }),
       // Réclamer immédiatement tous les clients
       self.clients.claim()
-    ]).then(() => {
-      // Forcer le rechargement de tous les clients
-      return self.clients.matchAll().then((clients) => {
-        clients.forEach((client) => {
-          client.postMessage({ type: 'SW_UPDATED', cacheName: CACHE_NAME });
-        });
-      });
-    })
+    ])
   );
 });
 
