@@ -57,6 +57,20 @@
     pointer-events: auto;
 }
 
+/* Animation pour mobile */
+@media (max-width: 768px) {
+    .carousel-slide {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-slide.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Cartes de projet */
 .project-card {
     background: rgba(15, 19, 37, 0.9);
@@ -268,15 +282,16 @@
         max-width: 100%;
         width: 100%;
         opacity: 0;
-        transform: none;
+        transform: translateX(20px);
         padding: 0;
         display: none;
         position: relative;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .carousel-slide.active {
         opacity: 1;
-        transform: none;
+        transform: translateX(0);
         display: block;
     }
 
@@ -348,14 +363,15 @@
         width: 100%;
         padding: 0;
         opacity: 0;
-        transform: none;
+        transform: translateX(20px);
         display: none;
         position: relative;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .carousel-slide.active {
         opacity: 1;
-        transform: none;
+        transform: translateX(0);
         display: block;
     }
 
