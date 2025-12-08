@@ -274,12 +274,37 @@ function updateLanguage(language) {
 // Enregistrement du Service Worker pour PWA
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(() => {
-                // Service Worker enregistré silencieusement
+        navigator.serviceWorker.register('/sw.js?version=' + Date.now())
+            .then((registration) => {
+                // Vérifier les mises à jour toutes les heures
+                setInterval(() => {
+                    registration.update();
+                }, 3600000);
+                
+                // Écouter les messages du Service Worker
+                navigator.serviceWorker.addEventListener('message', (event) => {
+                    if (event.data && event.data.type === 'SW_UPDATED') {
+                        // Forcer le rechargement de la page si le SW a été mis à jour
+                        window.location.reload();
+                    }
+                });
+                
+                // Vérifier les mises à jour immédiatement
+                registration.update();
             })
             .catch(() => {
                 // Échec silencieux du Service Worker
             });
+    });
+    
+    // Forcer la mise à jour du Service Worker au focus de la fenêtre
+    window.addEventListener('focus', () => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistration().then((registration) => {
+                if (registration) {
+                    registration.update();
+                }
+            });
+        }
     });
 } 

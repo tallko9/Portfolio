@@ -1,7 +1,8 @@
 // Service Worker pour le portfolio de Sasha Lorenc
 // Version 1.0.0
+// Ce fichier est mis à jour automatiquement à chaque build
 
-const CACHE_NAME = 'portfolio-sasha-lorenc-v3';
+const CACHE_NAME = 'portfolio-sasha-lorenc-v' + Date.now();
 
 // Installation du Service Worker
 self.addEventListener('install', (event) => {
@@ -14,19 +15,25 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     Promise.all([
-      // Supprimer les anciens caches
+      // Supprimer TOUS les anciens caches pour forcer le rechargement
       caches.keys().then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            if (cacheName !== CACHE_NAME) {
-              return caches.delete(cacheName);
-            }
+            // Supprimer tous les caches, même le cache actuel pour forcer le rechargement
+            return caches.delete(cacheName);
           })
         );
       }),
       // Réclamer immédiatement tous les clients
       self.clients.claim()
-    ])
+    ]).then(() => {
+      // Forcer le rechargement de tous les clients
+      return self.clients.matchAll().then((clients) => {
+        clients.forEach((client) => {
+          client.postMessage({ type: 'SW_UPDATED', cacheName: CACHE_NAME });
+        });
+      });
+    })
   );
 });
 
@@ -45,7 +52,12 @@ self.addEventListener('fetch', (event) => {
   // Cela garantit que les nouvelles versions sont toujours téléchargées
   if (hasVersion && isStaticAsset) {
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      })
         .then((response) => {
           // Si la requête réseau réussit, mettre à jour le cache
           if (response && response.status === 200) {
