@@ -116,7 +116,7 @@
     justify-content: center;
     margin-top: 1.5rem;
     padding: 0.85rem 1.8rem;
-    background: linear-gradient(120deg, var(--accent-color), #71f7d1);
+    background: linear-gradient(120deg, var(--accent-color), var(--accent-lighter));
     color: #05060a !important;
     text-decoration: none;
     font-weight: 600;
@@ -131,12 +131,11 @@
 
 .project-card .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(72, 224, 184, 0.35);
+    box-shadow: 0 12px 30px var(--accent-rgba-hover);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(72, 224, 184, 0.2);
     border-color: rgba(72, 224, 184, 0.3);
 }
 
