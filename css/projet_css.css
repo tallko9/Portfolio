@@ -272,6 +272,7 @@
         padding: 0;
         display: none;
         position: relative;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .carousel-slide.active {
@@ -351,6 +352,7 @@
         transform: none;
         display: none;
         position: relative;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .carousel-slide.active {

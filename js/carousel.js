@@ -69,7 +69,23 @@ const initCarousel = () => {
             }
             // Sur mobile uniquement, appliquer les styles inline pour masquer/afficher
             if (isMobile) {
-                slide.style.display = i === index ? 'block' : 'none';
+                if (i === index) {
+                    // Afficher le slide actif avec animation de fondu
+                    slide.style.display = 'block';
+                    // Forcer le reflow pour déclencher la transition d'opacité
+                    requestAnimationFrame(() => {
+                        slide.style.opacity = '1';
+                    });
+                } else {
+                    // Masquer les slides inactifs avec animation de fondu
+                    slide.style.opacity = '0';
+                    // Masquer après la transition
+                    setTimeout(() => {
+                        if (!slide.classList.contains('active')) {
+                            slide.style.display = 'none';
+                        }
+                    }, 400);
+                }
                 slide.style.width = '100%';
                 slide.style.maxWidth = '100%';
             } else {
@@ -236,8 +252,20 @@ const initCarousel = () => {
             // Réinitialiser l'affichage des slides selon le mode
             slides.forEach((slide, i) => {
                 if (isMobile) {
-                    // Sur mobile, gérer l'affichage avec styles inline
-                    slide.style.display = i === currentSlide ? 'block' : 'none';
+                    // Sur mobile, gérer l'affichage avec styles inline et animation de fondu
+                    if (i === currentSlide) {
+                        slide.style.display = 'block';
+                        requestAnimationFrame(() => {
+                            slide.style.opacity = '1';
+                        });
+                    } else {
+                        slide.style.opacity = '0';
+                        setTimeout(() => {
+                            if (!slide.classList.contains('active')) {
+                                slide.style.display = 'none';
+                            }
+                        }, 400);
+                    }
                     slide.style.width = '100%';
                     slide.style.maxWidth = '100%';
                 } else {
