@@ -112,6 +112,22 @@ const colorWithOpacity = (hex, opacity) => {
     return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
 };
 
+// Liste blanche des balises HTML autorisées dans les traductions
+const ALLOWED_HTML_TAGS = new Set(['STRONG', 'EM', 'BR']);
+
+// Vérifie si une chaîne contient uniquement des balises autorisées
+const isSafeHTML = (value) => {
+    if (typeof value !== 'string') return false;
+    const tagRegex = /<\/?([a-zA-Z0-9]+)[^>]*>/g;
+    let match;
+    while ((match = tagRegex.exec(value)) !== null) {
+        if (!ALLOWED_HTML_TAGS.has(match[1].toUpperCase())) {
+            return false;
+        }
+    }
+    return true;
+};
+
 // Color theme management
 const changeAccentColor = (color) => {
     document.documentElement.style.setProperty('--accent-color', color);
@@ -279,8 +295,13 @@ function updateLanguage(language) {
             } else if (element.tagName === 'OPTION') {
                 element.textContent = translations[safeLanguage][key];
             } else {
-                // Utiliser innerHTML pour permettre les balises HTML (comme <strong>)
-                element.innerHTML = translations[safeLanguage][key];
+                const value = translations[safeLanguage][key];
+                // N'autoriser que quelques balises sûres (strong, em, br). Sinon, fallback en texte brut.
+                if (isSafeHTML(value)) {
+                    element.innerHTML = value;
+                } else {
+                    element.textContent = value;
+                }
             }
         }
     });
