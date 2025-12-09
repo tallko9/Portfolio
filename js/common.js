@@ -247,14 +247,27 @@ initCommonFeatures();
 function updateLanguage(language) {
     const safeLanguage = getValidLanguage(language);
     document.documentElement.lang = safeLanguage;
-    const cvButton = document.getElementById('cv-download-btn');
-    if (cvButton) {
-        const datasetKey = `cv${safeLanguage.charAt(0).toUpperCase()}${safeLanguage.slice(1)}`;
-        const targetPath = cvButton.dataset[datasetKey] || cvButton.dataset.cvDefault;
-        if (targetPath) {
+    
+    // Mettre à jour tous les boutons CV
+    const cvButtons = [
+        document.getElementById('cv-download-btn'),
+        document.getElementById('hero-cv-download-btn')
+    ];
+    
+    cvButtons.forEach(cvButton => {
+        if (cvButton) {
+            // Construire le chemin du CV selon la langue avec le nom complet
+            const cvPath = safeLanguage === 'fr' ? 'documents/Cv_Sasha_Lorenc_fr.pdf' : 'documents/Cv_Sasha_Lorenc_en.pdf';
+            
+            // Les attributs data-cv-fr et data-cv-en deviennent dataset.cvFr et dataset.cvEn en JavaScript
+            const datasetKey = `cv${safeLanguage.charAt(0).toUpperCase()}${safeLanguage.slice(1)}`;
+            
+            // Utiliser l'attribut data s'il existe, sinon utiliser le chemin par défaut
+            const targetPath = cvButton.dataset[datasetKey] || cvPath;
+            
             cvButton.href = targetPath;
         }
-    }
+    });
     
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
