@@ -279,7 +279,8 @@ function updateLanguage(language) {
             } else if (element.tagName === 'OPTION') {
                 element.textContent = translations[safeLanguage][key];
             } else {
-                element.textContent = translations[safeLanguage][key];
+                // Utiliser innerHTML pour permettre les balises HTML (comme <strong>)
+                element.innerHTML = translations[safeLanguage][key];
             }
         }
     });

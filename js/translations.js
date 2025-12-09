@@ -90,7 +90,7 @@
         "about-title": "À propos de moi",
         "about-description": "Je suis un étudiant en 1ère année de BUT informatique en recherche d'alternance. Passionné par mes études et le développement informatique, j'aime le travail d'équipe, je n'ai aucun mal à bien m'entendre avec n'importe qui. Je ne crains pas l'inconnu et suis aventureux, j'apprécie les sports à sensations fortes.",
         "education-title": "Mon parcours",
-        "education-description": "J'ai obtenu mon baccalauréat avec les spécialités NSI et Mathématiques au lycée Albert Londres à Cusset. Durant mon parcours lycéen, j'ai eu l'opportunité exceptionnelle de participer au programme \"Solve for Tomorrow\" avec Samsung et de présenter notre projet devant un jury à Paris, ce qui a renforcé mes compétences en gestion de projet et en expression orale.",
+        "education-description": "J'ai obtenu mon baccalauréat avec les spécialités NSI et Mathématiques au lycée Albert Londres à Cusset. Durant mon parcours lycéen, j'ai eu l'opportunité exceptionnelle de participer à un projet innovant en partenariat avec Samsung dans le cadre du programme 'Solve for Tomorrow'.Notre équipe a fait partie des 5 groupes sélectionnés parmi plus d'un millier de groupes en France pour présenter notre projet devant un jury ainsi qu'un centaines de personnes à Paris, une expérience enrichissante qui a renforcé mes compétences en gestion de projet ainsi qu'en expression orale.",
         "page-title": "Projets - Portfolio de Sasha Lorenc",
         "projects-title": "Mes Projets",
         "project1-title": "SAE1.02 : Jeux vidéo",
