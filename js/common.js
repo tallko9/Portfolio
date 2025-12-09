@@ -256,14 +256,16 @@ function updateLanguage(language) {
     
     cvButtons.forEach(cvButton => {
         if (cvButton) {
-            // Construire le chemin du CV selon la langue avec le nom complet
-            const cvPath = safeLanguage === 'fr' ? 'documents/Cv_Sasha_Lorenc_fr.pdf' : 'documents/Cv_Sasha_Lorenc_en.pdf';
-            
+            // Chemin par défaut (fichiers présents dans /documents)
+            const fallbackCvPath = safeLanguage === 'fr' ? 'documents/Cv_fr.pdf' : 'documents/Cv_en.pdf';
+            // Chemin avec nom complet (si disponible)
+            const namedCvPath = safeLanguage === 'fr' ? 'documents/Cv_Sasha_Lorenc_fr.pdf' : 'documents/Cv_Sasha_Lorenc_en.pdf';
+
             // Les attributs data-cv-fr et data-cv-en deviennent dataset.cvFr et dataset.cvEn en JavaScript
             const datasetKey = `cv${safeLanguage.charAt(0).toUpperCase()}${safeLanguage.slice(1)}`;
             
-            // Utiliser l'attribut data s'il existe, sinon utiliser le chemin par défaut
-            const targetPath = cvButton.dataset[datasetKey] || cvPath;
+            // Priorité : attribut data → fallback existant → nom complet
+            const targetPath = cvButton.dataset[datasetKey] || fallbackCvPath || namedCvPath;
             
             cvButton.href = targetPath;
         }

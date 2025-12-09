@@ -1,4 +1,4 @@
-const translations = {
+﻿const translations = {
     fr: {
         "nav-home": "Accueil",
         "nav-about": "À propos",
@@ -261,7 +261,29 @@ const translations = {
         "tech-algorithms-intermediate": "(tri, recherche, manipulation de données)",
         "tech-html5-advanced": "(sémantique, accessibilité)",
         "tech-css3-advanced": "(Flexbox, Grid, animations)",
-        "tech-js-intermediate": "(DOM, LocalStorage, événements)"
+        "tech-js-intermediate": "(DOM, LocalStorage, événements)",
+        "skills-timeline-title": "Évolution de mes compétences",
+        "timeline-2023": "2023",
+        "timeline-2023-desc": "Découverte du développement web (HTML, CSS)",
+        "timeline-2024-start": "Début 2024",
+        "timeline-2024-start-desc": "Apprentissage du langage C et structures de données",
+        "timeline-2024-mid": "Mi-2024",
+        "timeline-2024-mid-desc": "Projets JavaScript (TaskShade), approfondissement C/C++",
+        "timeline-2025": "2025",
+        "timeline-2025-desc": "BUT Informatique, projets académiques, veille technologique",
+        "html-css-justification": "<strong>Utilisé dans 2+ projets</strong> : Portfolio (design responsive, animations CSS), TaskShade (interface utilisateur complète). Maîtrise des concepts avancés : Flexbox, Grid, animations, variables CSS, responsive design.",
+        "javascript-justification": "<strong>Capable de développer des fonctionnalités autonomes</strong> : Gestion d'état, manipulation du DOM, événements, carousel personnalisé. Utilisé dans TaskShade pour la logique métier et l'interactivité.",
+        "c-cpp-justification": "<strong>Utilisé dans 2 projets académiques majeurs</strong> : Application de gestion (structures de données, fichiers), Jeu vidéo (algorithmes, gestion mémoire). Maîtrise des pointeurs, structures, allocation dynamique.",
+        "csharp-justification": "<strong>En cours d'apprentissage</strong> : Découverte via .NET MAUI pour le développement d'applications multiplateformes. Projets en cours de développement.",
+        "linked-projects": "Projets liés :",
+        "project-taskShade": "TaskShade",
+        "project-portfolio": "Portfolio",
+        "project-carousel": "Carousel projets",
+        "project-gestion": "SAE1.01 Gestion",
+        "project-jeu": "SAE1.02 Jeu",
+        "learning-in-progress": "En apprentissage",
+        "tools-title": "Outils de Développement",
+        "tools-description": "Maîtrise des outils essentiels pour le développement moderne : contrôle de version (Git), IDE (VS Code), conteneurisation (Docker), et intégration continue (CI/CD)."
     },
     en: {
         "nav-home": "Home",
@@ -525,6 +547,28 @@ const translations = {
         "tech-algorithms-intermediate": "(sorting, search, data manipulation)",
         "tech-html5-advanced": "(semantics, accessibility)",
         "tech-css3-advanced": "(Flexbox, Grid, animations)",
-        "tech-js-intermediate": "(DOM, LocalStorage, events)"
+        "tech-js-intermediate": "(DOM, LocalStorage, events)",
+        "skills-timeline-title": "Skills Evolution",
+        "timeline-2023": "2023",
+        "timeline-2023-desc": "Discovery of web development (HTML, CSS)",
+        "timeline-2024-start": "Early 2024",
+        "timeline-2024-start-desc": "Learning C language and data structures",
+        "timeline-2024-mid": "Mid-2024",
+        "timeline-2024-mid-desc": "JavaScript projects (TaskShade), C/C++ deepening",
+        "timeline-2025": "2025",
+        "timeline-2025-desc": "Computer Science Bachelor, academic projects, tech watch",
+        "html-css-justification": "<strong>Used in 2+ projects</strong>: Portfolio (responsive design, CSS animations), TaskShade (complete user interface). Mastery of advanced concepts: Flexbox, Grid, animations, CSS variables, responsive design.",
+        "javascript-justification": "<strong>Capable of developing autonomous features</strong>: State management, DOM manipulation, events, custom carousel. Used in TaskShade for business logic and interactivity.",
+        "c-cpp-justification": "<strong>Used in 2 major academic projects</strong>: Management application (data structures, files), Video game (algorithms, memory management). Mastery of pointers, structures, dynamic allocation.",
+        "csharp-justification": "<strong>Currently learning</strong>: Discovery via .NET MAUI for cross-platform application development. Projects in development.",
+        "linked-projects": "Linked projects:",
+        "project-taskShade": "TaskShade",
+        "project-portfolio": "Portfolio",
+        "project-carousel": "Projects carousel",
+        "project-gestion": "SAE1.01 Management",
+        "project-jeu": "SAE1.02 Game",
+        "learning-in-progress": "Learning in progress",
+        "tools-title": "Development Tools",
+        "tools-description": "Mastery of essential tools for modern development: version control (Git), IDE (VS Code), containerization (Docker), and continuous integration (CI/CD)."
     }
 };

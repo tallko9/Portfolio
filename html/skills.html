@@ -97,51 +97,114 @@
         <div class="skills-panels">
             <div class="skills-section" role="region" aria-labelledby="technical-skills">
                 <h3 id="technical-skills" data-translate="technical-skills">Compétences Techniques</h3>
-                <div class="skill-matrix">
-                    <article class="skill-card" style="--value:0.9" aria-label="HTML & CSS maîtrisé à 90%">
-                        <div class="skill-ring">
-                            <span>90%</span>
+                
+                <!-- Timeline d'évolution des compétences -->
+                <div class="skills-timeline">
+                    <h4 data-translate="skills-timeline-title">Évolution de mes compétences</h4>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-translate="timeline-2023">2023</span>
+                                <p data-translate="timeline-2023-desc">Découverte du développement web (HTML, CSS)</p>
+                            </div>
                         </div>
-                        <div class="skill-details">
-                            <p id="html-skill" data-translate="html-css">HTML & CSS</p>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-translate="timeline-2024-start">Début 2024</span>
+                                <p data-translate="timeline-2024-start-desc">Apprentissage du langage C et structures de données</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-translate="timeline-2024-mid">Mi-2024</span>
+                                <p data-translate="timeline-2024-mid-desc">Projets JavaScript (TaskShade), approfondissement C/C++</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker active"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date" data-translate="timeline-2025">2025</span>
+                                <p data-translate="timeline-2025-desc">BUT Informatique, projets académiques, veille technologique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-matrix">
+                    <article class="skill-card-enhanced">
+                        <div class="skill-header">
+                            <h4 data-translate="html-css">HTML & CSS</h4>
                             <span class="skill-level" data-translate="skill-level-advanced">Avancé</span>
                         </div>
-                    </article>
-                    <article class="skill-card" style="--value:0.65" aria-label="JavaScript maîtrisé à 65%">
-                        <div class="skill-ring">
-                            <span>65%</span>
+                        <div class="skill-justification">
+                            <p data-translate="html-css-justification"><strong>Utilisé dans 2+ projets</strong> : Portfolio (design responsive, animations CSS), TaskShade (interface utilisateur complète). Maîtrise des concepts avancés : Flexbox, Grid, animations, variables CSS, responsive design.</p>
                         </div>
-                        <div class="skill-details">
-                            <p data-translate="javascript">JavaScript</p>
+                        <div class="skill-projects">
+                            <span class="skill-project-link" data-translate="linked-projects">Projets liés :</span>
+                            <a href="projet.html#taskShade" class="skill-project-tag" data-translate="project-taskShade">TaskShade</a>
+                            <a href="../index.html" class="skill-project-tag" data-translate="project-portfolio">Portfolio</a>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card-enhanced">
+                        <div class="skill-header">
+                            <h4 data-translate="javascript">JavaScript</h4>
                             <span class="skill-level" data-translate="skill-level-intermediate">Intermédiaire</span>
                         </div>
-                    </article>
-                    <article class="skill-card" style="--value:0.75" aria-label="C et C++ maîtrisés à 75%">
-                        <div class="skill-ring">
-                            <span>75%</span>
+                        <div class="skill-justification">
+                            <p data-translate="javascript-justification"><strong>Capable de développer des fonctionnalités autonomes</strong> : Gestion d'état, manipulation du DOM, événements, carousel personnalisé. Utilisé dans TaskShade pour la logique métier et l'interactivité.</p>
                         </div>
-                        <div class="skill-details">
-                            <p data-translate="c-cpp">C &amp; C++</p>
+                        <div class="skill-projects">
+                            <span class="skill-project-link" data-translate="linked-projects">Projets liés :</span>
+                            <a href="projet.html#taskShade" class="skill-project-tag" data-translate="project-taskShade">TaskShade</a>
+                            <a href="projet.html" class="skill-project-tag" data-translate="project-carousel">Carousel projets</a>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card-enhanced">
+                        <div class="skill-header">
+                            <h4 data-translate="c-cpp">C &amp; C++</h4>
                             <span class="skill-level" data-translate="skill-level-confirmed">Confirmé</span>
                         </div>
-                    </article>
-                    <article class="skill-card" style="--value:0.55" aria-label="C# maîtrisé à 55%">
-                        <div class="skill-ring">
-                            <span>55%</span>
+                        <div class="skill-justification">
+                            <p data-translate="c-cpp-justification"><strong>Utilisé dans 2 projets académiques majeurs</strong> : Application de gestion (structures de données, fichiers), Jeu vidéo (algorithmes, gestion mémoire). Maîtrise des pointeurs, structures, allocation dynamique.</p>
                         </div>
-                        <div class="skill-details">
-                            <p data-translate="csharp">C#</p>
+                        <div class="skill-projects">
+                            <span class="skill-project-link" data-translate="linked-projects">Projets liés :</span>
+                            <a href="projects/gestionC.html" class="skill-project-tag" data-translate="project-gestion">SAE1.01 Gestion</a>
+                            <a href="projects/jeuC.html" class="skill-project-tag" data-translate="project-jeu">SAE1.02 Jeu</a>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card-enhanced">
+                        <div class="skill-header">
+                            <h4 data-translate="csharp">C#</h4>
                             <span class="skill-level" data-translate="skill-level-intermediate">Intermédiaire</span>
+                        </div>
+                        <div class="skill-justification">
+                            <p data-translate="csharp-justification"><strong>En cours d'apprentissage</strong> : Découverte via .NET MAUI pour le développement d'applications multiplateformes. Projets en cours de développement.</p>
+                        </div>
+                        <div class="skill-projects">
+                            <span class="skill-project-link" data-translate="learning-in-progress">En apprentissage</span>
                         </div>
                     </article>
                 </div>
+                
                 <div class="skill-category">
-                    <h4 data-translate="frameworks-tools">Frameworks &amp; Outils</h4>
+                    <h4 data-translate="tools-title">Outils de Développement</h4>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">MAUI</span>
+                        <span class="skill-tag" title="Contrôle de version">Git</span>
+                        <span class="skill-tag" title="Environnement de développement">VS Code</span>
+                        <span class="skill-tag" title="Framework multiplateforme">.NET MAUI</span>
+                        <span class="skill-tag" title="Débogueur">Debugger</span>
+                        <span class="skill-tag" title="Gestionnaire de paquets">npm</span>
+                        <span class="skill-tag" title="Conteneurisation">Docker</span>
+                        <span class="skill-tag" title="CI/CD">Drone CI</span>
                     </div>
+                    <p class="tools-description" data-translate="tools-description">Maîtrise des outils essentiels pour le développement moderne : contrôle de version (Git), IDE (VS Code), conteneurisation (Docker), et intégration continue (CI/CD).</p>
                 </div>
             </div>
 
