@@ -128,17 +128,21 @@ const isSafeHTML = (value) => {
     }
     
     // Vérifier que seules les balises autorisées sont présentes
-    const tagRegex = /<\/?([a-zA-Z0-9]+)(?:\s+[^>]*)?>/g;
+    // Pattern amélioré pour gérer les balises auto-fermantes (<br/>, <br />) et les balises normales
+    const tagRegex = /<\/?([a-zA-Z0-9]+)([^>]*?)(\/?)>/g;
     let match;
     while ((match = tagRegex.exec(value)) !== null) {
         const tagName = match[1].toUpperCase();
+        const attributes = match[2] || '';
+        const isSelfClosing = match[3] === '/';
+        
+        // Vérifier que la balise est autorisée
         if (!ALLOWED_HTML_TAGS.has(tagName)) {
             return false;
         }
         
-        // Vérifier les attributs dans cette balise spécifique
-        const fullMatch = match[0];
-        if (DANGEROUS_ATTRIBUTES.test(fullMatch)) {
+        // Vérifier les attributs dans cette balise spécifique (même pour les balises auto-fermantes)
+        if (attributes && DANGEROUS_ATTRIBUTES.test(attributes)) {
             return false;
         }
     }
