@@ -115,16 +115,34 @@ const colorWithOpacity = (hex, opacity) => {
 // Liste blanche des balises HTML autorisées dans les traductions
 const ALLOWED_HTML_TAGS = new Set(['STRONG', 'EM', 'BR']);
 
-// Vérifie si une chaîne contient uniquement des balises autorisées
+// Attributs d'événements dangereux à bloquer
+const DANGEROUS_ATTRIBUTES = /on\w+\s*=/i;
+
+// Vérifie si une chaîne contient uniquement des balises autorisées et sans attributs dangereux
 const isSafeHTML = (value) => {
     if (typeof value !== 'string') return false;
-    const tagRegex = /<\/?([a-zA-Z0-9]+)[^>]*>/g;
+    
+    // Vérifier qu'il n'y a pas d'attributs d'événements (onclick, onerror, etc.)
+    if (DANGEROUS_ATTRIBUTES.test(value)) {
+        return false;
+    }
+    
+    // Vérifier que seules les balises autorisées sont présentes
+    const tagRegex = /<\/?([a-zA-Z0-9]+)(?:\s+[^>]*)?>/g;
     let match;
     while ((match = tagRegex.exec(value)) !== null) {
-        if (!ALLOWED_HTML_TAGS.has(match[1].toUpperCase())) {
+        const tagName = match[1].toUpperCase();
+        if (!ALLOWED_HTML_TAGS.has(tagName)) {
+            return false;
+        }
+        
+        // Vérifier les attributs dans cette balise spécifique
+        const fullMatch = match[0];
+        if (DANGEROUS_ATTRIBUTES.test(fullMatch)) {
             return false;
         }
     }
+    
     return true;
 };
 
